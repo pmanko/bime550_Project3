@@ -1000,18 +1000,18 @@ _:genid110 <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "tr
 	swrl:body _:genid121 .
 
 _:genid121 a swrl:AtomList ;
-	rdf:first _:genid370 .
+	rdf:first _:genid421 .
 
-_:genid370 a swrl:ClassAtom ;
+_:genid421 a swrl:ClassAtom ;
 	swrl:classPredicate :Patient ;
 	swrl:argument1 :p .
 
 _:genid121 rdf:rest _:genid120 .
 
 _:genid120 a swrl:AtomList ;
-	rdf:first _:genid379 .
+	rdf:first _:genid430 .
 
-_:genid379 a swrl:IndividualPropertyAtom ;
+_:genid430 a swrl:IndividualPropertyAtom ;
 	swrl:propertyPredicate :hasPrimaryTumour ;
 	swrl:argument1 :p ;
 	swrl:argument2 :t .
@@ -1019,9 +1019,9 @@ _:genid379 a swrl:IndividualPropertyAtom ;
 _:genid120 rdf:rest _:genid119 .
 
 _:genid119 a swrl:AtomList ;
-	rdf:first _:genid381 .
+	rdf:first _:genid432 .
 
-_:genid381 a swrl:DatavaluedPropertyAtom ;
+_:genid432 a swrl:DatavaluedPropertyAtom ;
 	swrl:propertyPredicate :hasSize ;
 	swrl:argument1 :t ;
 	swrl:argument2 :s .
@@ -1086,18 +1086,18 @@ _:genid124 <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "tr
 	swrl:body _:genid129 .
 
 _:genid129 a swrl:AtomList ;
-	rdf:first _:genid341 .
+	rdf:first _:genid387 .
 
-_:genid341 a swrl:ClassAtom ;
+_:genid387 a swrl:ClassAtom ;
 	swrl:classPredicate :Patient ;
 	swrl:argument1 <urn:swrl#p> .
 
 _:genid129 rdf:rest _:genid128 .
 
 _:genid128 a swrl:AtomList ;
-	rdf:first _:genid349 .
+	rdf:first _:genid399 .
 
-_:genid349 a swrl:IndividualPropertyAtom ;
+_:genid399 a swrl:IndividualPropertyAtom ;
 	swrl:propertyPredicate :hasPrimaryTumour ;
 	swrl:argument1 <urn:swrl#p> ;
 	swrl:argument2 <urn:swrl#pt> .
@@ -1105,9 +1105,9 @@ _:genid349 a swrl:IndividualPropertyAtom ;
 _:genid128 rdf:rest _:genid127 .
 
 _:genid127 a swrl:AtomList ;
-	rdf:first _:genid347 .
+	rdf:first _:genid397 .
 
-_:genid347 a swrl:IndividualPropertyAtom ;
+_:genid397 a swrl:IndividualPropertyAtom ;
 	swrl:propertyPredicate :hasInvasionOf ;
 	swrl:argument1 <urn:swrl#pt> ;
 	swrl:argument2 <urn:swrl#l> .
@@ -1138,18 +1138,18 @@ _:genid132 a swrl:Imp ;
 	swrl:body _:genid145 .
 
 _:genid145 a swrl:AtomList ;
-	rdf:first _:genid344 .
+	rdf:first _:genid391 .
 
-_:genid344 a swrl:ClassAtom ;
+_:genid391 a swrl:ClassAtom ;
 	swrl:classPredicate :Patient ;
 	swrl:argument1 <urn:swrl#p> .
 
 _:genid145 rdf:rest _:genid143 .
 
 _:genid143 a swrl:AtomList ;
-	rdf:first _:genid351 .
+	rdf:first _:genid402 .
 
-_:genid351 a swrl:IndividualPropertyAtom ;
+_:genid402 a swrl:IndividualPropertyAtom ;
 	swrl:propertyPredicate :hasPrimaryTumour ;
 	swrl:argument1 <urn:swrl#p> ;
 	swrl:argument2 <urn:swrl#t> .
@@ -1157,9 +1157,9 @@ _:genid351 a swrl:IndividualPropertyAtom ;
 _:genid143 rdf:rest _:genid141 .
 
 _:genid141 a swrl:AtomList ;
-	rdf:first _:genid345 .
+	rdf:first _:genid392 .
 
-_:genid345 a swrl:DatavaluedPropertyAtom ;
+_:genid392 a swrl:DatavaluedPropertyAtom ;
 	swrl:propertyPredicate :hasSize ;
 	swrl:argument1 <urn:swrl#t> ;
 	swrl:argument2 <urn:swrl#s> .
@@ -1215,18 +1215,18 @@ _:genid148 a swrl:Imp ;
 	swrl:body _:genid155 .
 
 _:genid155 a swrl:AtomList ;
-	rdf:first _:genid343 .
+	rdf:first _:genid390 .
 
-_:genid343 a swrl:ClassAtom ;
+_:genid390 a swrl:ClassAtom ;
 	swrl:classPredicate :Patient ;
 	swrl:argument1 <urn:swrl#p> .
 
 _:genid155 rdf:rest _:genid154 .
 
 _:genid154 a swrl:AtomList ;
-	rdf:first _:genid352 .
+	rdf:first _:genid403 .
 
-_:genid352 a swrl:IndividualPropertyAtom ;
+_:genid403 a swrl:IndividualPropertyAtom ;
 	swrl:propertyPredicate :hasPrimaryTumour ;
 	swrl:argument1 <urn:swrl#p> ;
 	swrl:argument2 <urn:swrl#t> .
@@ -1234,9 +1234,9 @@ _:genid352 a swrl:IndividualPropertyAtom ;
 _:genid154 rdf:rest _:genid153 .
 
 _:genid153 a swrl:AtomList ;
-	rdf:first _:genid346 .
+	rdf:first _:genid393 .
 
-_:genid346 a swrl:DatavaluedPropertyAtom ;
+_:genid393 a swrl:DatavaluedPropertyAtom ;
 	swrl:propertyPredicate :hasSize ;
 	swrl:argument1 <urn:swrl#t> ;
 	swrl:argument2 <urn:swrl#s> .
@@ -1247,7 +1247,7 @@ _:genid149 a swrl:AtomList ;
 	rdf:first _:genid150 .
 
 _:genid150 a swrl:BuiltinAtom ;
-	swrl:builtin swrlb:lessThan ;
+	swrl:builtin swrlb:greaterThanOrEqual ;
 	swrl:arguments _:genid152 .
 
 _:genid152 a rdf:List ;
@@ -1255,7 +1255,7 @@ _:genid152 a rdf:List ;
 	rdf:rest _:genid151 .
 
 _:genid151 a rdf:List ;
-	rdf:first "2.0"^^xsd:float ;
+	rdf:first "7.0"^^xsd:float ;
 	rdf:rest rdf:nil .
 
 _:genid149 rdf:rest rdf:nil .
@@ -1263,30 +1263,90 @@ _:genid149 rdf:rest rdf:nil .
 _:genid148 swrl:head _:genid156 .
 
 _:genid156 a swrl:AtomList ;
-	rdf:first _:genid157 .
+	rdf:first _:genid396 .
 
-_:genid157 a swrl:ClassAtom ;
-	swrl:classPredicate :T1a ;
+_:genid396 a swrl:ClassAtom ;
+	swrl:classPredicate :T3 ;
 	swrl:argument1 <urn:swrl#p> .
 
 _:genid156 rdf:rest rdf:nil .
+
+_:genid157 a swrl:Imp ;
+	swrl:body _:genid164 .
+
+_:genid164 a swrl:AtomList ;
+	rdf:first _:genid389 .
+
+_:genid389 a swrl:ClassAtom ;
+	swrl:classPredicate :Patient ;
+	swrl:argument1 <urn:swrl#p> .
+
+_:genid164 rdf:rest _:genid163 .
+
+_:genid163 a swrl:AtomList ;
+	rdf:first _:genid401 .
+
+_:genid401 a swrl:IndividualPropertyAtom ;
+	swrl:propertyPredicate :hasPrimaryTumour ;
+	swrl:argument1 <urn:swrl#p> ;
+	swrl:argument2 <urn:swrl#t> .
+
+_:genid163 rdf:rest _:genid162 .
+
+_:genid162 a swrl:AtomList ;
+	rdf:first _:genid394 .
+
+_:genid394 a swrl:DatavaluedPropertyAtom ;
+	swrl:propertyPredicate :hasSize ;
+	swrl:argument1 <urn:swrl#t> ;
+	swrl:argument2 <urn:swrl#s> .
+
+_:genid162 rdf:rest _:genid158 .
+
+_:genid158 a swrl:AtomList ;
+	rdf:first _:genid159 .
+
+_:genid159 a swrl:BuiltinAtom ;
+	swrl:builtin swrlb:lessThan ;
+	swrl:arguments _:genid161 .
+
+_:genid161 a rdf:List ;
+	rdf:first <urn:swrl#s> ;
+	rdf:rest _:genid160 .
+
+_:genid160 a rdf:List ;
+	rdf:first "2.0"^^xsd:float ;
+	rdf:rest rdf:nil .
+
+_:genid158 rdf:rest rdf:nil .
+
+_:genid157 swrl:head _:genid165 .
+
+_:genid165 a swrl:AtomList ;
+	rdf:first _:genid166 .
+
+_:genid166 a swrl:ClassAtom ;
+	swrl:classPredicate :T1a ;
+	swrl:argument1 <urn:swrl#p> .
+
+_:genid165 rdf:rest rdf:nil .
 
 _:genid40 a swrl:Imp ;
 	swrl:body _:genid51 .
 
 _:genid51 a swrl:AtomList ;
-	rdf:first _:genid360 .
+	rdf:first _:genid411 .
 
-_:genid360 a swrl:ClassAtom ;
+_:genid411 a swrl:ClassAtom ;
 	swrl:classPredicate :Metastasis ;
 	swrl:argument1 <urn:swrl#m> .
 
 _:genid51 rdf:rest _:genid49 .
 
 _:genid49 a swrl:AtomList ;
-	rdf:first _:genid355 .
+	rdf:first _:genid406 .
 
-_:genid355 a swrl:IndividualPropertyAtom ;
+_:genid406 a swrl:IndividualPropertyAtom ;
 	swrl:propertyPredicate :isMetastasisOf ;
 	swrl:argument1 <urn:swrl#m> ;
 	swrl:argument2 <urn:swrl#pt> .
@@ -1294,9 +1354,9 @@ _:genid355 a swrl:IndividualPropertyAtom ;
 _:genid49 rdf:rest _:genid47 .
 
 _:genid47 a swrl:AtomList ;
-	rdf:first _:genid376 .
+	rdf:first _:genid427 .
 
-_:genid376 a swrl:IndividualPropertyAtom ;
+_:genid427 a swrl:IndividualPropertyAtom ;
 	swrl:propertyPredicate :hasLocation ;
 	swrl:argument1 <urn:swrl#pt> ;
 	swrl:argument2 <urn:swrl#l> .
@@ -1304,9 +1364,9 @@ _:genid376 a swrl:IndividualPropertyAtom ;
 _:genid47 rdf:rest _:genid45 .
 
 _:genid45 a swrl:AtomList ;
-	rdf:first _:genid367 .
+	rdf:first _:genid418 .
 
-_:genid367 a swrl:IndividualPropertyAtom ;
+_:genid418 a swrl:IndividualPropertyAtom ;
 	swrl:propertyPredicate :hasSide ;
 	swrl:argument1 <urn:swrl#l> ;
 	swrl:argument2 :left .
@@ -1314,9 +1374,9 @@ _:genid367 a swrl:IndividualPropertyAtom ;
 _:genid45 rdf:rest _:genid43 .
 
 _:genid43 a swrl:AtomList ;
-	rdf:first _:genid371 .
+	rdf:first _:genid422 .
 
-_:genid371 a swrl:IndividualPropertyAtom ;
+_:genid422 a swrl:IndividualPropertyAtom ;
 	swrl:propertyPredicate :hasLocation ;
 	swrl:argument1 <urn:swrl#m> ;
 	swrl:argument2 <urn:swrl#ml> .
@@ -1324,9 +1384,9 @@ _:genid371 a swrl:IndividualPropertyAtom ;
 _:genid43 rdf:rest _:genid41 .
 
 _:genid41 a swrl:AtomList ;
-	rdf:first _:genid365 .
+	rdf:first _:genid416 .
 
-_:genid365 a swrl:IndividualPropertyAtom ;
+_:genid416 a swrl:IndividualPropertyAtom ;
 	swrl:propertyPredicate :hasSide ;
 	swrl:argument1 <urn:swrl#ml> ;
 	swrl:argument2 :left .
@@ -1336,9 +1396,9 @@ _:genid41 rdf:rest rdf:nil .
 _:genid40 swrl:head _:genid53 .
 
 _:genid53 a swrl:AtomList ;
-	rdf:first _:genid357 .
+	rdf:first _:genid408 .
 
-_:genid357 a swrl:ClassAtom ;
+_:genid408 a swrl:ClassAtom ;
 	swrl:classPredicate :IpsilateralMetastasis ;
 	swrl:argument1 <urn:swrl#m> .
 
@@ -1348,18 +1408,18 @@ _:genid55 a swrl:Imp ;
 	swrl:body _:genid62 .
 
 _:genid62 a swrl:AtomList ;
-	rdf:first _:genid359 .
+	rdf:first _:genid410 .
 
-_:genid359 a swrl:ClassAtom ;
+_:genid410 a swrl:ClassAtom ;
 	swrl:classPredicate :Metastasis ;
 	swrl:argument1 <urn:swrl#m> .
 
 _:genid62 rdf:rest _:genid61 .
 
 _:genid61 a swrl:AtomList ;
-	rdf:first _:genid353 .
+	rdf:first _:genid404 .
 
-_:genid353 a swrl:IndividualPropertyAtom ;
+_:genid404 a swrl:IndividualPropertyAtom ;
 	swrl:propertyPredicate :isMetastasisOf ;
 	swrl:argument1 <urn:swrl#m> ;
 	swrl:argument2 <urn:swrl#pt> .
@@ -1367,9 +1427,9 @@ _:genid353 a swrl:IndividualPropertyAtom ;
 _:genid61 rdf:rest _:genid60 .
 
 _:genid60 a swrl:AtomList ;
-	rdf:first _:genid375 .
+	rdf:first _:genid426 .
 
-_:genid375 a swrl:IndividualPropertyAtom ;
+_:genid426 a swrl:IndividualPropertyAtom ;
 	swrl:propertyPredicate :hasLocation ;
 	swrl:argument1 <urn:swrl#pt> ;
 	swrl:argument2 <urn:swrl#l> .
@@ -1377,9 +1437,9 @@ _:genid375 a swrl:IndividualPropertyAtom ;
 _:genid60 rdf:rest _:genid59 .
 
 _:genid59 a swrl:AtomList ;
-	rdf:first _:genid368 .
+	rdf:first _:genid419 .
 
-_:genid368 a swrl:IndividualPropertyAtom ;
+_:genid419 a swrl:IndividualPropertyAtom ;
 	swrl:propertyPredicate :hasSide ;
 	swrl:argument1 <urn:swrl#l> ;
 	swrl:argument2 :left .
@@ -1387,9 +1447,9 @@ _:genid368 a swrl:IndividualPropertyAtom ;
 _:genid59 rdf:rest _:genid58 .
 
 _:genid58 a swrl:AtomList ;
-	rdf:first _:genid374 .
+	rdf:first _:genid425 .
 
-_:genid374 a swrl:IndividualPropertyAtom ;
+_:genid425 a swrl:IndividualPropertyAtom ;
 	swrl:propertyPredicate :hasLocation ;
 	swrl:argument1 <urn:swrl#m> ;
 	swrl:argument2 <urn:swrl#ml> .
@@ -1397,9 +1457,9 @@ _:genid374 a swrl:IndividualPropertyAtom ;
 _:genid58 rdf:rest _:genid56 .
 
 _:genid56 a swrl:AtomList ;
-	rdf:first _:genid364 .
+	rdf:first _:genid415 .
 
-_:genid364 a swrl:IndividualPropertyAtom ;
+_:genid415 a swrl:IndividualPropertyAtom ;
 	swrl:propertyPredicate :hasSide ;
 	swrl:argument1 <urn:swrl#ml> ;
 	swrl:argument2 :right .
@@ -1409,9 +1469,9 @@ _:genid56 rdf:rest rdf:nil .
 _:genid55 swrl:head _:genid63 .
 
 _:genid63 a swrl:AtomList ;
-	rdf:first _:genid384 .
+	rdf:first _:genid435 .
 
-_:genid384 a swrl:ClassAtom ;
+_:genid435 a swrl:ClassAtom ;
 	swrl:classPredicate :ContralateralMetastasis ;
 	swrl:argument1 <urn:swrl#m> .
 
@@ -1421,18 +1481,18 @@ _:genid65 a swrl:Imp ;
 	swrl:body _:genid72 .
 
 _:genid72 a swrl:AtomList ;
-	rdf:first _:genid362 .
+	rdf:first _:genid413 .
 
-_:genid362 a swrl:ClassAtom ;
+_:genid413 a swrl:ClassAtom ;
 	swrl:classPredicate :Metastasis ;
 	swrl:argument1 <urn:swrl#m> .
 
 _:genid72 rdf:rest _:genid71 .
 
 _:genid71 a swrl:AtomList ;
-	rdf:first _:genid354 .
+	rdf:first _:genid405 .
 
-_:genid354 a swrl:IndividualPropertyAtom ;
+_:genid405 a swrl:IndividualPropertyAtom ;
 	swrl:propertyPredicate :isMetastasisOf ;
 	swrl:argument1 <urn:swrl#m> ;
 	swrl:argument2 <urn:swrl#pt> .
@@ -1440,9 +1500,9 @@ _:genid354 a swrl:IndividualPropertyAtom ;
 _:genid71 rdf:rest _:genid70 .
 
 _:genid70 a swrl:AtomList ;
-	rdf:first _:genid377 .
+	rdf:first _:genid428 .
 
-_:genid377 a swrl:IndividualPropertyAtom ;
+_:genid428 a swrl:IndividualPropertyAtom ;
 	swrl:propertyPredicate :hasLocation ;
 	swrl:argument1 <urn:swrl#pt> ;
 	swrl:argument2 <urn:swrl#l> .
@@ -1450,9 +1510,9 @@ _:genid377 a swrl:IndividualPropertyAtom ;
 _:genid70 rdf:rest _:genid68 .
 
 _:genid68 a swrl:AtomList ;
-	rdf:first _:genid385 .
+	rdf:first _:genid436 .
 
-_:genid385 a swrl:IndividualPropertyAtom ;
+_:genid436 a swrl:IndividualPropertyAtom ;
 	swrl:propertyPredicate :hasSide ;
 	swrl:argument1 <urn:swrl#l> ;
 	swrl:argument2 :right .
@@ -1460,9 +1520,9 @@ _:genid385 a swrl:IndividualPropertyAtom ;
 _:genid68 rdf:rest _:genid67 .
 
 _:genid67 a swrl:AtomList ;
-	rdf:first _:genid373 .
+	rdf:first _:genid424 .
 
-_:genid373 a swrl:IndividualPropertyAtom ;
+_:genid424 a swrl:IndividualPropertyAtom ;
 	swrl:propertyPredicate :hasLocation ;
 	swrl:argument1 <urn:swrl#m> ;
 	swrl:argument2 <urn:swrl#ml> .
@@ -1470,9 +1530,9 @@ _:genid373 a swrl:IndividualPropertyAtom ;
 _:genid67 rdf:rest _:genid66 .
 
 _:genid66 a swrl:AtomList ;
-	rdf:first _:genid366 .
+	rdf:first _:genid417 .
 
-_:genid366 a swrl:IndividualPropertyAtom ;
+_:genid417 a swrl:IndividualPropertyAtom ;
 	swrl:propertyPredicate :hasSide ;
 	swrl:argument1 <urn:swrl#ml> ;
 	swrl:argument2 :left .
@@ -1482,9 +1542,9 @@ _:genid66 rdf:rest rdf:nil .
 _:genid65 swrl:head _:genid73 .
 
 _:genid73 a swrl:AtomList ;
-	rdf:first _:genid383 .
+	rdf:first _:genid434 .
 
-_:genid383 a swrl:ClassAtom ;
+_:genid434 a swrl:ClassAtom ;
 	swrl:classPredicate :ContralateralMetastasis ;
 	swrl:argument1 <urn:swrl#m> .
 
@@ -1494,18 +1554,18 @@ _:genid74 a swrl:Imp ;
 	swrl:body _:genid80 .
 
 _:genid80 a swrl:AtomList ;
-	rdf:first _:genid361 .
+	rdf:first _:genid412 .
 
-_:genid361 a swrl:ClassAtom ;
+_:genid412 a swrl:ClassAtom ;
 	swrl:classPredicate :Metastasis ;
 	swrl:argument1 <urn:swrl#m> .
 
 _:genid80 rdf:rest _:genid79 .
 
 _:genid79 a swrl:AtomList ;
-	rdf:first _:genid356 .
+	rdf:first _:genid407 .
 
-_:genid356 a swrl:IndividualPropertyAtom ;
+_:genid407 a swrl:IndividualPropertyAtom ;
 	swrl:propertyPredicate :isMetastasisOf ;
 	swrl:argument1 <urn:swrl#m> ;
 	swrl:argument2 <urn:swrl#pt> .
@@ -1513,9 +1573,9 @@ _:genid356 a swrl:IndividualPropertyAtom ;
 _:genid79 rdf:rest _:genid78 .
 
 _:genid78 a swrl:AtomList ;
-	rdf:first _:genid378 .
+	rdf:first _:genid429 .
 
-_:genid378 a swrl:IndividualPropertyAtom ;
+_:genid429 a swrl:IndividualPropertyAtom ;
 	swrl:propertyPredicate :hasLocation ;
 	swrl:argument1 <urn:swrl#pt> ;
 	swrl:argument2 <urn:swrl#l> .
@@ -1523,9 +1583,9 @@ _:genid378 a swrl:IndividualPropertyAtom ;
 _:genid78 rdf:rest _:genid77 .
 
 _:genid77 a swrl:AtomList ;
-	rdf:first _:genid386 .
+	rdf:first _:genid437 .
 
-_:genid386 a swrl:IndividualPropertyAtom ;
+_:genid437 a swrl:IndividualPropertyAtom ;
 	swrl:propertyPredicate :hasSide ;
 	swrl:argument1 <urn:swrl#l> ;
 	swrl:argument2 :right .
@@ -1533,9 +1593,9 @@ _:genid386 a swrl:IndividualPropertyAtom ;
 _:genid77 rdf:rest _:genid76 .
 
 _:genid76 a swrl:AtomList ;
-	rdf:first _:genid372 .
+	rdf:first _:genid423 .
 
-_:genid372 a swrl:IndividualPropertyAtom ;
+_:genid423 a swrl:IndividualPropertyAtom ;
 	swrl:propertyPredicate :hasLocation ;
 	swrl:argument1 <urn:swrl#m> ;
 	swrl:argument2 <urn:swrl#ml> .
@@ -1543,9 +1603,9 @@ _:genid372 a swrl:IndividualPropertyAtom ;
 _:genid76 rdf:rest _:genid75 .
 
 _:genid75 a swrl:AtomList ;
-	rdf:first _:genid363 .
+	rdf:first _:genid414 .
 
-_:genid363 a swrl:IndividualPropertyAtom ;
+_:genid414 a swrl:IndividualPropertyAtom ;
 	swrl:propertyPredicate :hasSide ;
 	swrl:argument1 <urn:swrl#ml> ;
 	swrl:argument2 :right .
@@ -1555,9 +1615,9 @@ _:genid75 rdf:rest rdf:nil .
 _:genid74 swrl:head _:genid81 .
 
 _:genid81 a swrl:AtomList ;
-	rdf:first _:genid358 .
+	rdf:first _:genid409 .
 
-_:genid358 a swrl:ClassAtom ;
+_:genid409 a swrl:ClassAtom ;
 	swrl:classPredicate :IpsilateralMetastasis ;
 	swrl:argument1 <urn:swrl#m> .
 
@@ -1567,18 +1627,18 @@ _:genid82 a swrl:Imp ;
 	swrl:body _:genid89 .
 
 _:genid89 a swrl:AtomList ;
-	rdf:first _:genid342 .
+	rdf:first _:genid388 .
 
-_:genid342 a swrl:ClassAtom ;
+_:genid388 a swrl:ClassAtom ;
 	swrl:classPredicate :Patient ;
 	swrl:argument1 <urn:swrl#p> .
 
 _:genid89 rdf:rest _:genid87 .
 
 _:genid87 a swrl:AtomList ;
-	rdf:first _:genid350 .
+	rdf:first _:genid400 .
 
-_:genid350 a swrl:IndividualPropertyAtom ;
+_:genid400 a swrl:IndividualPropertyAtom ;
 	swrl:propertyPredicate :hasPrimaryTumour ;
 	swrl:argument1 <urn:swrl#p> ;
 	swrl:argument2 <urn:swrl#pt> .
@@ -1586,9 +1646,9 @@ _:genid350 a swrl:IndividualPropertyAtom ;
 _:genid87 rdf:rest _:genid85 .
 
 _:genid85 a swrl:AtomList ;
-	rdf:first _:genid348 .
+	rdf:first _:genid398 .
 
-_:genid348 a swrl:IndividualPropertyAtom ;
+_:genid398 a swrl:IndividualPropertyAtom ;
 	swrl:propertyPredicate :hasInvasionOf ;
 	swrl:argument1 <urn:swrl#pt> ;
 	swrl:argument2 <urn:swrl#l> .
@@ -1607,9 +1667,9 @@ _:genid83 rdf:rest rdf:nil .
 _:genid82 swrl:head _:genid91 .
 
 _:genid91 a swrl:AtomList ;
-	rdf:first _:genid92 .
+	rdf:first _:genid395 .
 
-_:genid92 a swrl:ClassAtom ;
+_:genid395 a swrl:ClassAtom ;
 	swrl:classPredicate :T3 ;
 	swrl:argument1 <urn:swrl#p> .
 
@@ -1622,18 +1682,18 @@ _:genid93 <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "tru
 	swrl:body _:genid106 .
 
 _:genid106 a swrl:AtomList ;
-	rdf:first _:genid369 .
+	rdf:first _:genid420 .
 
-_:genid369 a swrl:ClassAtom ;
+_:genid420 a swrl:ClassAtom ;
 	swrl:classPredicate :Patient ;
 	swrl:argument1 :p .
 
 _:genid106 rdf:rest _:genid104 .
 
 _:genid104 a swrl:AtomList ;
-	rdf:first _:genid380 .
+	rdf:first _:genid431 .
 
-_:genid380 a swrl:IndividualPropertyAtom ;
+_:genid431 a swrl:IndividualPropertyAtom ;
 	swrl:propertyPredicate :hasPrimaryTumour ;
 	swrl:argument1 :p ;
 	swrl:argument2 :t .
@@ -1641,9 +1701,9 @@ _:genid380 a swrl:IndividualPropertyAtom ;
 _:genid104 rdf:rest _:genid102 .
 
 _:genid102 a swrl:AtomList ;
-	rdf:first _:genid382 .
+	rdf:first _:genid433 .
 
-_:genid382 a swrl:DatavaluedPropertyAtom ;
+_:genid433 a swrl:DatavaluedPropertyAtom ;
 	swrl:propertyPredicate :hasSize ;
 	swrl:argument1 :t ;
 	swrl:argument2 :s .
