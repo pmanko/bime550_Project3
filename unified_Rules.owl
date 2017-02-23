@@ -53,11 +53,13 @@ rdfs:comment a owl:AnnotationProperty .
 # http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#hasMetastasis
 
 :hasMetastasis a owl:ObjectProperty ;
-	rdfs:domain :PrimaryTumour .
+	rdfs:domain :Patient ;
+	rdfs:range :Metastasis .
 # 
 # http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#hasPrimaryTumour
 
 :hasPrimaryTumour a owl:ObjectProperty ;
+	rdfs:domain :Patient ;
 	rdfs:range :PrimaryTumour .
 # 
 # http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#hasSide
@@ -76,6 +78,7 @@ rdfs:comment a owl:AnnotationProperty .
 # http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#isMetastasisOf
 
 :isMetastasisOf a owl:ObjectProperty , owl:FunctionalProperty ;
+	rdfs:domain :Metastasis ;
 	rdfs:range :PrimaryTumour .
 # 
 # 
@@ -843,18 +846,18 @@ _:genid37 <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "tru
 	swrl:body _:genid50 .
 
 _:genid50 a swrl:AtomList ;
-	rdf:first _:genid114 .
+	rdf:first _:genid6 .
 
-_:genid114 a swrl:ClassAtom ;
+_:genid6 a swrl:ClassAtom ;
 	swrl:classPredicate :Patient ;
 	swrl:argument1 :p .
 
 _:genid50 rdf:rest _:genid48 .
 
 _:genid48 a swrl:AtomList ;
-	rdf:first _:genid120 .
+	rdf:first _:genid12 .
 
-_:genid120 a swrl:IndividualPropertyAtom ;
+_:genid12 a swrl:IndividualPropertyAtom ;
 	swrl:propertyPredicate :hasPrimaryTumour ;
 	swrl:argument1 :p ;
 	swrl:argument2 :t .
@@ -862,9 +865,9 @@ _:genid120 a swrl:IndividualPropertyAtom ;
 _:genid48 rdf:rest _:genid46 .
 
 _:genid46 a swrl:AtomList ;
-	rdf:first _:genid116 .
+	rdf:first _:genid8 .
 
-_:genid116 a swrl:DatavaluedPropertyAtom ;
+_:genid8 a swrl:DatavaluedPropertyAtom ;
 	swrl:propertyPredicate :hasSize ;
 	swrl:argument1 :t ;
 	swrl:argument2 :s .
@@ -929,18 +932,18 @@ _:genid54 <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "tru
 	swrl:body _:genid65 .
 
 _:genid65 a swrl:AtomList ;
-	rdf:first _:genid113 .
+	rdf:first _:genid5 .
 
-_:genid113 a swrl:ClassAtom ;
+_:genid5 a swrl:ClassAtom ;
 	swrl:classPredicate :Patient ;
 	swrl:argument1 :p .
 
 _:genid65 rdf:rest _:genid64 .
 
 _:genid64 a swrl:AtomList ;
-	rdf:first _:genid119 .
+	rdf:first _:genid11 .
 
-_:genid119 a swrl:IndividualPropertyAtom ;
+_:genid11 a swrl:IndividualPropertyAtom ;
 	swrl:propertyPredicate :hasPrimaryTumour ;
 	swrl:argument1 :p ;
 	swrl:argument2 :t .
@@ -948,9 +951,9 @@ _:genid119 a swrl:IndividualPropertyAtom ;
 _:genid64 rdf:rest _:genid63 .
 
 _:genid63 a swrl:AtomList ;
-	rdf:first _:genid115 .
+	rdf:first _:genid7 .
 
-_:genid115 a swrl:DatavaluedPropertyAtom ;
+_:genid7 a swrl:DatavaluedPropertyAtom ;
 	swrl:propertyPredicate :hasSize ;
 	swrl:argument1 :t ;
 	swrl:argument2 :s .
@@ -1061,18 +1064,18 @@ _:genid79 a swrl:Imp ;
 	swrl:body _:genid92 .
 
 _:genid92 a swrl:AtomList ;
-	rdf:first _:genid110 .
+	rdf:first _:genid2 .
 
-_:genid110 a swrl:ClassAtom ;
+_:genid2 a swrl:ClassAtom ;
 	swrl:classPredicate :Patient ;
 	swrl:argument1 <urn:swrl#p> .
 
 _:genid92 rdf:rest _:genid90 .
 
 _:genid90 a swrl:AtomList ;
-	rdf:first _:genid112 .
+	rdf:first _:genid4 .
 
-_:genid112 a swrl:IndividualPropertyAtom ;
+_:genid4 a swrl:IndividualPropertyAtom ;
 	swrl:propertyPredicate :hasPrimaryTumour ;
 	swrl:argument1 <urn:swrl#p> ;
 	swrl:argument2 <urn:swrl#t> .
@@ -1080,9 +1083,9 @@ _:genid112 a swrl:IndividualPropertyAtom ;
 _:genid90 rdf:rest _:genid88 .
 
 _:genid88 a swrl:AtomList ;
-	rdf:first _:genid118 .
+	rdf:first _:genid10 .
 
-_:genid118 a swrl:DatavaluedPropertyAtom ;
+_:genid10 a swrl:DatavaluedPropertyAtom ;
 	swrl:propertyPredicate :hasSize ;
 	swrl:argument1 <urn:swrl#t> ;
 	swrl:argument2 <urn:swrl#s> .
@@ -1138,18 +1141,18 @@ _:genid96 a swrl:Imp ;
 	swrl:body _:genid103 .
 
 _:genid103 a swrl:AtomList ;
-	rdf:first _:genid109 .
+	rdf:first _:genid1 .
 
-_:genid109 a swrl:ClassAtom ;
+_:genid1 a swrl:ClassAtom ;
 	swrl:classPredicate :Patient ;
 	swrl:argument1 <urn:swrl#p> .
 
 _:genid103 rdf:rest _:genid102 .
 
 _:genid102 a swrl:AtomList ;
-	rdf:first _:genid111 .
+	rdf:first _:genid3 .
 
-_:genid111 a swrl:IndividualPropertyAtom ;
+_:genid3 a swrl:IndividualPropertyAtom ;
 	swrl:propertyPredicate :hasPrimaryTumour ;
 	swrl:argument1 <urn:swrl#p> ;
 	swrl:argument2 <urn:swrl#t> .
@@ -1157,9 +1160,9 @@ _:genid111 a swrl:IndividualPropertyAtom ;
 _:genid102 rdf:rest _:genid101 .
 
 _:genid101 a swrl:AtomList ;
-	rdf:first _:genid117 .
+	rdf:first _:genid9 .
 
-_:genid117 a swrl:DatavaluedPropertyAtom ;
+_:genid9 a swrl:DatavaluedPropertyAtom ;
 	swrl:propertyPredicate :hasSize ;
 	swrl:argument1 <urn:swrl#t> ;
 	swrl:argument2 <urn:swrl#s> .
