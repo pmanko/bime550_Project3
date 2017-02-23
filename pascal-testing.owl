@@ -66,8 +66,8 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
     <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#hasMetastasis -->
 
     <owl:ObjectProperty rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#hasMetastasis">
-        <owl:inverseOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#isMetastasisOf"/>
-        <rdfs:domain rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#PrimaryTumour"/>
+        <rdfs:domain rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Patient"/>
+        <rdfs:range rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Metastasis"/>
     </owl:ObjectProperty>
     
 
@@ -75,6 +75,7 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
     <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#hasPrimaryTumour -->
 
     <owl:ObjectProperty rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#hasPrimaryTumour">
+        <rdfs:domain rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Patient"/>
         <rdfs:range rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#PrimaryTumour"/>
     </owl:ObjectProperty>
     
@@ -102,15 +103,6 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
     
 
 
-    <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#isMetastasisOf -->
-
-    <owl:ObjectProperty rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#isMetastasisOf">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:range rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#PrimaryTumour"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -119,12 +111,6 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
-
-
-    <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#hasMetastasis1 -->
-
-    <owl:DatatypeProperty rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#hasMetastasis1"/>
     
 
 
@@ -158,22 +144,6 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
     
 
 
-    <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Body -->
-
-    <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Body">
-        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#AnatomicalStructure"/>
-        <owl:disjointWith rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Lung"/>
-        <owl:disjointWith rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LymphNode"/>
-    </owl:Class>
-    
-
-
-    <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#CancerDiagnosis -->
-
-    <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#CancerDiagnosis"/>
-    
-
-
     <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LobeOfLung -->
 
     <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LobeOfLung">
@@ -191,14 +161,6 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
     
 
 
-    <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LungTumour -->
-
-    <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LungTumour">
-        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#CancerDiagnosis"/>
-    </owl:Class>
-    
-
-
     <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LymphNode -->
 
     <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LymphNode">
@@ -208,68 +170,11 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
     
 
 
-    <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#M0 -->
-
-    <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#M0">
-        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LungTumour"/>
-        <owl:disjointWith rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#M1"/>
-    </owl:Class>
-    
-
-
-    <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#M1 -->
-
-    <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#M1">
-        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LungTumour"/>
-    </owl:Class>
-    
-
-
     <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Metastasis -->
 
     <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Metastasis">
         <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Tumor"/>
         <owl:disjointWith rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#PrimaryTumour"/>
-    </owl:Class>
-    
-
-
-    <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#N0 -->
-
-    <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#N0">
-        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LungTumour"/>
-    </owl:Class>
-    
-
-
-    <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#N1 -->
-
-    <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#N1">
-        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LungTumour"/>
-    </owl:Class>
-    
-
-
-    <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#N2 -->
-
-    <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#N2">
-        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LungTumour"/>
-    </owl:Class>
-    
-
-
-    <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#N3 -->
-
-    <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#N3">
-        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LungTumour"/>
-    </owl:Class>
-    
-
-
-    <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#NonVital -->
-
-    <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#NonVital">
-        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Body"/>
     </owl:Class>
     
 
@@ -382,18 +287,22 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
     
 
 
-    <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#T0 -->
+    <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StagedMetastasis -->
 
-    <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#T0">
-        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LungTumour"/>
-    </owl:Class>
+    <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StagedMetastasis"/>
+    
+
+
+    <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StagedPrimaryTumor -->
+
+    <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StagedPrimaryTumor"/>
     
 
 
     <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#T1 -->
 
     <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#T1">
-        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LungTumour"/>
+        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StagedMetastasis"/>
     </owl:Class>
     
 
@@ -406,49 +315,9 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
     
 
 
-    <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#T1b -->
-
-    <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#T1b">
-        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#T1"/>
-    </owl:Class>
-    
-
-
-    <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#T2 -->
-
-    <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#T2">
-        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LungTumour"/>
-    </owl:Class>
-    
-
-
-    <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#T3 -->
-
-    <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#T3">
-        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LungTumour"/>
-    </owl:Class>
-    
-
-
-    <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#T4 -->
-
-    <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#T4">
-        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LungTumour"/>
-    </owl:Class>
-    
-
-
     <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Tumor -->
 
     <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Tumor"/>
-    
-
-
-    <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Vital -->
-
-    <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Vital">
-        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Body"/>
-    </owl:Class>
     
 
 
@@ -480,7 +349,7 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
     <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Brain -->
 
     <owl:NamedIndividual rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Brain">
-        <rdf:type rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Vital"/>
+        <rdf:type rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#AnatomicalStructure"/>
     </owl:NamedIndividual>
     
 
@@ -488,7 +357,7 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
     <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#ChestWall -->
 
     <owl:NamedIndividual rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#ChestWall">
-        <rdf:type rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#NonVital"/>
+        <rdf:type rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#AnatomicalStructure"/>
     </owl:NamedIndividual>
     
 
@@ -496,7 +365,7 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
     <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Diaphragm -->
 
     <owl:NamedIndividual rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Diaphragm">
-        <rdf:type rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#NonVital"/>
+        <rdf:type rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#AnatomicalStructure"/>
     </owl:NamedIndividual>
     
 
@@ -504,7 +373,7 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
     <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Esophagus -->
 
     <owl:NamedIndividual rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Esophagus">
-        <rdf:type rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Vital"/>
+        <rdf:type rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#AnatomicalStructure"/>
     </owl:NamedIndividual>
     
 
@@ -512,7 +381,7 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
     <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Heart -->
 
     <owl:NamedIndividual rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Heart">
-        <rdf:type rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Vital"/>
+        <rdf:type rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#AnatomicalStructure"/>
     </owl:NamedIndividual>
     
 
@@ -619,7 +488,7 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
     <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Liver -->
 
     <owl:NamedIndividual rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Liver">
-        <rdf:type rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Vital"/>
+        <rdf:type rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#AnatomicalStructure"/>
     </owl:NamedIndividual>
     
 
@@ -664,6 +533,7 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
 
     <owl:NamedIndividual rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#M5_RightMediastinalMetastasis">
         <rdf:type rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Metastasis"/>
+        <hasLocation rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#RightMediastinalLymphNode"/>
     </owl:NamedIndividual>
     
 
@@ -671,7 +541,7 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
     <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Mediastinum -->
 
     <owl:NamedIndividual rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Mediastinum">
-        <rdf:type rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Vital"/>
+        <rdf:type rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#AnatomicalStructure"/>
     </owl:NamedIndividual>
     
 
@@ -754,7 +624,7 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
     <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#ParietalPericardium -->
 
     <owl:NamedIndividual rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#ParietalPericardium">
-        <rdf:type rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#NonVital"/>
+        <rdf:type rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#AnatomicalStructure"/>
     </owl:NamedIndividual>
     
 
@@ -764,7 +634,6 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
     <owl:NamedIndividual rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Patient1">
         <rdf:type rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Patient"/>
         <hasPrimaryTumour rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#PT1_InvasiveEsophagialLungTumorNoMets"/>
-        <hasMetastasis1 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasMetastasis1>
     </owl:NamedIndividual>
     
 
@@ -774,7 +643,6 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
     <owl:NamedIndividual rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Patient2">
         <rdf:type rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Patient"/>
         <hasPrimaryTumour rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#PT2_InvasivePericardlTumorNoMets"/>
-        <hasMetastasis1 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasMetastasis1>
     </owl:NamedIndividual>
     
 
@@ -814,7 +682,6 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
     <owl:NamedIndividual rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Patient6">
         <rdf:type rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Patient"/>
         <hasPrimaryTumour rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#PT6_SmallUpperLeftLobeTumourWithoutMetastasis"/>
-        <hasMetastasis1 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasMetastasis1>
     </owl:NamedIndividual>
     
 
@@ -941,7 +808,7 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
     <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Trachea -->
 
     <owl:NamedIndividual rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Trachea">
-        <rdf:type rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Vital"/>
+        <rdf:type rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#AnatomicalStructure"/>
     </owl:NamedIndividual>
     
 
@@ -973,10 +840,20 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#N0"/>
-            <rdf:Description rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#N1"/>
-            <rdf:Description rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#N2"/>
-            <rdf:Description rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#N3"/>
+            <rdf:Description rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#AnatomicalStructure"/>
+            <rdf:Description rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Patient"/>
+            <rdf:Description rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Side"/>
+            <rdf:Description rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StagedLungCancer"/>
+            <rdf:Description rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Tumor"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#AnatomicalStructure"/>
+            <rdf:Description rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Side"/>
+            <rdf:Description rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StagedLungCancer"/>
+            <rdf:Description rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Tumor"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
@@ -993,16 +870,6 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
             <rdf:Description rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StageIV"/>
         </owl:members>
     </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#T0"/>
-            <rdf:Description rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#T1"/>
-            <rdf:Description rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#T2"/>
-            <rdf:Description rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#T3"/>
-            <rdf:Description rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#T4"/>
-        </owl:members>
-    </rdf:Description>
     
 
 
@@ -1014,15 +881,6 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <rdf:Description rdf:about="urn:swrl#x">
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="urn:swrl#y">
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="urn:swrl#z">
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
-    </rdf:Description>
     <rdf:Description rdf:about="urn:swrl#p">
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
     </rdf:Description>
@@ -1031,291 +889,6 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
     </rdf:Description>
     <rdf:Description rdf:about="urn:swrl#s">
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="urn:swrl#c">
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="urn:swrl#v">
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
-        <swrl:body>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#M0"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#x"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                        <rdf:first>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                <swrl:classPredicate rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#N0"/>
-                                <swrl:argument1 rdf:resource="urn:swrl#x"/>
-                            </rdf:Description>
-                        </rdf:first>
-                        <rdf:rest>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                <rdf:first>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                        <swrl:classPredicate rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#T1"/>
-                                        <swrl:argument1 rdf:resource="urn:swrl#x"/>
-                                    </rdf:Description>
-                                </rdf:first>
-                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                            </rdf:Description>
-                        </rdf:rest>
-                    </rdf:Description>
-                </rdf:rest>
-            </rdf:Description>
-        </swrl:body>
-        <swrl:head>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StageIA"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#x"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-            </rdf:Description>
-        </swrl:head>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
-        <swrl:body>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#M0"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#x"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                        <rdf:first>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                <swrl:classPredicate rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#N0"/>
-                                <swrl:argument1 rdf:resource="urn:swrl#x"/>
-                            </rdf:Description>
-                        </rdf:first>
-                        <rdf:rest>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                <rdf:first>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                        <swrl:classPredicate rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#T3"/>
-                                        <swrl:argument1 rdf:resource="urn:swrl#x"/>
-                                    </rdf:Description>
-                                </rdf:first>
-                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                            </rdf:Description>
-                        </rdf:rest>
-                    </rdf:Description>
-                </rdf:rest>
-            </rdf:Description>
-        </swrl:body>
-        <swrl:head>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StageIIB"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#x"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-            </rdf:Description>
-        </swrl:head>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
-        <swrl:body>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#M0"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#x"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                        <rdf:first>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                <swrl:classPredicate rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#N0"/>
-                                <swrl:argument1 rdf:resource="urn:swrl#x"/>
-                            </rdf:Description>
-                        </rdf:first>
-                        <rdf:rest>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                <rdf:first>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                        <swrl:classPredicate rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#T4"/>
-                                        <swrl:argument1 rdf:resource="urn:swrl#x"/>
-                                    </rdf:Description>
-                                </rdf:first>
-                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                            </rdf:Description>
-                        </rdf:rest>
-                    </rdf:Description>
-                </rdf:rest>
-            </rdf:Description>
-        </swrl:body>
-        <swrl:head>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StageIIIA"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#x"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-            </rdf:Description>
-        </swrl:head>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
-        <swrl:body>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#M0"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#x"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                        <rdf:first>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                <swrl:classPredicate rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#N1"/>
-                                <swrl:argument1 rdf:resource="urn:swrl#x"/>
-                            </rdf:Description>
-                        </rdf:first>
-                        <rdf:rest>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                <rdf:first>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                        <swrl:classPredicate rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#T1"/>
-                                        <swrl:argument1 rdf:resource="urn:swrl#x"/>
-                                    </rdf:Description>
-                                </rdf:first>
-                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                            </rdf:Description>
-                        </rdf:rest>
-                    </rdf:Description>
-                </rdf:rest>
-            </rdf:Description>
-        </swrl:body>
-        <swrl:head>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StageIIB"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#x"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-            </rdf:Description>
-        </swrl:head>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
-        <swrl:body>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#hasPrimaryTumour"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#x"/>
-                        <swrl:argument2 rdf:resource="urn:swrl#y"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                        <rdf:first>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                <swrl:classPredicate rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Patient"/>
-                                <swrl:argument1 rdf:resource="urn:swrl#x"/>
-                            </rdf:Description>
-                        </rdf:first>
-                        <rdf:rest>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                <rdf:first>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                        <swrl:propertyPredicate rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#hasLocation"/>
-                                        <swrl:argument1 rdf:resource="urn:swrl#y"/>
-                                        <swrl:argument2 rdf:resource="urn:swrl#z"/>
-                                    </rdf:Description>
-                                </rdf:first>
-                                <rdf:rest>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                        <rdf:first>
-                                            <rdf:Description>
-                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                                <swrl:classPredicate rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#NonVital"/>
-                                                <swrl:argument1 rdf:resource="urn:swrl#z"/>
-                                            </rdf:Description>
-                                        </rdf:first>
-                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                                    </rdf:Description>
-                                </rdf:rest>
-                            </rdf:Description>
-                        </rdf:rest>
-                    </rdf:Description>
-                </rdf:rest>
-            </rdf:Description>
-        </swrl:body>
-        <swrl:head>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#T3"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#x"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-            </rdf:Description>
-        </swrl:head>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -1365,7 +938,7 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
                                                         <rdf:rest>
                                                             <rdf:Description>
                                                                 <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#float">3.0</rdf:first>
+                                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.0</rdf:first>
                                                                 <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
                                                             </rdf:Description>
                                                         </rdf:rest>
@@ -1388,268 +961,11 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
                 <rdf:first>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#T1"/>
+                        <swrl:classPredicate rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#T1a"/>
                         <swrl:argument1 rdf:resource="urn:swrl#p"/>
                     </rdf:Description>
                 </rdf:first>
                 <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-            </rdf:Description>
-        </swrl:head>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
-        <swrl:body>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Patient"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#x"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-            </rdf:Description>
-        </swrl:body>
-        <swrl:head>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#M0"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#x"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-            </rdf:Description>
-        </swrl:head>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
-        <swrl:body>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#hasPrimaryTumour"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#x"/>
-                        <swrl:argument2 rdf:resource="urn:swrl#y"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                        <rdf:first>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                <swrl:classPredicate rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Patient"/>
-                                <swrl:argument1 rdf:resource="urn:swrl#x"/>
-                            </rdf:Description>
-                        </rdf:first>
-                        <rdf:rest>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                <rdf:first>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                        <swrl:propertyPredicate rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#hasLocation"/>
-                                        <swrl:argument1 rdf:resource="urn:swrl#y"/>
-                                        <swrl:argument2 rdf:resource="urn:swrl#z"/>
-                                    </rdf:Description>
-                                </rdf:first>
-                                <rdf:rest>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                        <rdf:first>
-                                            <rdf:Description>
-                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                                <swrl:classPredicate rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Vital"/>
-                                                <swrl:argument1 rdf:resource="urn:swrl#z"/>
-                                            </rdf:Description>
-                                        </rdf:first>
-                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                                    </rdf:Description>
-                                </rdf:rest>
-                            </rdf:Description>
-                        </rdf:rest>
-                    </rdf:Description>
-                </rdf:rest>
-            </rdf:Description>
-        </swrl:body>
-        <swrl:head>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#T4"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#x"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-            </rdf:Description>
-        </swrl:head>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
-        <swrl:body>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Patient"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#x"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                        <rdf:first>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                <swrl:propertyPredicate rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#hasPrimaryTumour"/>
-                                <swrl:argument1 rdf:resource="urn:swrl#x"/>
-                                <swrl:argument2 rdf:resource="urn:swrl#y"/>
-                            </rdf:Description>
-                        </rdf:first>
-                        <rdf:rest>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                <rdf:first>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                        <swrl:propertyPredicate rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#hasLocation"/>
-                                        <swrl:argument1 rdf:resource="urn:swrl#y"/>
-                                        <swrl:argument2 rdf:resource="urn:swrl#c"/>
-                                    </rdf:Description>
-                                </rdf:first>
-                                <rdf:rest>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                        <rdf:first>
-                                            <rdf:Description>
-                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                                <swrl:propertyPredicate rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#hasSide"/>
-                                                <swrl:argument1 rdf:resource="urn:swrl#c"/>
-                                                <swrl:argument2 rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#right"/>
-                                            </rdf:Description>
-                                        </rdf:first>
-                                        <rdf:rest>
-                                            <rdf:Description>
-                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                <rdf:first>
-                                                    <rdf:Description>
-                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                                        <swrl:propertyPredicate rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#hasMetastasis"/>
-                                                        <swrl:argument1 rdf:resource="urn:swrl#x"/>
-                                                        <swrl:argument2 rdf:resource="urn:swrl#z"/>
-                                                    </rdf:Description>
-                                                </rdf:first>
-                                                <rdf:rest>
-                                                    <rdf:Description>
-                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                        <rdf:first>
-                                                            <rdf:Description>
-                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                                                <swrl:propertyPredicate rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#hasLocation"/>
-                                                                <swrl:argument1 rdf:resource="urn:swrl#z"/>
-                                                                <swrl:argument2 rdf:resource="urn:swrl#v"/>
-                                                            </rdf:Description>
-                                                        </rdf:first>
-                                                        <rdf:rest>
-                                                            <rdf:Description>
-                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                                <rdf:first>
-                                                                    <rdf:Description>
-                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                                                        <swrl:propertyPredicate rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#hasSide"/>
-                                                                        <swrl:argument1 rdf:resource="urn:swrl#v"/>
-                                                                        <swrl:argument2 rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#right"/>
-                                                                    </rdf:Description>
-                                                                </rdf:first>
-                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                                                            </rdf:Description>
-                                                        </rdf:rest>
-                                                    </rdf:Description>
-                                                </rdf:rest>
-                                            </rdf:Description>
-                                        </rdf:rest>
-                                    </rdf:Description>
-                                </rdf:rest>
-                            </rdf:Description>
-                        </rdf:rest>
-                    </rdf:Description>
-                </rdf:rest>
-            </rdf:Description>
-        </swrl:body>
-        <swrl:head>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#N1"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#x"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-            </rdf:Description>
-        </swrl:head>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
-        <swrl:body>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Patient"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#x"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                        <rdf:first>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
-                                <swrl:propertyPredicate rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#hasMetastasis1"/>
-                                <swrl:argument1 rdf:resource="urn:swrl#x"/>
-                                <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</swrl:argument2>
-                            </rdf:Description>
-                        </rdf:first>
-                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                    </rdf:Description>
-                </rdf:rest>
-            </rdf:Description>
-        </swrl:body>
-        <swrl:head>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#N0"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#x"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                        <rdf:first>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                <swrl:classPredicate rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#M0"/>
-                                <swrl:argument1 rdf:resource="urn:swrl#x"/>
-                            </rdf:Description>
-                        </rdf:first>
-                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                    </rdf:Description>
-                </rdf:rest>
             </rdf:Description>
         </swrl:head>
     </rdf:Description>
