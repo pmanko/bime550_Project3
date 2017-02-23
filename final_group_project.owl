@@ -194,9 +194,9 @@ _:genid19 a rdf:List ;
 _:genid20 owl:intersectionOf _:genid23 .
 
 _:genid23 a rdf:List ;
-	rdf:first _:genid4 .
+	rdf:first _:genid30 .
 
-_:genid4 a owl:Restriction ;
+_:genid30 a owl:Restriction ;
 	owl:onProperty :hasLocation ;
 	owl:someValuesFrom :LeftAnatomicalStructure .
 
@@ -207,9 +207,11 @@ _:genid21 a rdf:List ;
 
 _:genid22 a owl:Restriction ;
 	owl:onProperty :isMetastasisOf ;
-	owl:someValuesFrom _:genid3 .
+	owl:someValuesFrom _:genid29 .
 
-_:genid3 owl:someValuesFrom :RightAnatomicalStructure .
+_:genid29 a owl:Restriction ;
+	owl:onProperty :hasLocation ;
+	owl:someValuesFrom :RightAnatomicalStructure .
 
 _:genid21 rdf:rest rdf:nil .
 
@@ -223,9 +225,9 @@ _:genid12 a rdf:List ;
 _:genid13 owl:intersectionOf _:genid17 .
 
 _:genid17 a rdf:List ;
-	rdf:first _:genid2 .
+	rdf:first _:genid28 .
 
-_:genid2 a owl:Restriction ;
+_:genid28 a owl:Restriction ;
 	owl:onProperty :hasLocation ;
 	owl:someValuesFrom :RightAnatomicalStructure .
 
@@ -236,9 +238,11 @@ _:genid14 a rdf:List ;
 
 _:genid15 a owl:Restriction ;
 	owl:onProperty :isMetastasisOf ;
-	owl:someValuesFrom _:genid5 .
+	owl:someValuesFrom _:genid31 .
 
-_:genid5 owl:onProperty :hasLocation .
+_:genid31 a owl:Restriction ;
+	owl:onProperty :hasLocation ;
+	owl:someValuesFrom :LeftAnatomicalStructure .
 
 _:genid14 rdf:rest rdf:nil .
 
@@ -368,10 +372,9 @@ _:genid45 a rdf:List ;
 _:genid46 owl:intersectionOf _:genid50 .
 
 _:genid50 a rdf:List ;
-	rdf:first _:genid8 .
+	rdf:first _:genid34 .
 
-_:genid8 a owl:Restriction ;
-	owl:onProperty :hasLocation ;
+_:genid34 owl:onProperty :hasLocation ;
 	owl:someValuesFrom :LeftAnatomicalStructure .
 
 _:genid50 rdf:rest _:genid47 .
@@ -381,9 +384,10 @@ _:genid47 a rdf:List ;
 
 _:genid48 a owl:Restriction ;
 	owl:onProperty :isMetastasisOf ;
-	owl:someValuesFrom _:genid9 .
+	owl:someValuesFrom _:genid35 .
 
-_:genid9 owl:someValuesFrom :LeftAnatomicalStructure .
+_:genid35 owl:onProperty :hasLocation ;
+	owl:someValuesFrom :LeftAnatomicalStructure .
 
 _:genid47 rdf:rest rdf:nil .
 
@@ -397,11 +401,9 @@ _:genid39 a rdf:List ;
 _:genid40 owl:intersectionOf _:genid44 .
 
 _:genid44 a rdf:List ;
-	rdf:first _:genid7 .
+	rdf:first _:genid33 .
 
-_:genid7 a owl:Restriction ;
-	owl:onProperty :hasLocation ;
-	owl:someValuesFrom :RightAnatomicalStructure .
+_:genid33 owl:someValuesFrom :RightAnatomicalStructure .
 
 _:genid44 rdf:rest _:genid41 .
 
@@ -410,9 +412,10 @@ _:genid41 a rdf:List ;
 
 _:genid42 a owl:Restriction ;
 	owl:onProperty :isMetastasisOf ;
-	owl:someValuesFrom _:genid6 .
+	owl:someValuesFrom _:genid32 .
 
-_:genid6 owl:onProperty :hasLocation .
+_:genid32 owl:onProperty :hasLocation ;
+	owl:someValuesFrom :RightAnatomicalStructure .
 
 _:genid41 rdf:rest rdf:nil .
 
@@ -672,6 +675,11 @@ _:genid92 a owl:Restriction ;
 	owl:onProperty :hasLocation ;
 	owl:someValuesFrom :Brain .
 # 
+# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LungTumor_R
+
+:LungTumor_R a owl:Class ;
+	rdfs:subClassOf :CancerDiagnosis .
+# 
 # http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LungTumorwithLiverMets
 
 :LungTumorwithLiverMets a owl:Class ;
@@ -758,6 +766,11 @@ _:genid105 rdf:rest rdf:nil .
 
 _:genid104 a owl:Class .
 # 
+# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#M0_R
+
+:M0_R a owl:Class ;
+	rdfs:subClassOf :LungTumor_R .
+# 
 # http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#M1
 
 :M1 a owl:Class ;
@@ -816,6 +829,11 @@ _:genid112 a owl:Class .
 
 :M1a rdfs:subClassOf :LungTumour .
 # 
+# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#M1a_R
+
+:M1a_R a owl:Class ;
+	rdfs:subClassOf :LungTumor_R .
+# 
 # http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#M1b
 
 :M1b a owl:Class ;
@@ -858,6 +876,11 @@ _:genid120 rdf:rest rdf:nil .
 _:genid119 a owl:Class .
 
 :M1b rdfs:subClassOf :LungTumour .
+# 
+# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#M1b_R
+
+:M1b_R a owl:Class ;
+	rdfs:subClassOf :LungTumor_R .
 # 
 # http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#MediastinalLymphNode
 
@@ -915,6 +938,11 @@ _:genid131 rdf:rest rdf:nil .
 
 _:genid130 a owl:Class .
 # 
+# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#N0_R
+
+:N0_R a owl:Class ;
+	rdfs:subClassOf :LungTumor_R .
+# 
 # http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#N1
 
 :N1 a owl:Class ;
@@ -971,6 +999,11 @@ _:genid134 a owl:Class .
 
 :N1 rdfs:subClassOf :LungTumour .
 # 
+# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#N1_R
+
+:N1_R a owl:Class ;
+	rdfs:subClassOf :LungTumor_R .
+# 
 # http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#N2
 
 :N2 a owl:Class ;
@@ -1022,6 +1055,11 @@ _:genid147 rdf:rest rdf:nil .
 _:genid146 a owl:Class .
 
 :N2 rdfs:subClassOf :LungTumour .
+# 
+# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#N2_R
+
+:N2_R a owl:Class ;
+	rdfs:subClassOf :LungTumor_R .
 # 
 # http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#N3
 
@@ -1170,6 +1208,11 @@ _:genid166 rdf:rest rdf:nil .
 _:genid165 a owl:Class .
 
 :N3_Pascal rdfs:subClassOf :LungTumour .
+# 
+# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#N3_R
+
+:N3_R a owl:Class ;
+	rdfs:subClassOf :LungTumor_R .
 # 
 # http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#OccultCarcinoma
 
@@ -1435,10 +1478,10 @@ _:genid222 a owl:Class .
 
 :StageIA rdfs:subClassOf :StagedLungCancer .
 # 
-# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StageIAR
+# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StageIA_R
 
-:StageIAR a owl:Class ;
-	rdfs:subClassOf :StagedLungCancer .
+:StageIA_R a owl:Class ;
+	rdfs:subClassOf :StagedLungCancer_R .
 # 
 # http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StageIB
 
@@ -1463,10 +1506,10 @@ _:genid226 a owl:Class .
 
 :StageIB rdfs:subClassOf :StagedLungCancer .
 # 
-# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StageIBR
+# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StageIB_R
 
-:StageIBR a owl:Class ;
-	rdfs:subClassOf :StagedLungCancer .
+:StageIB_R a owl:Class ;
+	rdfs:subClassOf :StagedLungCancer_R .
 # 
 # http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StageIIA
 
@@ -1537,10 +1580,10 @@ _:genid230 a owl:Class .
 
 :StageIIA rdfs:subClassOf :StagedLungCancer .
 # 
-# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StageIIAR
+# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StageIIA_R
 
-:StageIIAR a owl:Class ;
-	rdfs:subClassOf :StagedLungCancer .
+:StageIIA_R a owl:Class ;
+	rdfs:subClassOf :StagedLungCancer_R .
 # 
 # http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StageIIB
 
@@ -1599,10 +1642,10 @@ _:genid245 a owl:Class .
 
 :StageIIB rdfs:subClassOf :StagedLungCancer .
 # 
-# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StageIIBR
+# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StageIIB_R
 
-:StageIIBR a owl:Class ;
-	rdfs:subClassOf :StagedLungCancer .
+:StageIIB_R a owl:Class ;
+	rdfs:subClassOf :StagedLungCancer_R .
 # 
 # http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StageIIIA
 
@@ -1714,11 +1757,6 @@ _:genid257 a owl:Class .
 
 :StageIIIA rdfs:subClassOf :StagedLungCancer .
 # 
-# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StageIIIAR
-
-:StageIIIAR a owl:Class ;
-	rdfs:subClassOf :StagedLungCancer .
-# 
 # http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StageIIIA_Pascal
 
 :StageIIIA_Pascal a owl:Class ;
@@ -1825,6 +1863,11 @@ _:genid282 a owl:Class .
 
 :StageIIIA_Pascal rdfs:subClassOf :StagedLungCancer .
 # 
+# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StageIIIA_R
+
+:StageIIIA_R a owl:Class ;
+	rdfs:subClassOf :StagedLungCancer_R .
+# 
 # http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StageIIIB
 
 :StageIIIB a owl:Class ;
@@ -1897,11 +1940,6 @@ _:genid307 rdf:rest rdf:nil .
 _:genid306 a owl:Class .
 
 :StageIIIB rdfs:subClassOf :StagedLungCancer .
-# 
-# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StageIIIBR
-
-:StageIIIBR a owl:Class ;
-	rdfs:subClassOf :StagedLungCancer .
 # 
 # http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StageIIIB_Pascal
 
@@ -1984,6 +2022,11 @@ _:genid322 a owl:Class .
 
 :StageIIIB_Pascal rdfs:subClassOf :StagedLungCancer .
 # 
+# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StageIIIB_R
+
+:StageIIIB_R a owl:Class ;
+	rdfs:subClassOf :StagedLungCancer_R .
+# 
 # http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StageIV
 
 :StageIV a owl:Class ;
@@ -2002,14 +2045,18 @@ _:genid341 a rdf:List ;
 
 :StageIV rdfs:subClassOf :StagedLungCancer .
 # 
-# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StageIVR
+# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StageIV_R
 
-:StageIVR a owl:Class ;
-	rdfs:subClassOf :StagedLungCancer .
+:StageIV_R a owl:Class ;
+	rdfs:subClassOf :StagedLungCancer_R .
 # 
 # http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StagedLungCancer
 
 :StagedLungCancer a owl:Class .
+# 
+# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StagedLungCancer_R
+
+:StagedLungCancer_R a owl:Class .
 # 
 # http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#SubcarinalLymphNode
 
@@ -2026,6 +2073,11 @@ _:genid341 a rdf:List ;
 
 :T0 a owl:Class ;
 	rdfs:subClassOf :LungTumour .
+# 
+# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#T0_R
+
+:T0_R a owl:Class ;
+	rdfs:subClassOf :LungTumor_R .
 # 
 # http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#T1
 
@@ -2048,11 +2100,6 @@ _:genid345 a owl:Restriction ;
 _:genid344 rdf:rest rdf:nil .
 
 _:genid343 a owl:Class .
-# 
-# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#T1R
-
-:T1R a owl:Class ;
-	rdfs:subClassOf :LungTumour .
 # 
 # http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#T1a
 
@@ -2078,6 +2125,11 @@ _:genid347 a owl:Class .
 
 :T1a rdfs:subClassOf :LungTumour .
 # 
+# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#T1a_R
+
+:T1a_R a owl:Class ;
+	rdfs:subClassOf :LungTumor_R .
+# 
 # http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#T1b
 
 :T1b a owl:Class ;
@@ -2101,6 +2153,11 @@ _:genid352 rdf:rest rdf:nil .
 _:genid351 a owl:Class .
 
 :T1b rdfs:subClassOf :LungTumour .
+# 
+# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#T1b_R
+
+:T1b_R a owl:Class ;
+	rdfs:subClassOf :LungTumor_R .
 # 
 # http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#T2
 
@@ -2144,6 +2201,11 @@ _:genid358 a owl:Class .
 
 :T2a rdfs:subClassOf :LungTumour .
 # 
+# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#T2a_R
+
+:T2a_R a owl:Class ;
+	rdfs:subClassOf :LungTumor_R .
+# 
 # http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#T2b
 
 :T2b a owl:Class ;
@@ -2167,6 +2229,11 @@ _:genid363 rdf:rest rdf:nil .
 _:genid362 a owl:Class .
 
 :T2b rdfs:subClassOf :LungTumour .
+# 
+# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#T2b_R
+
+:T2b_R a owl:Class ;
+	rdfs:subClassOf :LungTumor_R .
 # 
 # http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#T3
 
@@ -2228,6 +2295,11 @@ _:genid366 a owl:Class .
 
 :T3 rdfs:subClassOf :LungTumour .
 # 
+# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#T3_R
+
+:T3_R a owl:Class ;
+	rdfs:subClassOf :LungTumor_R .
+# 
 # http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#T4
 
 :T4 a owl:Class ;
@@ -2274,6 +2346,11 @@ _:genid380 rdf:rest rdf:nil .
 _:genid379 a owl:Class .
 
 :T4 rdfs:subClassOf :LungTumour .
+# 
+# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#T4_R
+
+:T4_R a owl:Class ;
+	rdfs:subClassOf :LungTumor_R .
 # 
 # http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Trachea
 
@@ -2526,329 +2603,54 @@ owl:Thing a owl:Class .
 # 
 
 _:genid412 a owl:AllDisjointClasses ;
-	owl:members _:genid423 .
-
-_:genid423 a rdf:List ;
-	rdf:first :OccultCarcinoma ;
-	rdf:rest _:genid422 .
-
-_:genid422 a rdf:List ;
-	rdf:first :OccultCarcinomaR ;
-	rdf:rest _:genid421 .
-
-_:genid421 a rdf:List ;
-	rdf:first :Stage0 ;
-	rdf:rest _:genid420 .
-
-_:genid420 a rdf:List ;
-	rdf:first :Stage0R ;
-	rdf:rest _:genid419 .
+	owl:members _:genid419 .
 
 _:genid419 a rdf:List ;
-	rdf:first :StageIAR ;
+	rdf:first :StageIA_R ;
 	rdf:rest _:genid418 .
 
 _:genid418 a rdf:List ;
-	rdf:first :StageIBR ;
+	rdf:first :StageIB_R ;
 	rdf:rest _:genid417 .
 
 _:genid417 a rdf:List ;
-	rdf:first :StageIIAR ;
+	rdf:first :StageIIA_R ;
 	rdf:rest _:genid416 .
 
 _:genid416 a rdf:List ;
-	rdf:first :StageIIBR ;
+	rdf:first :StageIIB_R ;
 	rdf:rest _:genid415 .
 
 _:genid415 a rdf:List ;
-	rdf:first :StageIIIAR ;
+	rdf:first :StageIIIA_R ;
 	rdf:rest _:genid414 .
 
 _:genid414 a rdf:List ;
-	rdf:first :StageIIIBR ;
+	rdf:first :StageIIIB_R ;
 	rdf:rest _:genid413 .
 
 _:genid413 a rdf:List ;
-	rdf:first :StageIVR ;
+	rdf:first :StageIV_R ;
 	rdf:rest rdf:nil .
 # 
 
-_:genid424 a owl:AllDisjointClasses ;
-	owl:members _:genid428 .
+_:genid420 a owl:AllDisjointClasses ;
+	owl:members _:genid424 .
 
-_:genid428 a rdf:List ;
+_:genid424 a rdf:List ;
 	rdf:first :TumorBetween3cm5cm ;
-	rdf:rest _:genid427 .
+	rdf:rest _:genid423 .
 
-_:genid427 a rdf:List ;
+_:genid423 a rdf:List ;
 	rdf:first :TumorBetween5cm7cm ;
-	rdf:rest _:genid426 .
+	rdf:rest _:genid422 .
 
-_:genid426 a rdf:List ;
+_:genid422 a rdf:List ;
 	rdf:first :TumorGreater7cm ;
-	rdf:rest _:genid425 .
+	rdf:rest _:genid421 .
 
-_:genid425 a rdf:List ;
+_:genid421 a rdf:List ;
 	rdf:first :TumorSmaller3cm ;
 	rdf:rest rdf:nil .
 # 
-# 
-# 
-# #################################################################
-# #
-# #    Rules
-# #
-# #################################################################
-# 
-# 
-
-:t a <http://www.w3.org/2003/11/swrl#Variable> .
-
-:x a <http://www.w3.org/2003/11/swrl#Variable> .
-
-_:genid429 <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
-	rdfs:comment ""^^xsd:string ;
-	rdfs:label "TEST"^^xsd:string ;
-	a <http://www.w3.org/2003/11/swrl#Imp> ;
-	<http://www.w3.org/2003/11/swrl#body> _:genid430 .
-
-_:genid430 a <http://www.w3.org/2003/11/swrl#AtomList> ;
-	rdf:first _:genid431 .
-
-_:genid431 a <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-	<http://www.w3.org/2003/11/swrl#classPredicate> :LungTumour ;
-	<http://www.w3.org/2003/11/swrl#argument1> :t .
-
-_:genid430 rdf:rest rdf:nil .
-
-_:genid429 <http://www.w3.org/2003/11/swrl#head> _:genid432 .
-
-_:genid432 a <http://www.w3.org/2003/11/swrl#AtomList> ;
-	rdf:first _:genid433 .
-
-_:genid433 a <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-	<http://www.w3.org/2003/11/swrl#classPredicate> :T1R ;
-	<http://www.w3.org/2003/11/swrl#argument1> :t .
-
-_:genid432 rdf:rest rdf:nil .
-
-_:genid434 <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
-	rdfs:comment ""^^xsd:string ;
-	rdfs:label "STAGEIA_RULE"^^xsd:string ;
-	a <http://www.w3.org/2003/11/swrl#Imp> ;
-	<http://www.w3.org/2003/11/swrl#body> _:genid439 .
-
-_:genid439 a <http://www.w3.org/2003/11/swrl#AtomList> ;
-	rdf:first _:genid23 .
-
-_:genid23 a <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-	<http://www.w3.org/2003/11/swrl#classPredicate> :T1 ;
-	<http://www.w3.org/2003/11/swrl#argument1> :x .
-
-_:genid439 rdf:rest _:genid437 .
-
-_:genid437 a <http://www.w3.org/2003/11/swrl#AtomList> ;
-	rdf:first _:genid12 .
-
-_:genid12 a <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-	<http://www.w3.org/2003/11/swrl#classPredicate> :N0 ;
-	<http://www.w3.org/2003/11/swrl#argument1> :x .
-
-_:genid437 rdf:rest _:genid435 .
-
-_:genid435 a <http://www.w3.org/2003/11/swrl#AtomList> ;
-	rdf:first _:genid19 .
-
-_:genid19 a <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-	<http://www.w3.org/2003/11/swrl#classPredicate> :M0 ;
-	<http://www.w3.org/2003/11/swrl#argument1> :x .
-
-_:genid435 rdf:rest rdf:nil .
-
-_:genid434 <http://www.w3.org/2003/11/swrl#head> _:genid441 .
-
-_:genid441 a <http://www.w3.org/2003/11/swrl#AtomList> ;
-	rdf:first _:genid442 .
-
-_:genid442 a <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-	<http://www.w3.org/2003/11/swrl#classPredicate> :StageIAR ;
-	<http://www.w3.org/2003/11/swrl#argument1> :x .
-
-_:genid441 rdf:rest rdf:nil .
-
-_:genid443 <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
-	rdfs:comment ""^^xsd:string ;
-	rdfs:label "STAGEIB_RULE"^^xsd:string ;
-	a <http://www.w3.org/2003/11/swrl#Imp> ;
-	<http://www.w3.org/2003/11/swrl#body> _:genid446 .
-
-_:genid446 a <http://www.w3.org/2003/11/swrl#AtomList> ;
-	rdf:first _:genid25 .
-
-_:genid25 a <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-	<http://www.w3.org/2003/11/swrl#classPredicate> :T2a ;
-	<http://www.w3.org/2003/11/swrl#argument1> :x .
-
-_:genid446 rdf:rest _:genid445 .
-
-_:genid445 a <http://www.w3.org/2003/11/swrl#AtomList> ;
-	rdf:first _:genid13 .
-
-_:genid13 a <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-	<http://www.w3.org/2003/11/swrl#classPredicate> :N0 ;
-	<http://www.w3.org/2003/11/swrl#argument1> :x .
-
-_:genid445 rdf:rest _:genid444 .
-
-_:genid444 a <http://www.w3.org/2003/11/swrl#AtomList> ;
-	rdf:first _:genid18 .
-
-_:genid18 a <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-	<http://www.w3.org/2003/11/swrl#classPredicate> :M0 ;
-	<http://www.w3.org/2003/11/swrl#argument1> :x .
-
-_:genid444 rdf:rest rdf:nil .
-
-_:genid443 <http://www.w3.org/2003/11/swrl#head> _:genid448 .
-
-_:genid448 a <http://www.w3.org/2003/11/swrl#AtomList> ;
-	rdf:first _:genid449 .
-
-_:genid449 a <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-	<http://www.w3.org/2003/11/swrl#classPredicate> :StageIBR ;
-	<http://www.w3.org/2003/11/swrl#argument1> :x .
-
-_:genid448 rdf:rest rdf:nil .
-
-_:genid450 <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
-	rdfs:comment ""^^xsd:string ;
-	rdfs:label "StageIIA_RULE1"^^xsd:string ;
-	a <http://www.w3.org/2003/11/swrl#Imp> ;
-	<http://www.w3.org/2003/11/swrl#body> _:genid453 .
-
-_:genid453 a <http://www.w3.org/2003/11/swrl#AtomList> ;
-	rdf:first _:genid454 .
-
-_:genid454 a <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-	<http://www.w3.org/2003/11/swrl#classPredicate> :T2b ;
-	<http://www.w3.org/2003/11/swrl#argument1> :x .
-
-_:genid453 rdf:rest _:genid452 .
-
-_:genid452 a <http://www.w3.org/2003/11/swrl#AtomList> ;
-	rdf:first _:genid14 .
-
-_:genid14 a <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-	<http://www.w3.org/2003/11/swrl#classPredicate> :N0 ;
-	<http://www.w3.org/2003/11/swrl#argument1> :x .
-
-_:genid452 rdf:rest _:genid451 .
-
-_:genid451 a <http://www.w3.org/2003/11/swrl#AtomList> ;
-	rdf:first _:genid15 .
-
-_:genid15 a <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-	<http://www.w3.org/2003/11/swrl#classPredicate> :M0 ;
-	<http://www.w3.org/2003/11/swrl#argument1> :x .
-
-_:genid451 rdf:rest rdf:nil .
-
-_:genid450 <http://www.w3.org/2003/11/swrl#head> _:genid455 .
-
-_:genid455 a <http://www.w3.org/2003/11/swrl#AtomList> ;
-	rdf:first _:genid22 .
-
-_:genid22 a <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-	<http://www.w3.org/2003/11/swrl#classPredicate> :StageIIAR ;
-	<http://www.w3.org/2003/11/swrl#argument1> :x .
-
-_:genid455 rdf:rest rdf:nil .
-
-_:genid457 <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
-	rdfs:comment ""^^xsd:string ;
-	rdfs:label "StageIIA_RULE2"^^xsd:string ;
-	a <http://www.w3.org/2003/11/swrl#Imp> ;
-	<http://www.w3.org/2003/11/swrl#body> _:genid461 .
-
-_:genid461 a <http://www.w3.org/2003/11/swrl#AtomList> ;
-	rdf:first _:genid24 .
-
-_:genid24 a <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-	<http://www.w3.org/2003/11/swrl#classPredicate> :T1 ;
-	<http://www.w3.org/2003/11/swrl#argument1> :x .
-
-_:genid461 rdf:rest _:genid459 .
-
-_:genid459 a <http://www.w3.org/2003/11/swrl#AtomList> ;
-	rdf:first _:genid11 .
-
-_:genid11 a <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-	<http://www.w3.org/2003/11/swrl#classPredicate> :N1 ;
-	<http://www.w3.org/2003/11/swrl#argument1> :x .
-
-_:genid459 rdf:rest _:genid458 .
-
-_:genid458 a <http://www.w3.org/2003/11/swrl#AtomList> ;
-	rdf:first _:genid16 .
-
-_:genid16 a <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-	<http://www.w3.org/2003/11/swrl#classPredicate> :M0 ;
-	<http://www.w3.org/2003/11/swrl#argument1> :x .
-
-_:genid458 rdf:rest rdf:nil .
-
-_:genid457 <http://www.w3.org/2003/11/swrl#head> _:genid462 .
-
-_:genid462 a <http://www.w3.org/2003/11/swrl#AtomList> ;
-	rdf:first _:genid21 .
-
-_:genid21 a <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-	<http://www.w3.org/2003/11/swrl#classPredicate> :StageIIAR ;
-	<http://www.w3.org/2003/11/swrl#argument1> :x .
-
-_:genid462 rdf:rest rdf:nil .
-
-_:genid463 <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
-	rdfs:comment ""^^xsd:string ;
-	rdfs:label "StageIIA_RULE3"^^xsd:string ;
-	a <http://www.w3.org/2003/11/swrl#Imp> ;
-	<http://www.w3.org/2003/11/swrl#body> _:genid466 .
-
-_:genid466 a <http://www.w3.org/2003/11/swrl#AtomList> ;
-	rdf:first _:genid26 .
-
-_:genid26 a <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-	<http://www.w3.org/2003/11/swrl#classPredicate> :T2a ;
-	<http://www.w3.org/2003/11/swrl#argument1> :x .
-
-_:genid466 rdf:rest _:genid465 .
-
-_:genid465 a <http://www.w3.org/2003/11/swrl#AtomList> ;
-	rdf:first _:genid10 .
-
-_:genid10 a <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-	<http://www.w3.org/2003/11/swrl#classPredicate> :N1 ;
-	<http://www.w3.org/2003/11/swrl#argument1> :x .
-
-_:genid465 rdf:rest _:genid464 .
-
-_:genid464 a <http://www.w3.org/2003/11/swrl#AtomList> ;
-	rdf:first _:genid17 .
-
-_:genid17 a <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-	<http://www.w3.org/2003/11/swrl#classPredicate> :M0 ;
-	<http://www.w3.org/2003/11/swrl#argument1> :x .
-
-_:genid464 rdf:rest rdf:nil .
-
-_:genid463 <http://www.w3.org/2003/11/swrl#head> _:genid467 .
-
-_:genid467 a <http://www.w3.org/2003/11/swrl#AtomList> ;
-	rdf:first _:genid20 .
-
-_:genid20 a <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-	<http://www.w3.org/2003/11/swrl#classPredicate> :StageIIAR ;
-	<http://www.w3.org/2003/11/swrl#argument1> :x .
-
-_:genid467 rdf:rest rdf:nil .
 # Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi
