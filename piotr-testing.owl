@@ -1,0 +1,685 @@
+@prefix : <http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix swrl: <http://www.w3.org/2003/11/swrl#> .
+@prefix swrlb: <http://www.w3.org/2003/11/swrlb#> .
+@base <http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl> .
+
+<http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl> rdf:type owl:Ontology ;
+                                                                        rdfs:comment """Originally from Olivier Dameron; drastically updated by John Gennari in Nov, 2010. Cleaned up in 2011. Ablated version. 
+
+Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.""" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.w3.org/2000/01/rdf-schema#comment
+rdfs:comment rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#hasAnatomicalPart
+:hasAnatomicalPart rdf:type owl:ObjectProperty ;
+                   owl:inverseOf :isAnatomicalPartOf ;
+                   rdf:type owl:TransitiveProperty .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#hasLocation
+:hasLocation rdf:type owl:ObjectProperty ;
+             owl:inverseOf :isLocatedIn ;
+             rdfs:range :AnatomicalStructure .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#hasMetastasis
+:hasMetastasis rdf:type owl:ObjectProperty ;
+               rdfs:domain :Patient ;
+               rdfs:range :Metastasis .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#hasPrimaryTumour
+:hasPrimaryTumour rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Patient ;
+                  rdfs:range :PrimaryTumour .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#hasSide
+:hasSide rdf:type owl:ObjectProperty ;
+         rdfs:range :Side .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#isAnatomicalPartOf
+:isAnatomicalPartOf rdf:type owl:ObjectProperty ,
+                             owl:TransitiveProperty .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#isLocatedIn
+:isLocatedIn rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#hasSize
+:hasSize rdf:type owl:DatatypeProperty ,
+                  owl:FunctionalProperty ;
+         rdfs:domain :Tumor ;
+         rdfs:range xsd:float .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#AnatomicalStructure
+:AnatomicalStructure rdf:type owl:Class ;
+                     owl:disjointWith :Side ,
+                                      :Tumor .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LobeOfLung
+:LobeOfLung rdf:type owl:Class ;
+            rdfs:subClassOf :Lung .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Lung
+:Lung rdf:type owl:Class ;
+      rdfs:subClassOf :AnatomicalStructure ;
+      owl:disjointWith :LymphNode .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LymphNode
+:LymphNode rdf:type owl:Class ;
+           rdfs:subClassOf :AnatomicalStructure ;
+           rdfs:comment "All subclasses should be provided a definition involving their location"^^xsd:string .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Metastasis
+:Metastasis rdf:type owl:Class ;
+            rdfs:subClassOf :Tumor ;
+            owl:disjointWith :PrimaryTumour .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#OccultCarcinoma
+:OccultCarcinoma rdf:type owl:Class ;
+                 rdfs:subClassOf :StagedLungCancer .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Patient
+:Patient rdf:type owl:Class .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#PrimaryTumour
+:PrimaryTumour rdf:type owl:Class ;
+               rdfs:subClassOf :Tumor .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#RegionalLymphNode
+:RegionalLymphNode rdf:type owl:Class ;
+                   rdfs:subClassOf :LymphNode .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Side
+:Side rdf:type owl:Class ;
+      owl:disjointWith :Tumor .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Stage0
+:Stage0 rdf:type owl:Class ;
+        rdfs:subClassOf :StagedLungCancer .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StageIA
+:StageIA rdf:type owl:Class ;
+         rdfs:subClassOf :StagedLungCancer .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StageIB
+:StageIB rdf:type owl:Class ;
+         rdfs:subClassOf :StagedLungCancer .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StageIIA
+:StageIIA rdf:type owl:Class ;
+          rdfs:subClassOf :StagedLungCancer .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StageIIB
+:StageIIB rdf:type owl:Class ;
+          rdfs:subClassOf :StagedLungCancer .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StageIIIA
+:StageIIIA rdf:type owl:Class ;
+           rdfs:subClassOf :StagedLungCancer .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StageIIIB
+:StageIIIB rdf:type owl:Class ;
+           rdfs:subClassOf :StagedLungCancer .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StageIV
+:StageIV rdf:type owl:Class ;
+         rdfs:subClassOf :StagedLungCancer .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StagedLungCancer
+:StagedLungCancer rdf:type owl:Class .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StagedMetastasis
+:StagedMetastasis rdf:type owl:Class .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StagedPrimaryTumor
+:StagedPrimaryTumor rdf:type owl:Class .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#T1
+:T1 rdf:type owl:Class ;
+    rdfs:subClassOf :StagedMetastasis .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#T1a
+:T1a rdf:type owl:Class ;
+     rdfs:subClassOf :T1 .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#T1b
+:T1b rdf:type owl:Class ;
+     rdfs:subClassOf :T1 .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Tumor
+:Tumor rdf:type owl:Class .
+
+
+###  http://www.w3.org/2002/07/owl#Thing
+owl:Thing rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#AxillaryLymphNode
+:AxillaryLymphNode rdf:type owl:NamedIndividual ,
+                            :LymphNode .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Brain
+:Brain rdf:type owl:NamedIndividual ,
+                :AnatomicalStructure .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#ChestWall
+:ChestWall rdf:type owl:NamedIndividual ,
+                    :AnatomicalStructure .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Diaphragm
+:Diaphragm rdf:type owl:NamedIndividual ,
+                    :AnatomicalStructure .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Esophagus
+:Esophagus rdf:type owl:NamedIndividual ,
+                    :AnatomicalStructure .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Heart
+:Heart rdf:type owl:NamedIndividual ,
+                :AnatomicalStructure .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LeftHilarLymphNode
+:LeftHilarLymphNode rdf:type owl:NamedIndividual ,
+                             :RegionalLymphNode ;
+                    :hasSide :left .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LeftIntrapulmonaryNode
+:LeftIntrapulmonaryNode rdf:type owl:NamedIndividual ,
+                                 :RegionalLymphNode ;
+                        :hasSide :left .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LeftLowerLobe
+:LeftLowerLobe rdf:type owl:NamedIndividual ,
+                        :LobeOfLung ;
+               :hasSide :left .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LeftLung
+:LeftLung rdf:type owl:NamedIndividual ,
+                   :Lung ;
+          :hasSide :left .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LeftMediastinalLymphNode
+:LeftMediastinalLymphNode rdf:type owl:NamedIndividual ,
+                                   :RegionalLymphNode ;
+                          :hasSide :left .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LeftMiddleLobe
+:LeftMiddleLobe rdf:type owl:NamedIndividual ,
+                         :LobeOfLung ;
+                :hasSide :left .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LeftPeribronchialLymphNode
+:LeftPeribronchialLymphNode rdf:type owl:NamedIndividual ,
+                                     :RegionalLymphNode ;
+                            :hasSide :left .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LeftScaleneLymphNode
+:LeftScaleneLymphNode rdf:type owl:NamedIndividual ,
+                               :RegionalLymphNode ;
+                      :hasSide :left .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LeftSubcarinalLymphNode
+:LeftSubcarinalLymphNode rdf:type owl:NamedIndividual ,
+                                  :RegionalLymphNode ;
+                         :hasSide :left .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LeftSupraclavicularLymphNode
+:LeftSupraclavicularLymphNode rdf:type owl:NamedIndividual ,
+                                       :RegionalLymphNode ;
+                              :hasSide :left .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LeftUpperLobe
+:LeftUpperLobe rdf:type owl:NamedIndividual ,
+                        :LobeOfLung ;
+               :hasSide :left .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Liver
+:Liver rdf:type owl:NamedIndividual ,
+                :AnatomicalStructure .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#M1_BrainMetastasis
+:M1_BrainMetastasis rdf:type owl:NamedIndividual ,
+                             :Metastasis ;
+                    :hasLocation :Brain .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#M2_LiverMetastasis
+:M2_LiverMetastasis rdf:type owl:NamedIndividual ,
+                             :Metastasis ;
+                    :hasLocation :Liver .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#M3_RightHilarMetastasis
+:M3_RightHilarMetastasis rdf:type owl:NamedIndividual ,
+                                  :Metastasis ;
+                         :hasLocation :RightHilarLymphNode .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#M4_LeftMediastinalMetastasis
+:M4_LeftMediastinalMetastasis rdf:type owl:NamedIndividual ,
+                                       :Metastasis ;
+                              :hasLocation :LeftMediastinalLymphNode .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#M5_RightMediastinalMetastasis
+:M5_RightMediastinalMetastasis rdf:type owl:NamedIndividual ,
+                                        :Metastasis ;
+                               :hasLocation :RightMediastinalLymphNode .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Mediastinum
+:Mediastinum rdf:type owl:NamedIndividual ,
+                      :AnatomicalStructure .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#PT1_InvasiveEsophagialLungTumorNoMets
+:PT1_InvasiveEsophagialLungTumorNoMets rdf:type owl:NamedIndividual ,
+                                                :PrimaryTumour ;
+                                       :hasLocation :Esophagus .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#PT2_InvasivePericardlTumorNoMets
+:PT2_InvasivePericardlTumorNoMets rdf:type owl:NamedIndividual ,
+                                           :PrimaryTumour ;
+                                  :hasLocation :ParietalPericardium .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#PT3_LungTumorWithBrainMetastasis
+:PT3_LungTumorWithBrainMetastasis rdf:type owl:NamedIndividual ,
+                                           :PrimaryTumour ;
+                                  :hasLocation :LeftLung .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#PT4_LungTumorwithLiverMets
+:PT4_LungTumorwithLiverMets rdf:type owl:NamedIndividual ,
+                                     :PrimaryTumour ;
+                            :hasLocation :RightLung .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#PT5_SmallRightLungTumourWithHilarLymphNodeMetastasis
+:PT5_SmallRightLungTumourWithHilarLymphNodeMetastasis rdf:type owl:NamedIndividual ,
+                                                               :PrimaryTumour ;
+                                                      :hasLocation :RightLung ;
+                                                      :hasSize "2.5"^^xsd:float .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#PT6_SmallUpperLeftLobeTumourWithoutMetastasis
+:PT6_SmallUpperLeftLobeTumourWithoutMetastasis rdf:type owl:NamedIndividual ,
+                                                        :PrimaryTumour ;
+                                               :hasLocation :LeftUpperLobe ;
+                                               :hasSize "1.3"^^xsd:float .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#PT7_UpperLeftLobeTumorWithLeftMediastinalMetastasis
+:PT7_UpperLeftLobeTumorWithLeftMediastinalMetastasis rdf:type owl:NamedIndividual ,
+                                                              :PrimaryTumour ;
+                                                     :hasLocation :LeftUpperLobe ;
+                                                     :hasSize "6.2"^^xsd:float .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#PT8_UpperLeftLobeTumorWithRightMediastinalMetastasis
+:PT8_UpperLeftLobeTumorWithRightMediastinalMetastasis rdf:type owl:NamedIndividual ,
+                                                               :PrimaryTumour ;
+                                                      :hasLocation :LeftUpperLobe .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#ParietalPericardium
+:ParietalPericardium rdf:type owl:NamedIndividual ,
+                              :AnatomicalStructure .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Patient1
+:Patient1 rdf:type owl:NamedIndividual ,
+                   :Patient ;
+          :hasPrimaryTumour :PT1_InvasiveEsophagialLungTumorNoMets .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Patient2
+:Patient2 rdf:type owl:NamedIndividual ,
+                   :Patient ;
+          :hasPrimaryTumour :PT2_InvasivePericardlTumorNoMets .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Patient3
+:Patient3 rdf:type owl:NamedIndividual ,
+                   :Patient ;
+          :hasMetastasis :M1_BrainMetastasis ;
+          :hasPrimaryTumour :PT3_LungTumorWithBrainMetastasis .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Patient4
+:Patient4 rdf:type owl:NamedIndividual ,
+                   :Patient ;
+          :hasMetastasis :M2_LiverMetastasis ;
+          :hasPrimaryTumour :PT4_LungTumorwithLiverMets .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Patient5
+:Patient5 rdf:type owl:NamedIndividual ,
+                   :Patient ;
+          :hasMetastasis :M3_RightHilarMetastasis ;
+          :hasPrimaryTumour :PT5_SmallRightLungTumourWithHilarLymphNodeMetastasis .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Patient6
+:Patient6 rdf:type owl:NamedIndividual ,
+                   :Patient ;
+          :hasPrimaryTumour :PT6_SmallUpperLeftLobeTumourWithoutMetastasis .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Patient7
+:Patient7 rdf:type owl:NamedIndividual ,
+                   :Patient ;
+          :hasMetastasis :M4_LeftMediastinalMetastasis ;
+          :hasPrimaryTumour :PT7_UpperLeftLobeTumorWithLeftMediastinalMetastasis .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Patient8
+:Patient8 rdf:type owl:NamedIndividual ,
+                   :Patient ;
+          :hasMetastasis :M5_RightMediastinalMetastasis ;
+          :hasPrimaryTumour :PT8_UpperLeftLobeTumorWithRightMediastinalMetastasis .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#RightHilarLymphNode
+:RightHilarLymphNode rdf:type owl:NamedIndividual ,
+                              :RegionalLymphNode ;
+                     :hasSide :right .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#RightIntrapulmonaryNode
+:RightIntrapulmonaryNode rdf:type owl:NamedIndividual ,
+                                  :RegionalLymphNode ;
+                         :hasSide :right .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#RightLowerLobe
+:RightLowerLobe rdf:type owl:NamedIndividual ,
+                         :LobeOfLung ;
+                :hasSide :right .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#RightLung
+:RightLung rdf:type owl:NamedIndividual ,
+                    :Lung ;
+           :hasSide :right .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#RightMediastinalLymphNode
+:RightMediastinalLymphNode rdf:type owl:NamedIndividual ,
+                                    :RegionalLymphNode ;
+                           :hasSide :right .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#RightMiddleLobe
+:RightMiddleLobe rdf:type owl:NamedIndividual ,
+                          :LobeOfLung ;
+                 :hasSide :right .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#RightPeribronchialLymphNode
+:RightPeribronchialLymphNode rdf:type owl:NamedIndividual ,
+                                      :RegionalLymphNode ;
+                             :hasSide :right .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#RightScaleneLymphNode
+:RightScaleneLymphNode rdf:type owl:NamedIndividual ,
+                                :RegionalLymphNode ;
+                       :hasSide :right .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#RightSubcarinalLymphNode
+:RightSubcarinalLymphNode rdf:type owl:NamedIndividual ,
+                                   :RegionalLymphNode ;
+                          :hasSide :right .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#RightSupraclavicularLymphNode
+:RightSupraclavicularLymphNode rdf:type owl:NamedIndividual ,
+                                        :RegionalLymphNode ;
+                               :hasSide :right .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#RightUpperLobe
+:RightUpperLobe rdf:type owl:NamedIndividual ,
+                         :LobeOfLung ;
+                :hasSide :right .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Trachea
+:Trachea rdf:type owl:NamedIndividual ,
+                  :AnatomicalStructure .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#left
+:left rdf:type owl:NamedIndividual ,
+               :Side .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#right
+:right rdf:type owl:NamedIndividual ,
+                :Side .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :AnatomicalStructure
+                :Patient
+                :Side
+                :StagedLungCancer
+                :Tumor
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :AnatomicalStructure
+                :Side
+                :StagedLungCancer
+                :Tumor
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :OccultCarcinoma
+                :Stage0
+                :StageIA
+                :StageIB
+                :StageIIA
+                :StageIIB
+                :StageIIIA
+                :StageIIIB
+                :StageIV
+              )
+] .
+
+
+#################################################################
+#    Rules
+#################################################################
+
+<urn:swrl#p> rdf:type swrl:Variable .
+
+<urn:swrl#t> rdf:type swrl:Variable .
+
+<urn:swrl#s> rdf:type swrl:Variable .
+
+[ rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate :Patient ;
+                           swrl:argument1 <urn:swrl#p>
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate :hasPrimaryTumour ;
+                                      swrl:argument1 <urn:swrl#p> ;
+                                      swrl:argument2 <urn:swrl#t>
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                 swrl:propertyPredicate :hasSize ;
+                                                 swrl:argument1 <urn:swrl#t> ;
+                                                 swrl:argument2 <urn:swrl#s>
+                                               ] ;
+                                     rdf:rest [ rdf:type swrl:AtomList ;
+                                                rdf:first [ rdf:type swrl:BuiltinAtom ;
+                                                            swrl:builtin swrlb:greaterThanOrEqual ;
+                                                            swrl:arguments [ rdf:type rdf:List ;
+                                                                             rdf:first <urn:swrl#s> ;
+                                                                             rdf:rest [ rdf:type rdf:List ;
+                                                                                        rdf:first "2.0"^^xsd:float ;
+                                                                                        rdf:rest rdf:nil
+                                                                                      ]
+                                                                           ]
+                                                          ] ;
+                                                rdf:rest [ rdf:type swrl:AtomList ;
+                                                           rdf:first [ rdf:type swrl:BuiltinAtom ;
+                                                                       swrl:builtin swrlb:lessThan ;
+                                                                       swrl:arguments [ rdf:type rdf:List ;
+                                                                                        rdf:first <urn:swrl#s> ;
+                                                                                        rdf:rest [ rdf:type rdf:List ;
+                                                                                                   rdf:first "3.0"^^xsd:float ;
+                                                                                                   rdf:rest rdf:nil
+                                                                                                 ]
+                                                                                      ]
+                                                                     ] ;
+                                                           rdf:rest rdf:nil
+                                                         ]
+                                              ]
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate :T1b ;
+                           swrl:argument1 <urn:swrl#p>
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate :Patient ;
+                           swrl:argument1 <urn:swrl#p>
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate :hasPrimaryTumour ;
+                                      swrl:argument1 <urn:swrl#p> ;
+                                      swrl:argument2 <urn:swrl#t>
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                 swrl:propertyPredicate :hasSize ;
+                                                 swrl:argument1 <urn:swrl#t> ;
+                                                 swrl:argument2 <urn:swrl#s>
+                                               ] ;
+                                     rdf:rest [ rdf:type swrl:AtomList ;
+                                                rdf:first [ rdf:type swrl:BuiltinAtom ;
+                                                            swrl:builtin swrlb:lessThan ;
+                                                            swrl:arguments [ rdf:type rdf:List ;
+                                                                             rdf:first <urn:swrl#s> ;
+                                                                             rdf:rest [ rdf:type rdf:List ;
+                                                                                        rdf:first "2.0"^^xsd:float ;
+                                                                                        rdf:rest rdf:nil
+                                                                                      ]
+                                                                           ]
+                                                          ] ;
+                                                rdf:rest rdf:nil
+                                              ]
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate :T1a ;
+                           swrl:argument1 <urn:swrl#p>
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+###  Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi
