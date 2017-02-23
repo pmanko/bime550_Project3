@@ -1,0 +1,2140 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl">
+    <Prefix name="" IRI="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="skos" IRI="http://www.w3.org/2004/02/skos/core#"/>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Originally from Olivier Dameron; drastically updated by John Gennari in Nov, 2010. Cleaned up in 2011. Ablated version.</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="#InvasiveEsophagialLungTumorNoMets"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#T2a"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RightMediastinalMetastasis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Stage2B"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#T3"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ParietalPericardium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TumorBetween3cm5cm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LowerLobeOfLung"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IntrapulmonaryNode"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SupraclavicularLymphNode"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isAnatomicalPartOf"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#stage2a2"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AxillaryLymphNode"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSide"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ContralateralMetastasis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Stage2A"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#N0"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#T4"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LeftMediastinalMetastasis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RegionalLymphNodeMetastasis"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#TumorBetween3cm5cm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Liver"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Trachea"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Stage1BRules"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Side"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Lung"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Stage3B"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#T0"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Tumour"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RightHilarMetastasis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SmallUpperLeftLobeTumourWithoutMetastasis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LungTumorwithLiverMets"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IpsilateralMetastasis"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#right"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#InvasivePericardlTumorNoMets"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SmallRightLungTumourWithHilarLymphNodeMetastasis"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UpperLobeOfLung"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Stage3A"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#T1"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Stage1ARules"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UpperLeftLobeTumorWithLeftMediastinalMetastasis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Stage4Rules"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Stage2BRules"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#TumorBetween5cm7cm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DistantMetastasis"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPrimaryTumour"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasMetastatis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TumorGreater7cm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Diaphragm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SubcarinalLymphNode"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isMetastasisOf"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RightAnatomicalStructure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UpperLobeOfLeftLung"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LobeOfRightLung"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ChestWall"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PrimaryTumour"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasMetastasis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RegionalLymphNode"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Esophagus"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UpperLeftLobePrimaryTumor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#N3"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#M1"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Brain"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MiddleLobeOfLung"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ScaleneLimphNode"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Axiom1"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Heart"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HilarLymphNode"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Mediastinum"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#TumorSmaller3cm"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#left"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LymphNode"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SmallUpperLeftLobeTumourWithoutMetastasis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LowerLobeOfLeftLung"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Stage2ARules"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UpperLeftLobeTumorWithRightMediastinalMetastasis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StagedLungCancer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Metastasis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LeftLung"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LungTumour"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Stage3BRules"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MediastinalLymphNode"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Axiom2"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TumorSmaller3cm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LungTumorWithBrainMetastasis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#stage2a1"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AnatomicalStructure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TumorSize"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AxillaryLymphNodeMetastasis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LungCancerExamps"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#stage1b"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isLocatedIn"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Stage1B"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LobeOfLeftLung"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InvasivePericardlTumorNoMets"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#N1"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PeribronchialLymphNode"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RightLung"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CancerDiagnosis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BrainMetastasis"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasLocation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LeftAnatomicalStructure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Stage4"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#stage2b2"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TumorBetween5cm7cm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Stage3ARules"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#T2b"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LowerLobeOfRightLung"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LobeOfLung"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Stage1A"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#UpperLobeOfLeftLung"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UpperLobeOfRightLung"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasAnatomicalPart"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#N2"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SmallRightLungTumourWithHilarLymphNodeMetastasis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#M0"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RightLungPrimaryTumor"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#AxillaryLymphNodeMetastasis"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Metastasis"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasLocation"/>
+                <Class IRI="#AxillaryLymphNode"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Axiom1"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isAnatomicalPartOf"/>
+            <Class IRI="#LeftAnatomicalStructure"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Axiom2"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isAnatomicalPartOf"/>
+            <Class IRI="#RightAnatomicalStructure"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#BrainMetastasis"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Metastasis"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasLocation"/>
+                <Class IRI="#Brain"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#ContralateralMetastasis"/>
+        <ObjectUnionOf>
+            <ObjectIntersectionOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#hasLocation"/>
+                    <Class IRI="#LeftAnatomicalStructure"/>
+                </ObjectSomeValuesFrom>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#isMetastasisOf"/>
+                    <ObjectSomeValuesFrom>
+                        <ObjectProperty IRI="#hasLocation"/>
+                        <Class IRI="#RightAnatomicalStructure"/>
+                    </ObjectSomeValuesFrom>
+                </ObjectSomeValuesFrom>
+            </ObjectIntersectionOf>
+            <ObjectIntersectionOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#hasLocation"/>
+                    <Class IRI="#RightAnatomicalStructure"/>
+                </ObjectSomeValuesFrom>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#isMetastasisOf"/>
+                    <ObjectSomeValuesFrom>
+                        <ObjectProperty IRI="#hasLocation"/>
+                        <Class IRI="#LeftAnatomicalStructure"/>
+                    </ObjectSomeValuesFrom>
+                </ObjectSomeValuesFrom>
+            </ObjectIntersectionOf>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#DistantMetastasis"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Metastasis"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasLocation"/>
+                <ObjectIntersectionOf>
+                    <Class IRI="#AnatomicalStructure"/>
+                    <ObjectComplementOf>
+                        <Class IRI="#RegionalLymphNode"/>
+                    </ObjectComplementOf>
+                </ObjectIntersectionOf>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#IpsilateralMetastasis"/>
+        <ObjectUnionOf>
+            <ObjectIntersectionOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#hasLocation"/>
+                    <Class IRI="#LeftAnatomicalStructure"/>
+                </ObjectSomeValuesFrom>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#isMetastasisOf"/>
+                    <ObjectSomeValuesFrom>
+                        <ObjectProperty IRI="#hasLocation"/>
+                        <Class IRI="#LeftAnatomicalStructure"/>
+                    </ObjectSomeValuesFrom>
+                </ObjectSomeValuesFrom>
+            </ObjectIntersectionOf>
+            <ObjectIntersectionOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#hasLocation"/>
+                    <Class IRI="#RightAnatomicalStructure"/>
+                </ObjectSomeValuesFrom>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#isMetastasisOf"/>
+                    <ObjectSomeValuesFrom>
+                        <ObjectProperty IRI="#hasLocation"/>
+                        <Class IRI="#RightAnatomicalStructure"/>
+                    </ObjectSomeValuesFrom>
+                </ObjectSomeValuesFrom>
+            </ObjectIntersectionOf>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#LeftAnatomicalStructure"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#AnatomicalStructure"/>
+            <ObjectHasValue>
+                <ObjectProperty IRI="#hasSide"/>
+                <NamedIndividual IRI="#left"/>
+            </ObjectHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#LeftLung"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#LeftAnatomicalStructure"/>
+            <Class IRI="#Lung"/>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#LobeOfLeftLung"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#LobeOfLung"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isAnatomicalPartOf"/>
+                <Class IRI="#LeftLung"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#LobeOfLung"/>
+        <ObjectUnionOf>
+            <Class IRI="#LobeOfLeftLung"/>
+            <Class IRI="#LobeOfRightLung"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#LobeOfLung"/>
+        <ObjectUnionOf>
+            <Class IRI="#LowerLobeOfLung"/>
+            <Class IRI="#MiddleLobeOfLung"/>
+            <Class IRI="#UpperLobeOfLung"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#LobeOfRightLung"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#LobeOfLung"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isAnatomicalPartOf"/>
+                <Class IRI="#RightLung"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#LowerLobeOfLeftLung"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#LobeOfLeftLung"/>
+            <Class IRI="#LowerLobeOfLung"/>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#LowerLobeOfLung"/>
+        <ObjectUnionOf>
+            <Class IRI="#LowerLobeOfLeftLung"/>
+            <Class IRI="#LowerLobeOfRightLung"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#LowerLobeOfRightLung"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#LobeOfRightLung"/>
+            <Class IRI="#LowerLobeOfLung"/>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Lung"/>
+        <ObjectUnionOf>
+            <Class IRI="#LeftLung"/>
+            <Class IRI="#RightLung"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#LungTumour"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#CancerDiagnosis"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasPrimaryTumour"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#hasLocation"/>
+                    <ObjectUnionOf>
+                        <Class IRI="#Lung"/>
+                        <ObjectSomeValuesFrom>
+                            <ObjectProperty IRI="#isAnatomicalPartOf"/>
+                            <Class IRI="#Lung"/>
+                        </ObjectSomeValuesFrom>
+                    </ObjectUnionOf>
+                </ObjectSomeValuesFrom>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#M0"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#LungTumour"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#hasMetastasis"/>
+                <Class IRI="#RegionalLymphNodeMetastasis"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#M1"/>
+        <Class IRI="#Stage4"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#M1"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#LungTumour"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasMetastasis"/>
+                <Class IRI="#DistantMetastasis"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#N0"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#LungTumour"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#hasMetastasis"/>
+                <Class IRI="#DistantMetastasis"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#N1"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#LungTumour"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasMetastasis"/>
+                <ObjectUnionOf>
+                    <ObjectIntersectionOf>
+                        <Class IRI="#IpsilateralMetastasis"/>
+                        <ObjectSomeValuesFrom>
+                            <ObjectProperty IRI="#hasLocation"/>
+                            <ObjectUnionOf>
+                                <Class IRI="#HilarLymphNode"/>
+                                <Class IRI="#PeribronchialLymphNode"/>
+                                <ObjectIntersectionOf>
+                                    <Class IRI="#HilarLymphNode"/>
+                                    <Class IRI="#PeribronchialLymphNode"/>
+                                </ObjectIntersectionOf>
+                            </ObjectUnionOf>
+                        </ObjectSomeValuesFrom>
+                    </ObjectIntersectionOf>
+                    <ObjectSomeValuesFrom>
+                        <ObjectProperty IRI="#hasLocation"/>
+                        <Class IRI="#IntrapulmonaryNode"/>
+                    </ObjectSomeValuesFrom>
+                </ObjectUnionOf>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#N2"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#LungTumour"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasMetastasis"/>
+                <ObjectUnionOf>
+                    <ObjectIntersectionOf>
+                        <Class IRI="#IpsilateralMetastasis"/>
+                        <ObjectSomeValuesFrom>
+                            <ObjectProperty IRI="#hasLocation"/>
+                            <Class IRI="#MediastinalLymphNode"/>
+                        </ObjectSomeValuesFrom>
+                    </ObjectIntersectionOf>
+                    <ObjectIntersectionOf>
+                        <ObjectIntersectionOf>
+                            <Class IRI="#IpsilateralMetastasis"/>
+                            <ObjectSomeValuesFrom>
+                                <ObjectProperty IRI="#hasLocation"/>
+                                <Class IRI="#MediastinalLymphNode"/>
+                            </ObjectSomeValuesFrom>
+                        </ObjectIntersectionOf>
+                        <ObjectSomeValuesFrom>
+                            <ObjectProperty IRI="#hasLocation"/>
+                            <Class IRI="#SubcarinalLymphNode"/>
+                        </ObjectSomeValuesFrom>
+                    </ObjectIntersectionOf>
+                    <ObjectSomeValuesFrom>
+                        <ObjectProperty IRI="#hasLocation"/>
+                        <Class IRI="#SubcarinalLymphNode"/>
+                    </ObjectSomeValuesFrom>
+                </ObjectUnionOf>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#N3"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#LungTumour"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasMetastasis"/>
+                <ObjectUnionOf>
+                    <ObjectIntersectionOf>
+                        <Class IRI="#ContralateralMetastasis"/>
+                        <ObjectSomeValuesFrom>
+                            <ObjectProperty IRI="#hasLocation"/>
+                            <ObjectUnionOf>
+                                <Class IRI="#MediastinalLymphNode"/>
+                                <Class IRI="#ScaleneLimphNode"/>
+                            </ObjectUnionOf>
+                        </ObjectSomeValuesFrom>
+                    </ObjectIntersectionOf>
+                    <ObjectIntersectionOf>
+                        <Class IRI="#IpsilateralMetastasis"/>
+                        <ObjectSomeValuesFrom>
+                            <ObjectProperty IRI="#hasLocation"/>
+                            <Class IRI="#ScaleneLimphNode"/>
+                        </ObjectSomeValuesFrom>
+                    </ObjectIntersectionOf>
+                    <ObjectSomeValuesFrom>
+                        <ObjectProperty IRI="#hasLocation"/>
+                        <Class IRI="#SupraclavicularLymphNode"/>
+                    </ObjectSomeValuesFrom>
+                </ObjectUnionOf>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#RegionalLymphNodeMetastasis"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Metastasis"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasLocation"/>
+                <Class IRI="#RegionalLymphNode"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#RightAnatomicalStructure"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#AnatomicalStructure"/>
+            <ObjectHasValue>
+                <ObjectProperty IRI="#hasSide"/>
+                <NamedIndividual IRI="#right"/>
+            </ObjectHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#RightLung"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Lung"/>
+            <Class IRI="#RightAnatomicalStructure"/>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Stage1A"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#M0"/>
+            <Class IRI="#N0"/>
+            <Class IRI="#T1"/>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Stage1B"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#M0"/>
+            <Class IRI="#N0"/>
+            <Class IRI="#T2a"/>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Stage2A"/>
+        <ObjectUnionOf>
+            <ObjectIntersectionOf>
+                <Class IRI="#M0"/>
+                <Class IRI="#N0"/>
+                <Class IRI="#T2b"/>
+            </ObjectIntersectionOf>
+            <ObjectIntersectionOf>
+                <Class IRI="#M0"/>
+                <Class IRI="#N1"/>
+                <ObjectUnionOf>
+                    <Class IRI="#T1"/>
+                    <Class IRI="#T2a"/>
+                </ObjectUnionOf>
+            </ObjectIntersectionOf>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Stage2B"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#M0"/>
+            <ObjectUnionOf>
+                <ObjectIntersectionOf>
+                    <Class IRI="#N0"/>
+                    <Class IRI="#T3"/>
+                </ObjectIntersectionOf>
+                <ObjectIntersectionOf>
+                    <Class IRI="#N1"/>
+                    <Class IRI="#T2b"/>
+                </ObjectIntersectionOf>
+            </ObjectUnionOf>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Stage3A"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#M0"/>
+            <ObjectUnionOf>
+                <ObjectIntersectionOf>
+                    <Class IRI="#N0"/>
+                    <Class IRI="#T4"/>
+                </ObjectIntersectionOf>
+                <ObjectIntersectionOf>
+                    <Class IRI="#N1"/>
+                    <ObjectUnionOf>
+                        <Class IRI="#T3"/>
+                        <Class IRI="#T4"/>
+                    </ObjectUnionOf>
+                </ObjectIntersectionOf>
+                <ObjectIntersectionOf>
+                    <Class IRI="#N2"/>
+                    <ObjectUnionOf>
+                        <Class IRI="#T1"/>
+                        <Class IRI="#T2a"/>
+                        <Class IRI="#T2b"/>
+                        <Class IRI="#T3"/>
+                    </ObjectUnionOf>
+                </ObjectIntersectionOf>
+            </ObjectUnionOf>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Stage3B"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#M0"/>
+            <ObjectUnionOf>
+                <ObjectIntersectionOf>
+                    <Class IRI="#N2"/>
+                    <Class IRI="#T4"/>
+                </ObjectIntersectionOf>
+                <ObjectIntersectionOf>
+                    <Class IRI="#N3"/>
+                    <ObjectUnionOf>
+                        <Class IRI="#T1"/>
+                        <Class IRI="#T2a"/>
+                        <Class IRI="#T2b"/>
+                        <Class IRI="#T3"/>
+                        <Class IRI="#T4"/>
+                    </ObjectUnionOf>
+                </ObjectIntersectionOf>
+            </ObjectUnionOf>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#T1"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#LungTumour"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasPrimaryTumour"/>
+                <Class IRI="#TumorSmaller3cm"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#T2a"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#LungTumour"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasPrimaryTumour"/>
+                <Class IRI="#TumorBetween3cm5cm"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#T2b"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#LungTumour"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasPrimaryTumour"/>
+                <Class IRI="#TumorBetween5cm7cm"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#T3"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#LungTumour"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasPrimaryTumour"/>
+                <ObjectUnionOf>
+                    <Class IRI="#TumorGreater7cm"/>
+                    <ObjectSomeValuesFrom>
+                        <ObjectProperty IRI="#hasLocation"/>
+                        <ObjectUnionOf>
+                            <Class IRI="#ChestWall"/>
+                            <Class IRI="#Diaphragm"/>
+                            <Class IRI="#ParietalPericardium"/>
+                        </ObjectUnionOf>
+                    </ObjectSomeValuesFrom>
+                </ObjectUnionOf>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#T4"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#LungTumour"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasPrimaryTumour"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#hasLocation"/>
+                    <ObjectUnionOf>
+                        <Class IRI="#Esophagus"/>
+                        <Class IRI="#Heart"/>
+                        <Class IRI="#Mediastinum"/>
+                        <Class IRI="#Trachea"/>
+                    </ObjectUnionOf>
+                </ObjectSomeValuesFrom>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#UpperLobeOfLeftLung"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#LobeOfLeftLung"/>
+            <Class IRI="#UpperLobeOfLung"/>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#UpperLobeOfLung"/>
+        <ObjectUnionOf>
+            <Class IRI="#UpperLobeOfLeftLung"/>
+            <Class IRI="#UpperLobeOfRightLung"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#UpperLobeOfRightLung"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#LobeOfRightLung"/>
+            <Class IRI="#UpperLobeOfLung"/>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#AxillaryLymphNode"/>
+        <Class IRI="#LymphNode"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Axiom1"/>
+        <Class IRI="#LeftAnatomicalStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Axiom1"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Axiom2"/>
+        <Class IRI="#RightAnatomicalStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Axiom2"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Brain"/>
+        <Class IRI="#AnatomicalStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ChestWall"/>
+        <Class IRI="#AnatomicalStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ContralateralMetastasis"/>
+        <Class IRI="#Metastasis"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Diaphragm"/>
+        <Class IRI="#AnatomicalStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Esophagus"/>
+        <Class IRI="#AnatomicalStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Heart"/>
+        <Class IRI="#AnatomicalStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HilarLymphNode"/>
+        <Class IRI="#RegionalLymphNode"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IntrapulmonaryNode"/>
+        <Class IRI="#RegionalLymphNode"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InvasiveEsophagialLungTumorNoMets"/>
+        <Class IRI="#LungCancerExamps"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InvasiveEsophagialLungTumorNoMets"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasPrimaryTumour"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasLocation"/>
+                <Class IRI="#Esophagus"/>
+            </ObjectSomeValuesFrom>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InvasiveEsophagialLungTumorNoMets"/>
+        <ObjectExactCardinality cardinality="0">
+            <ObjectProperty IRI="#hasMetastasis"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InvasivePericardlTumorNoMets"/>
+        <Class IRI="#LungCancerExamps"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InvasivePericardlTumorNoMets"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasPrimaryTumour"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasLocation"/>
+                <Class IRI="#ParietalPericardium"/>
+            </ObjectSomeValuesFrom>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InvasivePericardlTumorNoMets"/>
+        <ObjectExactCardinality cardinality="0">
+            <ObjectProperty IRI="#hasMetastasis"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IpsilateralMetastasis"/>
+        <Class IRI="#Metastasis"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LeftMediastinalMetastasis"/>
+        <Class IRI="#Metastasis"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LeftMediastinalMetastasis"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasLocation"/>
+            <ObjectIntersectionOf>
+                <Class IRI="#MediastinalLymphNode"/>
+                <ObjectHasValue>
+                    <ObjectProperty IRI="#hasSide"/>
+                    <NamedIndividual IRI="#left"/>
+                </ObjectHasValue>
+            </ObjectIntersectionOf>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Liver"/>
+        <Class IRI="#AnatomicalStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LobeOfLung"/>
+        <Class IRI="#AnatomicalStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LobeOfLung"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isAnatomicalPartOf"/>
+            <Class IRI="#Lung"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LowerLobeOfLung"/>
+        <Class IRI="#LobeOfLung"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Lung"/>
+        <Class IRI="#AnatomicalStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LungCancerExamps"/>
+        <Class IRI="#LungTumour"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LungTumorWithBrainMetastasis"/>
+        <Class IRI="#LungCancerExamps"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LungTumorWithBrainMetastasis"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasMetastasis"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasLocation"/>
+                <Class IRI="#Brain"/>
+            </ObjectSomeValuesFrom>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LungTumorwithLiverMets"/>
+        <Class IRI="#LungCancerExamps"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LungTumorwithLiverMets"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasMetastasis"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasLocation"/>
+                <Class IRI="#Liver"/>
+            </ObjectSomeValuesFrom>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LungTumour"/>
+        <Class IRI="#CancerDiagnosis"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LymphNode"/>
+        <Class IRI="#AnatomicalStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MediastinalLymphNode"/>
+        <Class IRI="#RegionalLymphNode"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Mediastinum"/>
+        <Class IRI="#AnatomicalStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Metastasis"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Metastasis"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasLocation"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MiddleLobeOfLung"/>
+        <Class IRI="#LobeOfLung"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MiddleLobeOfLung"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isAnatomicalPartOf"/>
+            <Class IRI="#RightLung"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#N1"/>
+        <Class IRI="#LungTumour"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#N2"/>
+        <Class IRI="#LungTumour"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#N3"/>
+        <Class IRI="#LungTumour"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ParietalPericardium"/>
+        <Class IRI="#AnatomicalStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PeribronchialLymphNode"/>
+        <Class IRI="#RegionalLymphNode"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PrimaryTumour"/>
+        <Class IRI="#Tumour"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PrimaryTumour"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasLocation"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RegionalLymphNode"/>
+        <Class IRI="#LymphNode"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RightHilarMetastasis"/>
+        <Class IRI="#Metastasis"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RightHilarMetastasis"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasLocation"/>
+            <ObjectIntersectionOf>
+                <Class IRI="#HilarLymphNode"/>
+                <ObjectHasValue>
+                    <ObjectProperty IRI="#hasSide"/>
+                    <NamedIndividual IRI="#right"/>
+                </ObjectHasValue>
+            </ObjectIntersectionOf>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RightLungPrimaryTumor"/>
+        <Class IRI="#PrimaryTumour"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RightLungPrimaryTumor"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasLocation"/>
+            <Class IRI="#RightLung"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RightMediastinalMetastasis"/>
+        <Class IRI="#Metastasis"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RightMediastinalMetastasis"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasLocation"/>
+            <ObjectIntersectionOf>
+                <Class IRI="#MediastinalLymphNode"/>
+                <ObjectHasValue>
+                    <ObjectProperty IRI="#hasSide"/>
+                    <NamedIndividual IRI="#right"/>
+                </ObjectHasValue>
+            </ObjectIntersectionOf>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ScaleneLimphNode"/>
+        <Class IRI="#RegionalLymphNode"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SmallRightLungTumourWithHilarLymphNodeMetastasis"/>
+        <Class IRI="#LungCancerExamps"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SmallRightLungTumourWithHilarLymphNodeMetastasis"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasMetastasis"/>
+            <Class IRI="#RightHilarMetastasis"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SmallRightLungTumourWithHilarLymphNodeMetastasis"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasMetastasis"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isMetastasisOf"/>
+                <Class IRI="#RightLungPrimaryTumor"/>
+            </ObjectSomeValuesFrom>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SmallRightLungTumourWithHilarLymphNodeMetastasis"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasPrimaryTumour"/>
+            <Class IRI="#TumorSmaller3cm"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SmallRightLungTumourWithHilarLymphNodeMetastasis"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasPrimaryTumour"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasLocation"/>
+                <Class IRI="#RightLung"/>
+            </ObjectSomeValuesFrom>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SmallRightLungTumourWithHilarLymphNodeMetastasis"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasMetastasis"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SmallUpperLeftLobeTumourWithoutMetastasis"/>
+        <Class IRI="#LungCancerExamps"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SmallUpperLeftLobeTumourWithoutMetastasis"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasLocation"/>
+            <Class IRI="#UpperLobeOfLeftLung"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SmallUpperLeftLobeTumourWithoutMetastasis"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasPrimaryTumour"/>
+            <Class IRI="#TumorSmaller3cm"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SmallUpperLeftLobeTumourWithoutMetastasis"/>
+        <ObjectExactCardinality cardinality="0">
+            <ObjectProperty IRI="#hasMetastasis"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Stage1A"/>
+        <Class IRI="#StagedLungCancer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Stage1ARules"/>
+        <Class IRI="#StagedLungCancer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Stage1B"/>
+        <Class IRI="#StagedLungCancer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Stage1BRules"/>
+        <Class IRI="#StagedLungCancer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Stage2A"/>
+        <Class IRI="#StagedLungCancer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Stage2ARules"/>
+        <Class IRI="#StagedLungCancer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Stage2B"/>
+        <Class IRI="#StagedLungCancer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Stage2BRules"/>
+        <Class IRI="#StagedLungCancer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Stage3A"/>
+        <Class IRI="#StagedLungCancer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Stage3ARules"/>
+        <Class IRI="#StagedLungCancer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Stage3B"/>
+        <Class IRI="#StagedLungCancer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Stage3BRules"/>
+        <Class IRI="#StagedLungCancer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Stage4"/>
+        <Class IRI="#StagedLungCancer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Stage4Rules"/>
+        <Class IRI="#StagedLungCancer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SubcarinalLymphNode"/>
+        <Class IRI="#RegionalLymphNode"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SupraclavicularLymphNode"/>
+        <Class IRI="#RegionalLymphNode"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#T0"/>
+        <Class IRI="#LungTumour"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#T2a"/>
+        <Class IRI="#LungTumour"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#T2b"/>
+        <Class IRI="#LungTumour"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#T3"/>
+        <Class IRI="#LungTumour"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#T4"/>
+        <Class IRI="#LungTumour"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Trachea"/>
+        <Class IRI="#AnatomicalStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TumorBetween3cm5cm"/>
+        <Class IRI="#TumorSize"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TumorBetween5cm7cm"/>
+        <Class IRI="#TumorSize"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TumorGreater7cm"/>
+        <Class IRI="#TumorSize"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TumorSize"/>
+        <Class IRI="#Tumour"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TumorSmaller3cm"/>
+        <Class IRI="#TumorSize"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UpperLeftLobePrimaryTumor"/>
+        <Class IRI="#PrimaryTumour"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UpperLeftLobePrimaryTumor"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasLocation"/>
+            <Class IRI="#UpperLobeOfLeftLung"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UpperLeftLobeTumorWithLeftMediastinalMetastasis"/>
+        <Class IRI="#LungCancerExamps"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UpperLeftLobeTumorWithLeftMediastinalMetastasis"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasMetastasis"/>
+            <Class IRI="#LeftMediastinalMetastasis"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UpperLeftLobeTumorWithLeftMediastinalMetastasis"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasMetastasis"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isMetastasisOf"/>
+                <Class IRI="#UpperLeftLobePrimaryTumor"/>
+            </ObjectSomeValuesFrom>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UpperLeftLobeTumorWithLeftMediastinalMetastasis"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasPrimaryTumour"/>
+            <Class IRI="#TumorBetween5cm7cm"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UpperLeftLobeTumorWithLeftMediastinalMetastasis"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasPrimaryTumour"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasLocation"/>
+                <Class IRI="#UpperLobeOfLeftLung"/>
+            </ObjectSomeValuesFrom>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UpperLeftLobeTumorWithLeftMediastinalMetastasis"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasMetastasis"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UpperLeftLobeTumorWithRightMediastinalMetastasis"/>
+        <Class IRI="#LungCancerExamps"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UpperLeftLobeTumorWithRightMediastinalMetastasis"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasMetastasis"/>
+            <Class IRI="#RightMediastinalMetastasis"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UpperLeftLobeTumorWithRightMediastinalMetastasis"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasMetastasis"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isMetastasisOf"/>
+                <Class IRI="#UpperLeftLobePrimaryTumor"/>
+            </ObjectSomeValuesFrom>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UpperLeftLobeTumorWithRightMediastinalMetastasis"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasPrimaryTumour"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasLocation"/>
+                <Class IRI="#UpperLobeOfLeftLung"/>
+            </ObjectSomeValuesFrom>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UpperLeftLobeTumorWithRightMediastinalMetastasis"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasMetastasis"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UpperLobeOfLung"/>
+        <Class IRI="#LobeOfLung"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#stage1b"/>
+        <Class IRI="#LungCancerExamps"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#stage1b"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasPrimaryTumour"/>
+            <Class IRI="#TumorBetween3cm5cm"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#stage1b"/>
+        <ObjectExactCardinality cardinality="0">
+            <ObjectProperty IRI="#hasMetastasis"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#stage2a1"/>
+        <Class IRI="#LungCancerExamps"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#stage2a1"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasMetastasis"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasLocation"/>
+                <ObjectUnionOf>
+                    <Class IRI="#IntrapulmonaryNode"/>
+                    <ObjectIntersectionOf>
+                        <Class IRI="#IpsilateralMetastasis"/>
+                        <ObjectUnionOf>
+                            <Class IRI="#HilarLymphNode"/>
+                            <Class IRI="#PeribronchialLymphNode"/>
+                            <ObjectIntersectionOf>
+                                <Class IRI="#HilarLymphNode"/>
+                                <Class IRI="#PeribronchialLymphNode"/>
+                            </ObjectIntersectionOf>
+                        </ObjectUnionOf>
+                    </ObjectIntersectionOf>
+                </ObjectUnionOf>
+            </ObjectSomeValuesFrom>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#stage2a1"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasPrimaryTumour"/>
+            <Class IRI="#TumorSmaller3cm"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#stage2a1"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasMetastasis"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#stage2a2"/>
+        <Class IRI="#LungCancerExamps"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#stage2a2"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasPrimaryTumour"/>
+            <Class IRI="#TumorBetween5cm7cm"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#stage2a2"/>
+        <ObjectExactCardinality cardinality="0">
+            <ObjectProperty IRI="#hasMetastasis"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#stage2b2"/>
+        <Class IRI="#LungCancerExamps"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#stage2b2"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasPrimaryTumour"/>
+            <Class IRI="#TumorGreater7cm"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#stage2b2"/>
+        <ObjectExactCardinality cardinality="0">
+            <ObjectProperty IRI="#hasMetastasis"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#AnatomicalStructure"/>
+        <Class IRI="#Side"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#AnatomicalStructure"/>
+        <Class IRI="#Tumour"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#AxillaryLymphNode"/>
+        <Class IRI="#RegionalLymphNode"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Brain"/>
+        <Class IRI="#ChestWall"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Brain"/>
+        <Class IRI="#Diaphragm"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Brain"/>
+        <Class IRI="#Esophagus"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Brain"/>
+        <Class IRI="#Heart"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Brain"/>
+        <Class IRI="#Liver"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Brain"/>
+        <Class IRI="#LobeOfLung"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Brain"/>
+        <Class IRI="#Lung"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Brain"/>
+        <Class IRI="#LymphNode"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Brain"/>
+        <Class IRI="#Mediastinum"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Brain"/>
+        <Class IRI="#ParietalPericardium"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Brain"/>
+        <Class IRI="#Trachea"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ChestWall"/>
+        <Class IRI="#Diaphragm"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ChestWall"/>
+        <Class IRI="#Esophagus"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ChestWall"/>
+        <Class IRI="#Heart"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ChestWall"/>
+        <Class IRI="#Liver"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ChestWall"/>
+        <Class IRI="#LobeOfLung"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ChestWall"/>
+        <Class IRI="#Lung"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ChestWall"/>
+        <Class IRI="#LymphNode"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ChestWall"/>
+        <Class IRI="#Mediastinum"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ChestWall"/>
+        <Class IRI="#ParietalPericardium"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ChestWall"/>
+        <Class IRI="#Trachea"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Diaphragm"/>
+        <Class IRI="#Esophagus"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Diaphragm"/>
+        <Class IRI="#Heart"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Diaphragm"/>
+        <Class IRI="#Liver"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Diaphragm"/>
+        <Class IRI="#LobeOfLung"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Diaphragm"/>
+        <Class IRI="#Lung"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Diaphragm"/>
+        <Class IRI="#LymphNode"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Diaphragm"/>
+        <Class IRI="#Mediastinum"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Diaphragm"/>
+        <Class IRI="#ParietalPericardium"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Diaphragm"/>
+        <Class IRI="#Trachea"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Esophagus"/>
+        <Class IRI="#Heart"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Esophagus"/>
+        <Class IRI="#Liver"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Esophagus"/>
+        <Class IRI="#LymphNode"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Esophagus"/>
+        <Class IRI="#Mediastinum"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Esophagus"/>
+        <Class IRI="#ParietalPericardium"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Esophagus"/>
+        <Class IRI="#Trachea"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Heart"/>
+        <Class IRI="#Liver"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Heart"/>
+        <Class IRI="#LymphNode"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Heart"/>
+        <Class IRI="#Mediastinum"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Heart"/>
+        <Class IRI="#ParietalPericardium"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Heart"/>
+        <Class IRI="#Trachea"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#HilarLymphNode"/>
+        <Class IRI="#IntrapulmonaryNode"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#HilarLymphNode"/>
+        <Class IRI="#MediastinalLymphNode"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#HilarLymphNode"/>
+        <Class IRI="#PeribronchialLymphNode"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#HilarLymphNode"/>
+        <Class IRI="#ScaleneLimphNode"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#HilarLymphNode"/>
+        <Class IRI="#SubcarinalLymphNode"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#HilarLymphNode"/>
+        <Class IRI="#SupraclavicularLymphNode"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#IntrapulmonaryNode"/>
+        <Class IRI="#MediastinalLymphNode"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#IntrapulmonaryNode"/>
+        <Class IRI="#PeribronchialLymphNode"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#IntrapulmonaryNode"/>
+        <Class IRI="#ScaleneLimphNode"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#IntrapulmonaryNode"/>
+        <Class IRI="#SubcarinalLymphNode"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#IntrapulmonaryNode"/>
+        <Class IRI="#SupraclavicularLymphNode"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#LeftAnatomicalStructure"/>
+        <Class IRI="#RightAnatomicalStructure"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Liver"/>
+        <Class IRI="#LymphNode"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Liver"/>
+        <Class IRI="#Mediastinum"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Liver"/>
+        <Class IRI="#ParietalPericardium"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Liver"/>
+        <Class IRI="#Trachea"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#LobeOfLung"/>
+        <Class IRI="#Lung"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#LobeOfLung"/>
+        <Class IRI="#LymphNode"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#LobeOfLung"/>
+        <Class IRI="#Mediastinum"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#LowerLobeOfLeftLung"/>
+        <Class IRI="#LowerLobeOfRightLung"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#LowerLobeOfLung"/>
+        <Class IRI="#MiddleLobeOfLung"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#LowerLobeOfLung"/>
+        <Class IRI="#UpperLobeOfLung"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Lung"/>
+        <Class IRI="#LymphNode"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Lung"/>
+        <Class IRI="#Mediastinum"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#LymphNode"/>
+        <Class IRI="#Mediastinum"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#LymphNode"/>
+        <Class IRI="#ParietalPericardium"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#LymphNode"/>
+        <Class IRI="#Trachea"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#MediastinalLymphNode"/>
+        <Class IRI="#PeribronchialLymphNode"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#MediastinalLymphNode"/>
+        <Class IRI="#ScaleneLimphNode"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#MediastinalLymphNode"/>
+        <Class IRI="#SubcarinalLymphNode"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#MediastinalLymphNode"/>
+        <Class IRI="#SupraclavicularLymphNode"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Mediastinum"/>
+        <Class IRI="#ParietalPericardium"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Mediastinum"/>
+        <Class IRI="#Trachea"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Metastasis"/>
+        <Class IRI="#PrimaryTumour"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#MiddleLobeOfLung"/>
+        <Class IRI="#UpperLobeOfLung"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#N0"/>
+        <Class IRI="#N1"/>
+        <Class IRI="#N2"/>
+        <Class IRI="#N3"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ParietalPericardium"/>
+        <Class IRI="#Trachea"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#PeribronchialLymphNode"/>
+        <Class IRI="#ScaleneLimphNode"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#PeribronchialLymphNode"/>
+        <Class IRI="#SubcarinalLymphNode"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#PeribronchialLymphNode"/>
+        <Class IRI="#SupraclavicularLymphNode"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ScaleneLimphNode"/>
+        <Class IRI="#SubcarinalLymphNode"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ScaleneLimphNode"/>
+        <Class IRI="#SupraclavicularLymphNode"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Side"/>
+        <Class IRI="#Tumour"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Stage1A"/>
+        <Class IRI="#Stage1B"/>
+        <Class IRI="#Stage2A"/>
+        <Class IRI="#Stage2B"/>
+        <Class IRI="#Stage3A"/>
+        <Class IRI="#Stage3B"/>
+        <Class IRI="#Stage4"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#SubcarinalLymphNode"/>
+        <Class IRI="#SupraclavicularLymphNode"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#T0"/>
+        <Class IRI="#T1"/>
+        <Class IRI="#T2a"/>
+        <Class IRI="#T2b"/>
+        <Class IRI="#T3"/>
+        <Class IRI="#T4"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#TumorBetween3cm5cm"/>
+        <Class IRI="#TumorBetween5cm7cm"/>
+        <Class IRI="#TumorGreater7cm"/>
+        <Class IRI="#TumorSmaller3cm"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#UpperLobeOfLeftLung"/>
+        <Class IRI="#UpperLobeOfRightLung"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#LungCancerExamps"/>
+        <NamedIndividual IRI="#InvasivePericardlTumorNoMets"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#LungCancerExamps"/>
+        <NamedIndividual IRI="#SmallRightLungTumourWithHilarLymphNodeMetastasis"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#LungCancerExamps"/>
+        <NamedIndividual IRI="#SmallUpperLeftLobeTumourWithoutMetastasis"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PrimaryTumour"/>
+        <NamedIndividual IRI="#TumorBetween3cm5cm"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PrimaryTumour"/>
+        <NamedIndividual IRI="#TumorBetween5cm7cm"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PrimaryTumour"/>
+        <NamedIndividual IRI="#TumorSmaller3cm"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UpperLobeOfLeftLung"/>
+        <NamedIndividual IRI="#UpperLobeOfLeftLung"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Side"/>
+        <NamedIndividual IRI="#left"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Side"/>
+        <NamedIndividual IRI="#right"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasPrimaryTumour"/>
+        <NamedIndividual IRI="#SmallRightLungTumourWithHilarLymphNodeMetastasis"/>
+        <NamedIndividual IRI="#TumorSmaller3cm"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasPrimaryTumour"/>
+        <NamedIndividual IRI="#SmallUpperLeftLobeTumourWithoutMetastasis"/>
+        <NamedIndividual IRI="#TumorSmaller3cm"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasMetastatis"/>
+        <NamedIndividual IRI="#SmallRightLungTumourWithHilarLymphNodeMetastasis"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasMetastatis"/>
+        <NamedIndividual IRI="#SmallUpperLeftLobeTumourWithoutMetastasis"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">0</Literal>
+    </DataPropertyAssertion>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasAnatomicalPart"/>
+        <ObjectProperty IRI="#isAnatomicalPartOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasLocation"/>
+        <ObjectProperty IRI="#isLocatedIn"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasMetastasis"/>
+        <ObjectProperty IRI="#isMetastasisOf"/>
+    </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#isMetastasisOf"/>
+    </FunctionalObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#hasAnatomicalPart"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#isAnatomicalPartOf"/>
+    </TransitiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasMetastasis"/>
+        <Class IRI="#PrimaryTumour"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasLocation"/>
+        <Class IRI="#AnatomicalStructure"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasMetastasis"/>
+        <Class IRI="#Metastasis"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPrimaryTumour"/>
+        <Class IRI="#PrimaryTumour"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSide"/>
+        <Class IRI="#Side"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isMetastasisOf"/>
+        <Class IRI="#PrimaryTumour"/>
+    </ObjectPropertyRange>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#LungCancerExamps"/>
+                <Variable IRI="urn:swrl#x"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#hasPrimaryTumour"/>
+                <Variable IRI="urn:swrl#x"/>
+                <NamedIndividual IRI="#TumorSmaller3cm"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ClassAtom>
+                <Class IRI="#T1"/>
+                <Variable IRI="urn:swrl#x"/>
+            </ClassAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#LungCancerExamps"/>
+                <Variable IRI="urn:swrl#x"/>
+            </ClassAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#hasMetastatis"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">0</Literal>
+            </DataPropertyAtom>
+        </Body>
+        <Head>
+            <ClassAtom>
+                <Class IRI="#M0"/>
+                <Variable IRI="urn:swrl#x"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#N0"/>
+                <Variable IRI="urn:swrl#x"/>
+            </ClassAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#M0"/>
+                <Variable IRI="urn:swrl#x"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#N0"/>
+                <Variable IRI="urn:swrl#x"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#T1"/>
+                <Variable IRI="urn:swrl#X"/>
+            </ClassAtom>
+        </Body>
+        <Head>
+            <ClassAtom>
+                <Class IRI="#Stage1ARules"/>
+                <Variable IRI="urn:swrl#x"/>
+            </ClassAtom>
+        </Head>
+    </DLSafeRule>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#LymphNode</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">All subclasses should be provided a definition involving their location</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+
