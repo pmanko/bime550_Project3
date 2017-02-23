@@ -68,47 +68,29 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 
 
 #################################################################
+#    Data properties
+#################################################################
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#hasSize
+:hasSize rdf:type owl:DatatypeProperty ,
+                  owl:FunctionalProperty ;
+         rdfs:domain :Tumor ;
+         rdfs:range xsd:float .
+
+
+#################################################################
 #    Classes
 #################################################################
 
 ###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#AnatomicalStructure
 :AnatomicalStructure rdf:type owl:Class ;
                      owl:disjointWith :Side ,
-                                      :Tumour .
+                                      :Tumor .
 
 
-###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#AxillaryLymphNode
-:AxillaryLymphNode rdf:type owl:Class ;
-                   rdfs:subClassOf :LymphNode ;
-                   owl:disjointWith :RegionalLymphNode .
-
-
-###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#HilarLymphNode
-:HilarLymphNode rdf:type owl:Class ;
-                rdfs:subClassOf :RegionalLymphNode ;
-                owl:disjointWith :IntrapulmonaryNode ,
-                                 :MediastinalLymphNode ,
-                                 :PeribronchialLymphNode ,
-                                 :ScaleneLimphNode ,
-                                 :SubcarinalLymphNode ,
-                                 :SupraclavicularLymphNode .
-
-
-###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#IntrapulmonaryNode
-:IntrapulmonaryNode rdf:type owl:Class ;
-                    rdfs:subClassOf :RegionalLymphNode ;
-                    owl:disjointWith :MediastinalLymphNode ,
-                                     :PeribronchialLymphNode ,
-                                     :ScaleneLimphNode ,
-                                     :SubcarinalLymphNode ,
-                                     :SupraclavicularLymphNode .
-
-
-###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LowerLobeOfLung
-:LowerLobeOfLung rdf:type owl:Class ;
-                 rdfs:subClassOf :Lung ;
-                 owl:disjointWith :MiddleLobeOfLung ,
-                                  :UpperLobeOfLung .
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LobeOfLung
+:LobeOfLung rdf:type owl:Class ;
+            rdfs:subClassOf :Lung .
 
 
 ###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Lung
@@ -123,25 +105,10 @@ rdfs:comment rdf:type owl:AnnotationProperty .
            rdfs:comment "All subclasses should be provided a definition involving their location"^^xsd:string .
 
 
-###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#MediastinalLymphNode
-:MediastinalLymphNode rdf:type owl:Class ;
-                      rdfs:subClassOf :RegionalLymphNode ;
-                      owl:disjointWith :PeribronchialLymphNode ,
-                                       :ScaleneLimphNode ,
-                                       :SubcarinalLymphNode ,
-                                       :SupraclavicularLymphNode .
-
-
 ###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Metastasis
 :Metastasis rdf:type owl:Class ;
-            rdfs:subClassOf :Tumour ;
+            rdfs:subClassOf :Tumor ;
             owl:disjointWith :PrimaryTumour .
-
-
-###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#MiddleLobeOfLung
-:MiddleLobeOfLung rdf:type owl:Class ;
-                  rdfs:subClassOf :Lung ;
-                  owl:disjointWith :UpperLobeOfLung .
 
 
 ###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#OccultCarcinoma
@@ -149,17 +116,13 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                  rdfs:subClassOf :StagedLungCancer .
 
 
-###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#PeribronchialLymphNode
-:PeribronchialLymphNode rdf:type owl:Class ;
-                        rdfs:subClassOf :RegionalLymphNode ;
-                        owl:disjointWith :ScaleneLimphNode ,
-                                         :SubcarinalLymphNode ,
-                                         :SupraclavicularLymphNode .
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Patient
+:Patient rdf:type owl:Class .
 
 
 ###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#PrimaryTumour
 :PrimaryTumour rdf:type owl:Class ;
-               rdfs:subClassOf :Tumour .
+               rdfs:subClassOf :Tumor .
 
 
 ###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#RegionalLymphNode
@@ -167,16 +130,9 @@ rdfs:comment rdf:type owl:AnnotationProperty .
                    rdfs:subClassOf :LymphNode .
 
 
-###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#ScaleneLimphNode
-:ScaleneLimphNode rdf:type owl:Class ;
-                  rdfs:subClassOf :RegionalLymphNode ;
-                  owl:disjointWith :SubcarinalLymphNode ,
-                                   :SupraclavicularLymphNode .
-
-
 ###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Side
 :Side rdf:type owl:Class ;
-      owl:disjointWith :Tumour .
+      owl:disjointWith :Tumor .
 
 
 ###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Stage0
@@ -223,24 +179,8 @@ rdfs:comment rdf:type owl:AnnotationProperty .
 :StagedLungCancer rdf:type owl:Class .
 
 
-###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#SubcarinalLymphNode
-:SubcarinalLymphNode rdf:type owl:Class ;
-                     rdfs:subClassOf :RegionalLymphNode ;
-                     owl:disjointWith :SupraclavicularLymphNode .
-
-
-###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#SupraclavicularLymphNode
-:SupraclavicularLymphNode rdf:type owl:Class ;
-                          rdfs:subClassOf :RegionalLymphNode .
-
-
-###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Tumour
-:Tumour rdf:type owl:Class .
-
-
-###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#UpperLobeOfLung
-:UpperLobeOfLung rdf:type owl:Class ;
-                 rdfs:subClassOf :Lung .
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Tumor
+:Tumor rdf:type owl:Class .
 
 
 ###  http://www.w3.org/2002/07/owl#Thing
@@ -250,6 +190,306 @@ owl:Thing rdf:type owl:Class .
 #################################################################
 #    Individuals
 #################################################################
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#AxillaryLymphNode
+:AxillaryLymphNode rdf:type owl:NamedIndividual ,
+                            :LymphNode .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Brain
+:Brain rdf:type owl:NamedIndividual ,
+                :AnatomicalStructure .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#ChestWall
+:ChestWall rdf:type owl:NamedIndividual ,
+                    :AnatomicalStructure .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Diaphragm
+:Diaphragm rdf:type owl:NamedIndividual ,
+                    :AnatomicalStructure .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Esophagus
+:Esophagus rdf:type owl:NamedIndividual ,
+                    :AnatomicalStructure .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Heart
+:Heart rdf:type owl:NamedIndividual ,
+                :AnatomicalStructure .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LeftHilarLymphNode
+:LeftHilarLymphNode rdf:type owl:NamedIndividual ,
+                             :RegionalLymphNode ;
+                    :hasSide :left .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LeftIntrapulmonaryNode
+:LeftIntrapulmonaryNode rdf:type owl:NamedIndividual ,
+                                 :RegionalLymphNode ;
+                        :hasSide :left .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LeftLowerLobe
+:LeftLowerLobe rdf:type owl:NamedIndividual ,
+                        :LobeOfLung ;
+               :hasSide :left .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LeftLung
+:LeftLung rdf:type owl:NamedIndividual ,
+                   :Lung ;
+          :hasSide :left .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LeftMediastinalLymphNode
+:LeftMediastinalLymphNode rdf:type owl:NamedIndividual ,
+                                   :RegionalLymphNode ;
+                          :hasSide :left .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LeftMiddleLobe
+:LeftMiddleLobe rdf:type owl:NamedIndividual ,
+                         :LobeOfLung ;
+                :hasSide :left .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LeftPeribronchialLymphNode
+:LeftPeribronchialLymphNode rdf:type owl:NamedIndividual ,
+                                     :RegionalLymphNode ;
+                            :hasSide :left .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LeftScaleneLymphNode
+:LeftScaleneLymphNode rdf:type owl:NamedIndividual ,
+                               :RegionalLymphNode ;
+                      :hasSide :left .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LeftSubcarinalLymphNode
+:LeftSubcarinalLymphNode rdf:type owl:NamedIndividual ,
+                                  :RegionalLymphNode ;
+                         :hasSide :left .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LeftSupraclavicularLymphNode
+:LeftSupraclavicularLymphNode rdf:type owl:NamedIndividual ,
+                                       :RegionalLymphNode ;
+                              :hasSide :left .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LeftUpperLobe
+:LeftUpperLobe rdf:type owl:NamedIndividual ,
+                        :LobeOfLung ;
+               :hasSide :left .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Liver
+:Liver rdf:type owl:NamedIndividual ,
+                :AnatomicalStructure .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#M1_BrainMetastasis
+:M1_BrainMetastasis rdf:type owl:NamedIndividual ,
+                             :Metastasis ;
+                    :hasLocation :Brain .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#M2_LiverMetastasis
+:M2_LiverMetastasis rdf:type owl:NamedIndividual ,
+                             :Metastasis ;
+                    :hasLocation :Liver .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#M3_RightHilarMetastasis
+:M3_RightHilarMetastasis rdf:type owl:NamedIndividual ,
+                                  :Metastasis ;
+                         :hasLocation :RightHilarLymphNode .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#M4_LeftMediastinalMetastasis
+:M4_LeftMediastinalMetastasis rdf:type owl:NamedIndividual ,
+                                       :Metastasis ;
+                              :hasLocation :LeftMediastinalLymphNode .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#M5_RightMediastinalMetastasis
+:M5_RightMediastinalMetastasis rdf:type owl:NamedIndividual ,
+                                        :Metastasis ;
+                               :hasLocation :RightMediastinalLymphNode .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Mediastinum
+:Mediastinum rdf:type owl:NamedIndividual ,
+                      :AnatomicalStructure .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#PT1_InvasiveEsophagialLungTumorNoMets
+:PT1_InvasiveEsophagialLungTumorNoMets rdf:type owl:NamedIndividual ,
+                                                :PrimaryTumour ;
+                                       :hasLocation :Esophagus .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#PT2_InvasivePericardlTumorNoMets
+:PT2_InvasivePericardlTumorNoMets rdf:type owl:NamedIndividual ,
+                                           :PrimaryTumour ;
+                                  :hasLocation :ParietalPericardium .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#PT3_LungTumorWithBrainMetastasis
+:PT3_LungTumorWithBrainMetastasis rdf:type owl:NamedIndividual ,
+                                           :PrimaryTumour ;
+                                  :hasLocation :LeftLung .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#PT4_LungTumorwithLiverMets
+:PT4_LungTumorwithLiverMets rdf:type owl:NamedIndividual ,
+                                     :PrimaryTumour ;
+                            :hasLocation :RightLung .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#PT5_SmallRightLungTumourWithHilarLymphNodeMetastasis
+:PT5_SmallRightLungTumourWithHilarLymphNodeMetastasis rdf:type owl:NamedIndividual ,
+                                                               :PrimaryTumour ;
+                                                      :hasLocation :RightLung .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#PT6_SmallUpperLeftLobeTumourWithoutMetastasis
+:PT6_SmallUpperLeftLobeTumourWithoutMetastasis rdf:type owl:NamedIndividual ,
+                                                        :PrimaryTumour ;
+                                               :hasLocation :LeftUpperLobe .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#PT7_UpperLeftLobeTumorWithLeftMediastinalMetastasis
+:PT7_UpperLeftLobeTumorWithLeftMediastinalMetastasis rdf:type owl:NamedIndividual ,
+                                                              :PrimaryTumour ;
+                                                     :hasLocation :LeftUpperLobe .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#PT8_UpperLeftLobeTumorWithRightMediastinalMetastasis
+:PT8_UpperLeftLobeTumorWithRightMediastinalMetastasis rdf:type owl:NamedIndividual ,
+                                                               :PrimaryTumour ;
+                                                      :hasLocation :LeftUpperLobe .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#ParietalPericardium
+:ParietalPericardium rdf:type owl:NamedIndividual ,
+                              :AnatomicalStructure .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Patient1
+:Patient1 rdf:type owl:NamedIndividual ,
+                   :Patient .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Patient2
+:Patient2 rdf:type owl:NamedIndividual ,
+                   :Patient .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Patient3
+:Patient3 rdf:type owl:NamedIndividual ,
+                   :Patient .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Patient4
+:Patient4 rdf:type owl:NamedIndividual ,
+                   :Patient .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Patient5
+:Patient5 rdf:type owl:NamedIndividual ,
+                   :Patient .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Patient6
+:Patient6 rdf:type owl:NamedIndividual ,
+                   :Patient .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Patient7
+:Patient7 rdf:type owl:NamedIndividual ,
+                   :Patient .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Patient8
+:Patient8 rdf:type owl:NamedIndividual ,
+                   :Patient .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#RightHilarLymphNode
+:RightHilarLymphNode rdf:type owl:NamedIndividual ,
+                              :RegionalLymphNode ;
+                     :hasSide :right .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#RightIntrapulmonaryNode
+:RightIntrapulmonaryNode rdf:type owl:NamedIndividual ,
+                                  :RegionalLymphNode ;
+                         :hasSide :right .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#RightLowerLobe
+:RightLowerLobe rdf:type owl:NamedIndividual ,
+                         :LobeOfLung ;
+                :hasSide :right .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#RightLung
+:RightLung rdf:type owl:NamedIndividual ,
+                    :Lung ;
+           :hasSide :right .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#RightMediastinalLymphNode
+:RightMediastinalLymphNode rdf:type owl:NamedIndividual ,
+                                    :RegionalLymphNode ;
+                           :hasSide :right .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#RightMiddleLobe
+:RightMiddleLobe rdf:type owl:NamedIndividual ,
+                          :LobeOfLung ;
+                 :hasSide :right .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#RightPeribronchialLymphNode
+:RightPeribronchialLymphNode rdf:type owl:NamedIndividual ,
+                                      :RegionalLymphNode ;
+                             :hasSide :right .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#RightScaleneLymphNode
+:RightScaleneLymphNode rdf:type owl:NamedIndividual ,
+                                :RegionalLymphNode ;
+                       :hasSide :right .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#RightSubcarinalLymphNode
+:RightSubcarinalLymphNode rdf:type owl:NamedIndividual ,
+                                   :RegionalLymphNode ;
+                          :hasSide :right .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#RightSupraclavicularLymphNode
+:RightSupraclavicularLymphNode rdf:type owl:NamedIndividual ,
+                                        :RegionalLymphNode ;
+                               :hasSide :right .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#RightUpperLobe
+:RightUpperLobe rdf:type owl:NamedIndividual ,
+                         :LobeOfLung ;
+                :hasSide :right .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Trachea
+:Trachea rdf:type owl:NamedIndividual ,
+                  :AnatomicalStructure .
+
 
 ###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#left
 :left rdf:type owl:NamedIndividual ,
@@ -267,9 +507,19 @@ owl:Thing rdf:type owl:Class .
 
 [ rdf:type owl:AllDisjointClasses ;
   owl:members ( :AnatomicalStructure
+                :Patient
                 :Side
                 :StagedLungCancer
-                :Tumour
+                :Tumor
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :AnatomicalStructure
+                :Side
+                :StagedLungCancer
+                :Tumor
               )
 ] .
 
