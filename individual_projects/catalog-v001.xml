@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1487818808261" name="duplicate:http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl" uri="KL_Project3.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1487818808261" name="duplicate:http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl" uri="pascal-brandt-bime-550-project-3a.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1487839676561" name="duplicate:http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl" uri="KL_Project3.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1487839676561" name="duplicate:http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl" uri="pascal-brandt-bime-550-project-3a.owl"/>
     </group>
 </catalog>
