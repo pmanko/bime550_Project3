@@ -44,11 +44,40 @@ rdfs:comment a owl:AnnotationProperty .
 	owl:inverseOf :isAnatomicalPartOf ;
 	a owl:TransitiveProperty .
 # 
+# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#hasCondition
+
+:hasCondition a owl:ObjectProperty ;
+	rdfs:domain :Patient ;
+	rdfs:range :Condition .
+# 
+# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#hasFeature
+
+:hasFeature a owl:ObjectProperty ;
+	rdfs:domain :PrimaryTumour ;
+	rdfs:range :Feature .
+# 
+# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#hasInvasionOf
+
+:hasInvasionOf a owl:ObjectProperty ;
+	rdfs:subPropertyOf owl:topObjectProperty ;
+	rdfs:domain :PrimaryTumour ;
+	rdfs:range :AnatomicalStructure .
+# 
 # http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#hasLocation
 
 :hasLocation a owl:ObjectProperty ;
 	owl:inverseOf :isLocatedIn ;
-	rdfs:range :AnatomicalStructure .
+	rdfs:range :AnatomicalStructure , :RelativeLocation .
+# 
+# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#hasLocationRelativeTo
+
+:hasLocationRelativeTo a owl:ObjectProperty ;
+	rdfs:domain :RelativeLocation .
+# 
+# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#hasMainLocation
+
+:hasMainLocation a owl:ObjectProperty ;
+	rdfs:domain :RelativeLocation .
 # 
 # http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#hasMetastasis
 
@@ -90,6 +119,12 @@ rdfs:comment a owl:AnnotationProperty .
 # #################################################################
 # 
 # 
+# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#hasDistalDistance
+
+:hasDistalDistance a owl:DatatypeProperty ;
+	rdfs:domain :RelativeLocation ;
+	rdfs:range xsd:float .
+# 
 # http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#hasSize
 
 :hasSize a owl:DatatypeProperty , owl:FunctionalProperty ;
@@ -110,6 +145,11 @@ rdfs:comment a owl:AnnotationProperty .
 :AnatomicalStructure a owl:Class ;
 	owl:disjointWith :Side , :Tumor .
 # 
+# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Atelectasis
+
+:Atelectasis a owl:Class ;
+	rdfs:subClassOf :Condition .
+# 
 # http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#AxillaryLymphNode
 
 :AxillaryLymphNode a owl:Class ;
@@ -121,9 +161,22 @@ rdfs:comment a owl:AnnotationProperty .
 	rdfs:subClassOf :AnatomicalStructure ;
 	owl:disjointWith :Lung , :LymphNode .
 # 
+# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Bronchi
+
+:Bronchi a owl:Class ;
+	rdfs:subClassOf :Lung .
+# 
 # http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#CancerDiagnosis
 
 :CancerDiagnosis a owl:Class .
+# 
+# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Condition
+
+:Condition a owl:Class .
+# 
+# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Feature
+
+:Feature a owl:Class .
 # 
 # http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#HilarLymphNode
 
@@ -214,6 +267,11 @@ rdfs:comment a owl:AnnotationProperty .
 :NonVital a owl:Class ;
 	rdfs:subClassOf :Body .
 # 
+# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#ObstructivePneumonitis
+
+:ObstructivePneumonitis a owl:Class ;
+	rdfs:subClassOf :Condition .
+# 
 # http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#OccultCarcinoma
 
 :OccultCarcinoma a owl:Class ;
@@ -237,6 +295,10 @@ rdfs:comment a owl:AnnotationProperty .
 
 :RegionalLymphNode a owl:Class ;
 	rdfs:subClassOf :LymphNode .
+# 
+# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#RelativeLocation
+
+:RelativeLocation a owl:Class .
 # 
 # http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#ScaleneLymphNode
 
@@ -382,6 +444,17 @@ owl:Thing a owl:Class .
 
 :Brain a owl:NamedIndividual , :Vital .
 # 
+# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Bronchus1
+
+:Bronchus1 a owl:NamedIndividual , :RelativeLocation ;
+	:hasLocationRelativeTo :Carina ;
+	:hasMainLocation :LeftBronchus ;
+	:hasDistalDistance "1.4"^^xsd:decimal .
+# 
+# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Carina
+
+:Carina a owl:NamedIndividual , :Vital .
+# 
 # http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#ChestWall
 
 :ChestWall a owl:NamedIndividual , :NonVital .
@@ -394,9 +467,26 @@ owl:Thing a owl:Class .
 
 :Esophagus a owl:NamedIndividual , :Vital .
 # 
+# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#FullAtelectasis
+
+:FullAtelectasis a owl:NamedIndividual , :Atelectasis .
+# 
+# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#FullObstructivePneumonitis
+
+:FullObstructivePneumonitis a owl:NamedIndividual , :ObstructivePneumonitis .
+# 
+# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#GreatVessel
+
+:GreatVessel a owl:NamedIndividual , :Vital .
+# 
 # http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Heart
 
 :Heart a owl:NamedIndividual , :Vital .
+# 
+# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LeftBronchus
+
+:LeftBronchus a owl:NamedIndividual , :Bronchi ;
+	:hasSide :left .
 # 
 # http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LeftHilarLymphNode
 
@@ -479,11 +569,24 @@ owl:Thing a owl:Class .
 # 
 # http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#M5_RightMediastinalMetastasis
 
-:M5_RightMediastinalMetastasis a owl:NamedIndividual , :Metastasis .
+:M5_RightMediastinalMetastasis a owl:NamedIndividual , :Metastasis ;
+	:hasLocation :LeftMediastinalLymphNode .
+# 
+# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#MalignantPlueuralEffusion
+
+:MalignantPlueuralEffusion a owl:NamedIndividual , :Feature .
+# 
+# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#MediastinalPleura
+
+:MediastinalPleura a owl:NamedIndividual , :NonVital .
 # 
 # http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Mediastinum
 
 :Mediastinum a owl:NamedIndividual , :Vital .
+# 
+# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#NoMetastasis
+
+:NoMetastasis a owl:NamedIndividual , :Metastasis .
 # 
 # http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#PT1_InvasiveEsophagialLungTumorNoMets
 
@@ -528,9 +631,27 @@ owl:Thing a owl:Class .
 :PT8_UpperLeftLobeTumorWithRightMediastinalMetastasis a owl:NamedIndividual , :PrimaryTumour ;
 	:hasLocation :LeftUpperLobe .
 # 
+# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#PT9_SmallLungTumorBronchusPartialAtelectasis
+
+:PT9_SmallLungTumorBronchusPartialAtelectasis a owl:NamedIndividual , :PrimaryTumour ;
+	:hasLocation :Bronchus1 ;
+	:hasSize "4.2"^^xsd:decimal .
+# 
 # http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#ParietalPericardium
 
 :ParietalPericardium a owl:NamedIndividual , :NonVital .
+# 
+# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#ParietalPleura
+
+:ParietalPleura a owl:NamedIndividual , :NonVital .
+# 
+# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#PartialAtelectasis
+
+:PartialAtelectasis a owl:NamedIndividual , :Atelectasis .
+# 
+# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#PartialObstructivePneumonitis
+
+:PartialObstructivePneumonitis a owl:NamedIndividual , :ObstructivePneumonitis .
 # 
 # http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Patient1
 
@@ -576,6 +697,29 @@ owl:Thing a owl:Class .
 :Patient8 a owl:NamedIndividual , :Patient ;
 	:hasMetastasis :M5_RightMediastinalMetastasis ;
 	:hasPrimaryTumour :PT8_UpperLeftLobeTumorWithRightMediastinalMetastasis .
+# 
+# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Patient9
+
+:Patient9 a owl:NamedIndividual , :Patient ;
+	:hasCondition :PartialAtelectasis ;
+	:hasPrimaryTumour :PT9_SmallLungTumorBronchusPartialAtelectasis .
+# 
+# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#PhrenicNerve
+
+:PhrenicNerve a owl:NamedIndividual , :NonVital .
+# 
+# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#PleuralNodule
+
+:PleuralNodule a owl:NamedIndividual , :Feature .
+# 
+# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#RecurrentLaryngealNerve
+
+:RecurrentLaryngealNerve a owl:NamedIndividual , :Vital .
+# 
+# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#RightBronchus
+
+:RightBronchus a owl:NamedIndividual , :Bronchi ;
+	:hasSide :right .
 # 
 # http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#RightHilarLymphNode
 
@@ -636,6 +780,10 @@ owl:Thing a owl:Class .
 
 :Trachea a owl:NamedIndividual , :Vital .
 # 
+# http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#VertebralBody
+
+:VertebralBody a owl:NamedIndividual , :Vital .
+# 
 # http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#left
 
 :left a owl:NamedIndividual , :Side .
@@ -655,101 +803,169 @@ owl:Thing a owl:Class .
 # 
 
 _:genid1 a owl:AllDisjointClasses ;
-	owl:members _:genid4 .
-
-_:genid4 a rdf:List ;
-	rdf:first :LowerLobeOfLung ;
-	rdf:rest _:genid3 .
-
-_:genid3 a rdf:List ;
-	rdf:first :MiddleLobeOfLung ;
-	rdf:rest _:genid2 .
-
-_:genid2 a rdf:List ;
-	rdf:first :UpperLobeOfLung ;
-	rdf:rest rdf:nil .
-# 
-
-_:genid5 a owl:AllDisjointClasses ;
 	owl:members _:genid9 .
 
 _:genid9 a rdf:List ;
-	rdf:first :N0 ;
+	rdf:first :AnatomicalStructure ;
 	rdf:rest _:genid8 .
 
 _:genid8 a rdf:List ;
-	rdf:first :N1 ;
+	rdf:first :CancerDiagnosis ;
 	rdf:rest _:genid7 .
 
 _:genid7 a rdf:List ;
-	rdf:first :N2 ;
+	rdf:first :Condition ;
 	rdf:rest _:genid6 .
 
 _:genid6 a rdf:List ;
-	rdf:first :N3 ;
+	rdf:first :Feature ;
+	rdf:rest _:genid5 .
+
+_:genid5 a rdf:List ;
+	rdf:first :Patient ;
+	rdf:rest _:genid4 .
+
+_:genid4 a rdf:List ;
+	rdf:first :Side ;
+	rdf:rest _:genid3 .
+
+_:genid3 a rdf:List ;
+	rdf:first :StagedLungCancer ;
+	rdf:rest _:genid2 .
+
+_:genid2 a rdf:List ;
+	rdf:first :Tumor ;
 	rdf:rest rdf:nil .
 # 
 
 _:genid10 a owl:AllDisjointClasses ;
-	owl:members _:genid19 .
-
-_:genid19 a rdf:List ;
-	rdf:first :OccultCarcinoma ;
-	rdf:rest _:genid18 .
-
-_:genid18 a rdf:List ;
-	rdf:first :Stage0 ;
-	rdf:rest _:genid17 .
+	owl:members _:genid17 .
 
 _:genid17 a rdf:List ;
-	rdf:first :StageIA ;
+	rdf:first :AnatomicalStructure ;
 	rdf:rest _:genid16 .
 
 _:genid16 a rdf:List ;
-	rdf:first :StageIB ;
+	rdf:first :CancerDiagnosis ;
 	rdf:rest _:genid15 .
 
 _:genid15 a rdf:List ;
-	rdf:first :StageIIA ;
+	rdf:first :Feature ;
 	rdf:rest _:genid14 .
 
 _:genid14 a rdf:List ;
-	rdf:first :StageIIB ;
+	rdf:first :Patient ;
 	rdf:rest _:genid13 .
 
 _:genid13 a rdf:List ;
-	rdf:first :StageIIIA ;
+	rdf:first :Side ;
 	rdf:rest _:genid12 .
 
 _:genid12 a rdf:List ;
-	rdf:first :StageIIIB ;
+	rdf:first :StagedLungCancer ;
 	rdf:rest _:genid11 .
 
 _:genid11 a rdf:List ;
+	rdf:first :Tumor ;
+	rdf:rest rdf:nil .
+# 
+
+_:genid18 a owl:AllDisjointClasses ;
+	owl:members _:genid21 .
+
+_:genid21 a rdf:List ;
+	rdf:first :LowerLobeOfLung ;
+	rdf:rest _:genid20 .
+
+_:genid20 a rdf:List ;
+	rdf:first :MiddleLobeOfLung ;
+	rdf:rest _:genid19 .
+
+_:genid19 a rdf:List ;
+	rdf:first :UpperLobeOfLung ;
+	rdf:rest rdf:nil .
+# 
+
+_:genid22 a owl:AllDisjointClasses ;
+	owl:members _:genid26 .
+
+_:genid26 a rdf:List ;
+	rdf:first :N0 ;
+	rdf:rest _:genid25 .
+
+_:genid25 a rdf:List ;
+	rdf:first :N1 ;
+	rdf:rest _:genid24 .
+
+_:genid24 a rdf:List ;
+	rdf:first :N2 ;
+	rdf:rest _:genid23 .
+
+_:genid23 a rdf:List ;
+	rdf:first :N3 ;
+	rdf:rest rdf:nil .
+# 
+
+_:genid27 a owl:AllDisjointClasses ;
+	owl:members _:genid36 .
+
+_:genid36 a rdf:List ;
+	rdf:first :OccultCarcinoma ;
+	rdf:rest _:genid35 .
+
+_:genid35 a rdf:List ;
+	rdf:first :Stage0 ;
+	rdf:rest _:genid34 .
+
+_:genid34 a rdf:List ;
+	rdf:first :StageIA ;
+	rdf:rest _:genid33 .
+
+_:genid33 a rdf:List ;
+	rdf:first :StageIB ;
+	rdf:rest _:genid32 .
+
+_:genid32 a rdf:List ;
+	rdf:first :StageIIA ;
+	rdf:rest _:genid31 .
+
+_:genid31 a rdf:List ;
+	rdf:first :StageIIB ;
+	rdf:rest _:genid30 .
+
+_:genid30 a rdf:List ;
+	rdf:first :StageIIIA ;
+	rdf:rest _:genid29 .
+
+_:genid29 a rdf:List ;
+	rdf:first :StageIIIB ;
+	rdf:rest _:genid28 .
+
+_:genid28 a rdf:List ;
 	rdf:first :StageIV ;
 	rdf:rest rdf:nil .
 # 
 
-_:genid20 a owl:AllDisjointClasses ;
-	owl:members _:genid25 .
+_:genid37 a owl:AllDisjointClasses ;
+	owl:members _:genid42 .
 
-_:genid25 a rdf:List ;
+_:genid42 a rdf:List ;
 	rdf:first :T0 ;
-	rdf:rest _:genid24 .
+	rdf:rest _:genid41 .
 
-_:genid24 a rdf:List ;
+_:genid41 a rdf:List ;
 	rdf:first :T1 ;
-	rdf:rest _:genid23 .
+	rdf:rest _:genid40 .
 
-_:genid23 a rdf:List ;
+_:genid40 a rdf:List ;
 	rdf:first :T2 ;
-	rdf:rest _:genid22 .
+	rdf:rest _:genid39 .
 
-_:genid22 a rdf:List ;
+_:genid39 a rdf:List ;
 	rdf:first :T3 ;
-	rdf:rest _:genid21 .
+	rdf:rest _:genid38 .
 
-_:genid21 a rdf:List ;
+_:genid38 a rdf:List ;
 	rdf:first :T4 ;
 	rdf:rest rdf:nil .
 # 
@@ -787,178 +1003,178 @@ _:genid21 a rdf:List ;
 
 <urn:swrl#s> a swrl:Variable .
 
-_:genid26 a swrl:Imp ;
-	swrl:body _:genid33 .
+_:genid113 a swrl:Imp ;
+	swrl:body _:genid120 .
 
-_:genid33 a swrl:AtomList ;
-	rdf:first _:genid34 .
+_:genid120 a swrl:AtomList ;
+	rdf:first _:genid77 .
 
-_:genid34 a swrl:IndividualPropertyAtom ;
-	swrl:propertyPredicate :hasPrimaryTumour ;
-	swrl:argument1 <urn:swrl#x> ;
-	swrl:argument2 <urn:swrl#y> .
-
-_:genid33 rdf:rest _:genid31 .
-
-_:genid31 a swrl:AtomList ;
-	rdf:first _:genid32 .
-
-_:genid32 a swrl:ClassAtom ;
-	swrl:classPredicate :Patient ;
-	swrl:argument1 <urn:swrl#x> .
-
-_:genid31 rdf:rest _:genid29 .
-
-_:genid29 a swrl:AtomList ;
-	rdf:first _:genid30 .
-
-_:genid30 a swrl:IndividualPropertyAtom ;
-	swrl:propertyPredicate :hasLocation ;
-	swrl:argument1 <urn:swrl#y> ;
-	swrl:argument2 <urn:swrl#z> .
-
-_:genid29 rdf:rest _:genid27 .
-
-_:genid27 a swrl:AtomList ;
-	rdf:first _:genid28 .
-
-_:genid28 a swrl:ClassAtom ;
-	swrl:classPredicate :NonVital ;
-	swrl:argument1 <urn:swrl#z> .
-
-_:genid27 rdf:rest rdf:nil .
-
-_:genid26 swrl:head _:genid35 .
-
-_:genid35 a swrl:AtomList ;
-	rdf:first _:genid36 .
-
-_:genid36 a swrl:ClassAtom ;
-	swrl:classPredicate :T3 ;
-	swrl:argument1 <urn:swrl#x> .
-
-_:genid35 rdf:rest rdf:nil .
-
-_:genid37 <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
-	rdfs:comment ""^^xsd:string ;
-	rdfs:label "T2a_Rule"^^xsd:string ;
-	a swrl:Imp ;
-	swrl:body _:genid50 .
-
-_:genid50 a swrl:AtomList ;
-	rdf:first _:genid6 .
-
-_:genid6 a swrl:ClassAtom ;
-	swrl:classPredicate :Patient ;
-	swrl:argument1 :p .
-
-_:genid50 rdf:rest _:genid48 .
-
-_:genid48 a swrl:AtomList ;
-	rdf:first _:genid12 .
-
-_:genid12 a swrl:IndividualPropertyAtom ;
-	swrl:propertyPredicate :hasPrimaryTumour ;
-	swrl:argument1 :p ;
-	swrl:argument2 :t .
-
-_:genid48 rdf:rest _:genid46 .
-
-_:genid46 a swrl:AtomList ;
-	rdf:first _:genid8 .
-
-_:genid8 a swrl:DatavaluedPropertyAtom ;
-	swrl:propertyPredicate :hasSize ;
-	swrl:argument1 :t ;
-	swrl:argument2 :s .
-
-_:genid46 rdf:rest _:genid42 .
-
-_:genid42 a swrl:AtomList ;
-	rdf:first _:genid43 .
-
-_:genid43 a swrl:BuiltinAtom ;
+_:genid77 a swrl:BuiltinAtom ;
 	swrl:builtin swrlb:greaterThanOrEqual .
 
 swrlb:greaterThanOrEqual a swrl:Builtin .
 
-_:genid43 swrl:arguments _:genid45 .
+_:genid77 swrl:arguments _:genid79 .
 
-_:genid45 a rdf:List ;
+_:genid79 a rdf:List ;
 	rdf:first :s ;
-	rdf:rest _:genid44 .
+	rdf:rest _:genid78 .
 
-_:genid44 a rdf:List ;
-	rdf:first "3.0"^^xsd:float ;
+_:genid78 a rdf:List ;
+	rdf:first "5.0"^^xsd:float ;
 	rdf:rest rdf:nil .
 
-_:genid42 rdf:rest _:genid38 .
+_:genid120 rdf:rest _:genid119 .
 
-_:genid38 a swrl:AtomList ;
-	rdf:first _:genid39 .
+_:genid119 a swrl:AtomList ;
+	rdf:first _:genid73 .
 
-_:genid39 a swrl:BuiltinAtom ;
+_:genid73 a swrl:BuiltinAtom ;
 	swrl:builtin swrlb:lessThan .
 
 swrlb:lessThan a swrl:Builtin .
 
-_:genid39 swrl:arguments _:genid41 .
+_:genid73 swrl:arguments _:genid75 .
 
-_:genid41 a rdf:List ;
+_:genid75 a rdf:List ;
 	rdf:first :s ;
-	rdf:rest _:genid40 .
+	rdf:rest _:genid74 .
 
-_:genid40 a rdf:List ;
-	rdf:first "5.0"^^xsd:float ;
+_:genid74 a rdf:List ;
+	rdf:first "7.0"^^xsd:float ;
 	rdf:rest rdf:nil .
 
-_:genid38 rdf:rest rdf:nil .
+_:genid119 rdf:rest _:genid118 .
 
-_:genid37 swrl:head _:genid52 .
+_:genid118 a swrl:AtomList ;
+	rdf:first _:genid76 .
+
+_:genid76 a swrl:AtomList ;
+	rdf:first _:genid77 ;
+	rdf:rest _:genid72 .
+
+_:genid72 a swrl:AtomList ;
+	rdf:first _:genid73 ;
+	rdf:rest rdf:nil .
+
+_:genid118 rdf:rest _:genid114 .
+
+_:genid114 a swrl:AtomList ;
+	rdf:first _:genid115 .
+
+_:genid115 a swrl:BuiltinAtom ;
+	swrl:builtin swrlb:lessThan ;
+	swrl:arguments _:genid117 .
+
+_:genid117 a rdf:List ;
+	rdf:first <urn:swrl#s> ;
+	rdf:rest _:genid116 .
+
+_:genid116 a rdf:List ;
+	rdf:first "2.0"^^xsd:float ;
+	rdf:rest rdf:nil .
+
+_:genid114 rdf:rest rdf:nil .
+
+_:genid113 swrl:head _:genid121 .
+
+_:genid121 a swrl:AtomList ;
+	rdf:first _:genid122 .
+
+_:genid122 a swrl:ClassAtom ;
+	swrl:classPredicate :T1a ;
+	swrl:argument1 <urn:swrl#p> .
+
+_:genid121 rdf:rest rdf:nil .
+
+_:genid43 a swrl:Imp ;
+	swrl:body _:genid50 .
+
+_:genid50 a swrl:AtomList ;
+	rdf:first _:genid51 .
+
+_:genid51 a swrl:IndividualPropertyAtom ;
+	swrl:propertyPredicate :hasPrimaryTumour ;
+	swrl:argument1 <urn:swrl#x> ;
+	swrl:argument2 <urn:swrl#y> .
+
+_:genid50 rdf:rest _:genid48 .
+
+_:genid48 a swrl:AtomList ;
+	rdf:first _:genid49 .
+
+_:genid49 a swrl:ClassAtom ;
+	swrl:classPredicate :Patient ;
+	swrl:argument1 <urn:swrl#x> .
+
+_:genid48 rdf:rest _:genid46 .
+
+_:genid46 a swrl:AtomList ;
+	rdf:first _:genid47 .
+
+_:genid47 a swrl:IndividualPropertyAtom ;
+	swrl:propertyPredicate :hasLocation ;
+	swrl:argument1 <urn:swrl#y> ;
+	swrl:argument2 <urn:swrl#z> .
+
+_:genid46 rdf:rest _:genid44 .
+
+_:genid44 a swrl:AtomList ;
+	rdf:first _:genid45 .
+
+_:genid45 a swrl:ClassAtom ;
+	swrl:classPredicate :NonVital ;
+	swrl:argument1 <urn:swrl#z> .
+
+_:genid44 rdf:rest rdf:nil .
+
+_:genid43 swrl:head _:genid52 .
 
 _:genid52 a swrl:AtomList ;
 	rdf:first _:genid53 .
 
 _:genid53 a swrl:ClassAtom ;
-	swrl:classPredicate :T2a ;
-	swrl:argument1 :p .
+	swrl:classPredicate :T3 ;
+	swrl:argument1 <urn:swrl#x> .
 
 _:genid52 rdf:rest rdf:nil .
 
 _:genid54 <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
-	rdfs:comment "Some comment"^^xsd:string ;
-	rdfs:label "T2b_Rule"^^xsd:string ;
+	rdfs:comment ""^^xsd:string ;
+	rdfs:label "T2a_Rule"^^xsd:string ;
 	a swrl:Imp ;
-	swrl:body _:genid65 .
+	swrl:body _:genid67 .
 
-_:genid65 a swrl:AtomList ;
-	rdf:first _:genid5 .
+_:genid67 a swrl:AtomList ;
+	rdf:first _:genid81 .
 
-_:genid5 a swrl:ClassAtom ;
-	swrl:classPredicate :Patient ;
+_:genid81 a swrl:AtomList ;
+	rdf:first _:genid83 .
+
+_:genid83 a swrl:AtomList ;
+	rdf:first _:genid84 .
+
+_:genid84 a swrl:ClassAtom ;
+	swrl:classPredicate :T2b ;
 	swrl:argument1 :p .
 
-_:genid65 rdf:rest _:genid64 .
+_:genid83 rdf:rest rdf:nil .
 
-_:genid64 a swrl:AtomList ;
-	rdf:first _:genid11 .
+_:genid81 rdf:rest _:genid80 .
 
-_:genid11 a swrl:IndividualPropertyAtom ;
-	swrl:propertyPredicate :hasPrimaryTumour ;
-	swrl:argument1 :p ;
-	swrl:argument2 :t .
+_:genid80 a swrl:AtomList ;
+	rdf:first _:genid79 ;
+	rdf:rest _:genid76 .
 
-_:genid64 rdf:rest _:genid63 .
+_:genid67 rdf:rest _:genid65 .
+
+_:genid65 a swrl:AtomList ;
+	rdf:first _:genid84 ;
+	rdf:rest _:genid63 .
 
 _:genid63 a swrl:AtomList ;
-	rdf:first _:genid7 .
-
-_:genid7 a swrl:DatavaluedPropertyAtom ;
-	swrl:propertyPredicate :hasSize ;
-	swrl:argument1 :t ;
-	swrl:argument2 :s .
-
-_:genid63 rdf:rest _:genid59 .
+	rdf:first _:genid80 ;
+	rdf:rest _:genid59 .
 
 _:genid59 a swrl:AtomList ;
 	rdf:first _:genid60 .
@@ -972,7 +1188,7 @@ _:genid62 a rdf:List ;
 	rdf:rest _:genid61 .
 
 _:genid61 a rdf:List ;
-	rdf:first "5.0"^^xsd:float ;
+	rdf:first "3.0"^^xsd:float ;
 	rdf:rest rdf:nil .
 
 _:genid59 rdf:rest _:genid55 .
@@ -989,183 +1205,118 @@ _:genid58 a rdf:List ;
 	rdf:rest _:genid57 .
 
 _:genid57 a rdf:List ;
-	rdf:first "7.0"^^xsd:float ;
+	rdf:first "5.0"^^xsd:float ;
 	rdf:rest rdf:nil .
 
 _:genid55 rdf:rest rdf:nil .
 
-_:genid54 swrl:head _:genid66 .
-
-_:genid66 a swrl:AtomList ;
-	rdf:first _:genid67 .
-
-_:genid67 a swrl:ClassAtom ;
-	swrl:classPredicate :T2b ;
-	swrl:argument1 :p .
-
-_:genid66 rdf:rest rdf:nil .
-
-_:genid68 <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
-	rdfs:comment ""^^xsd:string ;
-	rdfs:label "T4_Rule"^^xsd:string ;
-	a swrl:Imp ;
-	swrl:body _:genid75 .
-
-_:genid75 a swrl:AtomList ;
-	rdf:first _:genid76 .
-
-_:genid76 a swrl:IndividualPropertyAtom ;
-	swrl:propertyPredicate :hasPrimaryTumour ;
-	swrl:argument1 :x ;
-	swrl:argument2 :y .
-
-_:genid75 rdf:rest _:genid73 .
-
-_:genid73 a swrl:AtomList ;
-	rdf:first _:genid74 .
-
-_:genid74 a swrl:ClassAtom ;
-	swrl:classPredicate :Patient ;
-	swrl:argument1 :x .
-
-_:genid73 rdf:rest _:genid71 .
-
-_:genid71 a swrl:AtomList ;
-	rdf:first _:genid72 .
-
-_:genid72 a swrl:IndividualPropertyAtom ;
-	swrl:propertyPredicate :hasLocation ;
-	swrl:argument1 :y ;
-	swrl:argument2 :z .
-
-_:genid71 rdf:rest _:genid69 .
+_:genid54 swrl:head _:genid69 .
 
 _:genid69 a swrl:AtomList ;
 	rdf:first _:genid70 .
 
 _:genid70 a swrl:ClassAtom ;
-	swrl:classPredicate :Vital ;
-	swrl:argument1 :z .
+	swrl:classPredicate :T2a ;
+	swrl:argument1 :p .
 
 _:genid69 rdf:rest rdf:nil .
 
-_:genid68 swrl:head _:genid77 .
+_:genid71 <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+	rdfs:comment "Some comment"^^xsd:string ;
+	rdfs:label "T2b_Rule"^^xsd:string ;
+	a swrl:Imp ;
+	swrl:body _:genid82 .
 
-_:genid77 a swrl:AtomList ;
-	rdf:first _:genid78 .
+_:genid82 a swrl:AtomList ;
+	rdf:first _:genid82 ;
+	rdf:rest _:genid81 .
 
-_:genid78 a swrl:ClassAtom ;
-	swrl:classPredicate :T4 ;
-	swrl:argument1 :x .
+_:genid71 swrl:head _:genid83 .
 
-_:genid77 rdf:rest rdf:nil .
-
-_:genid79 a swrl:Imp ;
+_:genid85 <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+	rdfs:comment ""^^xsd:string ;
+	rdfs:label "T4_Rule"^^xsd:string ;
+	a swrl:Imp ;
 	swrl:body _:genid92 .
 
 _:genid92 a swrl:AtomList ;
-	rdf:first _:genid2 .
+	rdf:first _:genid93 .
 
-_:genid2 a swrl:ClassAtom ;
-	swrl:classPredicate :Patient ;
-	swrl:argument1 <urn:swrl#p> .
+_:genid93 a swrl:IndividualPropertyAtom ;
+	swrl:propertyPredicate :hasPrimaryTumour ;
+	swrl:argument1 :x ;
+	swrl:argument2 :y .
 
 _:genid92 rdf:rest _:genid90 .
 
 _:genid90 a swrl:AtomList ;
-	rdf:first _:genid4 .
+	rdf:first _:genid91 .
 
-_:genid4 a swrl:IndividualPropertyAtom ;
-	swrl:propertyPredicate :hasPrimaryTumour ;
-	swrl:argument1 <urn:swrl#p> ;
-	swrl:argument2 <urn:swrl#t> .
+_:genid91 a swrl:ClassAtom ;
+	swrl:classPredicate :Patient ;
+	swrl:argument1 :x .
 
 _:genid90 rdf:rest _:genid88 .
 
 _:genid88 a swrl:AtomList ;
-	rdf:first _:genid10 .
+	rdf:first _:genid89 .
 
-_:genid10 a swrl:DatavaluedPropertyAtom ;
-	swrl:propertyPredicate :hasSize ;
-	swrl:argument1 <urn:swrl#t> ;
-	swrl:argument2 <urn:swrl#s> .
+_:genid89 a swrl:IndividualPropertyAtom ;
+	swrl:propertyPredicate :hasLocation ;
+	swrl:argument1 :y ;
+	swrl:argument2 :z .
 
-_:genid88 rdf:rest _:genid84 .
+_:genid88 rdf:rest _:genid86 .
 
-_:genid84 a swrl:AtomList ;
-	rdf:first _:genid85 .
+_:genid86 a swrl:AtomList ;
+	rdf:first _:genid87 .
 
-_:genid85 a swrl:BuiltinAtom ;
-	swrl:builtin swrlb:greaterThanOrEqual ;
-	swrl:arguments _:genid87 .
+_:genid87 a swrl:ClassAtom ;
+	swrl:classPredicate :Vital ;
+	swrl:argument1 :z .
 
-_:genid87 a rdf:List ;
-	rdf:first <urn:swrl#s> ;
-	rdf:rest _:genid86 .
+_:genid86 rdf:rest rdf:nil .
 
-_:genid86 a rdf:List ;
-	rdf:first "2.0"^^xsd:float ;
-	rdf:rest rdf:nil .
-
-_:genid84 rdf:rest _:genid80 .
-
-_:genid80 a swrl:AtomList ;
-	rdf:first _:genid81 .
-
-_:genid81 a swrl:BuiltinAtom ;
-	swrl:builtin swrlb:lessThan ;
-	swrl:arguments _:genid83 .
-
-_:genid83 a rdf:List ;
-	rdf:first <urn:swrl#s> ;
-	rdf:rest _:genid82 .
-
-_:genid82 a rdf:List ;
-	rdf:first "3.0"^^xsd:float ;
-	rdf:rest rdf:nil .
-
-_:genid80 rdf:rest rdf:nil .
-
-_:genid79 swrl:head _:genid94 .
+_:genid85 swrl:head _:genid94 .
 
 _:genid94 a swrl:AtomList ;
 	rdf:first _:genid95 .
 
 _:genid95 a swrl:ClassAtom ;
-	swrl:classPredicate :T1b ;
-	swrl:argument1 <urn:swrl#p> .
+	swrl:classPredicate :T4 ;
+	swrl:argument1 :x .
 
 _:genid94 rdf:rest rdf:nil .
 
 _:genid96 a swrl:Imp ;
-	swrl:body _:genid103 .
+	swrl:body _:genid109 .
 
-_:genid103 a swrl:AtomList ;
-	rdf:first _:genid1 .
+_:genid109 a swrl:AtomList ;
+	rdf:first _:genid78 ;
+	rdf:rest _:genid107 .
 
-_:genid1 a swrl:ClassAtom ;
-	swrl:classPredicate :Patient ;
-	swrl:argument1 <urn:swrl#p> .
+_:genid107 a swrl:AtomList ;
+	rdf:first _:genid74 ;
+	rdf:rest _:genid105 .
 
-_:genid103 rdf:rest _:genid102 .
-
-_:genid102 a swrl:AtomList ;
-	rdf:first _:genid3 .
-
-_:genid3 a swrl:IndividualPropertyAtom ;
-	swrl:propertyPredicate :hasPrimaryTumour ;
-	swrl:argument1 <urn:swrl#p> ;
-	swrl:argument2 <urn:swrl#t> .
-
-_:genid102 rdf:rest _:genid101 .
+_:genid105 a swrl:AtomList ;
+	rdf:first _:genid75 ;
+	rdf:rest _:genid101 .
 
 _:genid101 a swrl:AtomList ;
-	rdf:first _:genid9 .
+	rdf:first _:genid102 .
 
-_:genid9 a swrl:DatavaluedPropertyAtom ;
-	swrl:propertyPredicate :hasSize ;
-	swrl:argument1 <urn:swrl#t> ;
-	swrl:argument2 <urn:swrl#s> .
+_:genid102 a swrl:BuiltinAtom ;
+	swrl:builtin swrlb:greaterThanOrEqual ;
+	swrl:arguments _:genid104 .
+
+_:genid104 a rdf:List ;
+	rdf:first <urn:swrl#s> ;
+	rdf:rest _:genid103 .
+
+_:genid103 a rdf:List ;
+	rdf:first "2.0"^^xsd:float ;
+	rdf:rest rdf:nil .
 
 _:genid101 rdf:rest _:genid97 .
 
@@ -1181,19 +1332,19 @@ _:genid100 a rdf:List ;
 	rdf:rest _:genid99 .
 
 _:genid99 a rdf:List ;
-	rdf:first "2.0"^^xsd:float ;
+	rdf:first "3.0"^^xsd:float ;
 	rdf:rest rdf:nil .
 
 _:genid97 rdf:rest rdf:nil .
 
-_:genid96 swrl:head _:genid104 .
+_:genid96 swrl:head _:genid111 .
 
-_:genid104 a swrl:AtomList ;
-	rdf:first _:genid105 .
+_:genid111 a swrl:AtomList ;
+	rdf:first _:genid112 .
 
-_:genid105 a swrl:ClassAtom ;
-	swrl:classPredicate :T1a ;
+_:genid112 a swrl:ClassAtom ;
+	swrl:classPredicate :T1b ;
 	swrl:argument1 <urn:swrl#p> .
 
-_:genid104 rdf:rest rdf:nil .
+_:genid111 rdf:rest rdf:nil .
 # Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi
