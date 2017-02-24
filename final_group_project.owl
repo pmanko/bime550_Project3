@@ -375,6 +375,12 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
     
 
 
+    <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Feature -->
+
+    <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Feature"/>
+    
+
+
     <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#FullAtelectasis -->
 
     <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#FullAtelectasis">
@@ -922,6 +928,14 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
     
 
 
+    <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#MalignantPlueuralEffusion -->
+
+    <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#MalignantPlueuralEffusion">
+        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Feature"/>
+    </owl:Class>
+    
+
+
     <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#MediastinalLymphNode -->
 
     <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#MediastinalLymphNode">
@@ -1205,6 +1219,14 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
         <owl:disjointWith rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#ScaleneLimphNode"/>
         <owl:disjointWith rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#SubcarinalLymphNode"/>
         <owl:disjointWith rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#SupraclavicularLymphNode"/>
+    </owl:Class>
+    
+
+
+    <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#PleuralNodule -->
+
+    <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#PleuralNodule">
+        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Feature"/>
     </owl:Class>
     
 
