@@ -612,6 +612,12 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
                 <owl:someValuesFrom rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#PleuralNodule"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#hasPrimaryTumour"/>
+                <owl:someValuesFrom rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#TumorBetween2cm3cm"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
