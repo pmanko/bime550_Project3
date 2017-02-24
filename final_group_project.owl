@@ -211,10 +211,18 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
     
 
 
+    <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Body -->
+
+    <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Body">
+        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#AnatomicalStructure"/>
+    </owl:Class>
+    
+
+
     <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Brain -->
 
     <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Brain">
-        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#AnatomicalStructure"/>
+        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Vital"/>
         <owl:disjointWith rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#ChestWall"/>
         <owl:disjointWith rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Diaphragm"/>
         <owl:disjointWith rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Esophagus"/>
@@ -254,10 +262,18 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
     
 
 
+    <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Carina -->
+
+    <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Carina">
+        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Vital"/>
+    </owl:Class>
+    
+
+
     <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#ChestWall -->
 
     <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#ChestWall">
-        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#AnatomicalStructure"/>
+        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#NonVital"/>
         <owl:disjointWith rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Diaphragm"/>
         <owl:disjointWith rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Esophagus"/>
         <owl:disjointWith rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Heart"/>
@@ -329,7 +345,7 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
     <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Diaphragm -->
 
     <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Diaphragm">
-        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#AnatomicalStructure"/>
+        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#NonVital"/>
         <owl:disjointWith rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Esophagus"/>
         <owl:disjointWith rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Heart"/>
         <owl:disjointWith rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Liver"/>
@@ -373,7 +389,7 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
     <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Esophagus -->
 
     <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Esophagus">
-        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#AnatomicalStructure"/>
+        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Vital"/>
         <owl:disjointWith rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Heart"/>
         <owl:disjointWith rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Liver"/>
         <owl:disjointWith rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LymphNode"/>
@@ -406,10 +422,18 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
     
 
 
+    <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#GreatVessel -->
+
+    <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#GreatVessel">
+        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Vital"/>
+    </owl:Class>
+    
+
+
     <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Heart -->
 
     <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Heart">
-        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#AnatomicalStructure"/>
+        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Vital"/>
         <owl:disjointWith rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Liver"/>
         <owl:disjointWith rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LymphNode"/>
         <owl:disjointWith rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Mediastinum"/>
@@ -625,7 +649,7 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
     <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Liver -->
 
     <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Liver">
-        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#AnatomicalStructure"/>
+        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Vital"/>
         <owl:disjointWith rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LymphNode"/>
         <owl:disjointWith rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Mediastinum"/>
         <owl:disjointWith rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#ParietalPericardium"/>
@@ -985,10 +1009,18 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
     
 
 
+    <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#MediastinalPleura -->
+
+    <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#MediastinalPleura">
+        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#NonVital"/>
+    </owl:Class>
+    
+
+
     <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Mediastinum -->
 
     <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Mediastinum">
-        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#AnatomicalStructure"/>
+        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Vital"/>
         <owl:disjointWith rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#ParietalPericardium"/>
         <owl:disjointWith rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Trachea"/>
     </owl:Class>
@@ -1208,6 +1240,14 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
     
 
 
+    <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#NonVital -->
+
+    <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#NonVital">
+        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Body"/>
+    </owl:Class>
+    
+
+
     <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#ObstructivePneumonitis -->
 
     <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#ObstructivePneumonitis">
@@ -1227,8 +1267,16 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
     <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#ParietalPericardium -->
 
     <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#ParietalPericardium">
-        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#AnatomicalStructure"/>
+        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#NonVital"/>
         <owl:disjointWith rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Trachea"/>
+    </owl:Class>
+    
+
+
+    <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#ParietalPleura -->
+
+    <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#ParietalPleura">
+        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#NonVital"/>
     </owl:Class>
     
 
@@ -1260,6 +1308,14 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
     
 
 
+    <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#PhrenicNerve -->
+
+    <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#PhrenicNerve">
+        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#NonVital"/>
+    </owl:Class>
+    
+
+
     <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#PleuralNodule -->
 
     <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#PleuralNodule">
@@ -1278,6 +1334,14 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
                 <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#RecurrentLaryngealNerve -->
+
+    <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#RecurrentLaryngealNerve">
+        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Vital"/>
     </owl:Class>
     
 
@@ -2015,7 +2079,7 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
     <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Trachea -->
 
     <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Trachea">
-        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#AnatomicalStructure"/>
+        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Vital"/>
     </owl:Class>
     
 
@@ -2233,6 +2297,22 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
     
 
 
+    <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#VertebralBody -->
+
+    <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#VertebralBody">
+        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Vital"/>
+    </owl:Class>
+    
+
+
+    <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Vital -->
+
+    <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Vital">
+        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Body"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.w3.org/2002/07/owl#Thing -->
 
     <owl:Class rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
@@ -2344,6 +2424,32 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Brain"/>
+            <rdf:Description rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Carina"/>
+            <rdf:Description rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Esophagus"/>
+            <rdf:Description rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#GreatVessel"/>
+            <rdf:Description rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Heart"/>
+            <rdf:Description rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Liver"/>
+            <rdf:Description rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Mediastinum"/>
+            <rdf:Description rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#RecurrentLaryngealNerve"/>
+            <rdf:Description rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Trachea"/>
+            <rdf:Description rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#VertebralBody"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#ChestWall"/>
+            <rdf:Description rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Diaphragm"/>
+            <rdf:Description rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#MediastinalPleura"/>
+            <rdf:Description rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#ParietalPericardium"/>
+            <rdf:Description rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#ParietalPleura"/>
+            <rdf:Description rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#PhrenicNerve"/>
+        </owl:members>
+    </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
