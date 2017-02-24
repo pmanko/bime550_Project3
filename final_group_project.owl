@@ -643,6 +643,21 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
     
 
 
+    <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LeftSideTumorNodule -->
+
+    <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LeftSideTumorNodule">
+        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#TumourNodule"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#hasSide"/>
+                <owl:hasValue rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#left"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#RightSideTumorNodule"/>
+    </owl:Class>
+    
+
+
     <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LeftUpperLobeWithPleuralNodule -->
 
     <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LeftUpperLobeWithPleuralNodule">
@@ -977,6 +992,30 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
     <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#M1b -->
 
     <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#M1b">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LungTumour"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#hasMetastasis"/>
+                        <owl:someValuesFrom>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#hasLocation"/>
+                                <owl:someValuesFrom rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Body"/>
+                            </owl:Restriction>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LungTumour"/>
+    </owl:Class>
+    
+
+
+    <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#M1b_v2.0 -->
+
+    <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#M1b_v2.0">
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
@@ -1476,6 +1515,20 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
                         </owl:intersectionOf>
                     </owl:Class>
                 </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#RightSideTumorNodule -->
+
+    <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#RightSideTumorNodule">
+        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#TumourNodule"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#hasSide"/>
+                <owl:hasValue rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#right"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -2242,6 +2295,20 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
     <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Tumour -->
 
     <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Tumour"/>
+    
+
+
+    <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#TumourNodule -->
+
+    <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#TumourNodule">
+        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Tumour"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#hasLocation"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
     
 
 
