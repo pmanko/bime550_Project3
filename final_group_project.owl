@@ -137,6 +137,14 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
     
 
 
+    <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Atelectasis -->
+
+    <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Atelectasis">
+        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Condition"/>
+    </owl:Class>
+    
+
+
     <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#AxillaryLymphNode -->
 
     <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#AxillaryLymphNode">
@@ -255,6 +263,12 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
     
 
 
+    <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Condition -->
+
+    <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Condition"/>
+    
+
+
     <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#ContralateralMetastasis -->
 
     <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#ContralateralMetastasis">
@@ -357,6 +371,22 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
         <owl:disjointWith rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Mediastinum"/>
         <owl:disjointWith rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#ParietalPericardium"/>
         <owl:disjointWith rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Trachea"/>
+    </owl:Class>
+    
+
+
+    <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#FullAtelectasis -->
+
+    <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#FullAtelectasis">
+        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Atelectasis"/>
+    </owl:Class>
+    
+
+
+    <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#FullObstructivePneumonitis -->
+
+    <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#FullObstructivePneumonitis">
+        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#ObstructivePneumonitis"/>
     </owl:Class>
     
 
@@ -1127,6 +1157,14 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
     
 
 
+    <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#ObstructivePneumonitis -->
+
+    <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#ObstructivePneumonitis">
+        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Condition"/>
+    </owl:Class>
+    
+
+
     <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#OccultCarcinoma -->
 
     <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#OccultCarcinoma">
@@ -1140,6 +1178,22 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
     <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#ParietalPericardium">
         <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#AnatomicalStructure"/>
         <owl:disjointWith rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Trachea"/>
+    </owl:Class>
+    
+
+
+    <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#PartialAtelectasis -->
+
+    <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#PartialAtelectasis">
+        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Atelectasis"/>
+    </owl:Class>
+    
+
+
+    <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#PartialObstructivePneumonitis -->
+
+    <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#PartialObstructivePneumonitis">
+        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#ObstructivePneumonitis"/>
     </owl:Class>
     
 
