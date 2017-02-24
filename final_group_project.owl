@@ -1,0 +1,1742 @@
+@prefix : <http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@base <http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl> .
+
+<http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl> rdf:type owl:Ontology ;
+                                                                        rdfs:comment """Originally from Olivier Dameron; drastically updated by John Gennari in Nov, 2010. Cleaned up in 2011. Ablated version. 
+
+Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.""" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled
+<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#comment
+rdfs:comment rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#hasAnatomicalPart
+:hasAnatomicalPart rdf:type owl:ObjectProperty ;
+                   owl:inverseOf :isAnatomicalPartOf ;
+                   rdf:type owl:TransitiveProperty .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#hasLocation
+:hasLocation rdf:type owl:ObjectProperty ;
+             owl:inverseOf :isLocatedIn ;
+             rdfs:range :AnatomicalStructure .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#hasMetastasis
+:hasMetastasis rdf:type owl:ObjectProperty ;
+               owl:inverseOf :isMetastasisOf ;
+               rdfs:domain :PrimaryTumour ;
+               rdfs:range :Metastasis .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#hasPrimaryTumour
+:hasPrimaryTumour rdf:type owl:ObjectProperty ;
+                  rdfs:range :PrimaryTumour .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#hasSide
+:hasSide rdf:type owl:ObjectProperty ;
+         rdfs:range :Side .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#isAnatomicalPartOf
+:isAnatomicalPartOf rdf:type owl:ObjectProperty ,
+                             owl:TransitiveProperty .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#isLocatedIn
+:isLocatedIn rdf:type owl:ObjectProperty .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#isMetastasisOf
+:isMetastasisOf rdf:type owl:ObjectProperty ,
+                         owl:FunctionalProperty ;
+                rdfs:range :PrimaryTumour .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#AnatomicalStructure
+:AnatomicalStructure rdf:type owl:Class ;
+                     owl:disjointWith :Side ,
+                                      :Tumour .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#AxillaryLymphNode
+:AxillaryLymphNode rdf:type owl:Class ;
+                   rdfs:subClassOf :LymphNode ;
+                   owl:disjointWith :RegionalLymphNode .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#AxillaryLymphNodeMetastasis
+:AxillaryLymphNodeMetastasis rdf:type owl:Class ;
+                             owl:equivalentClass [ owl:intersectionOf ( :Metastasis
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty :hasLocation ;
+                                                                          owl:someValuesFrom :AxillaryLymphNode
+                                                                        ]
+                                                                      ) ;
+                                                   rdf:type owl:Class
+                                                 ] .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Axiom1
+:Axiom1 rdf:type owl:Class ;
+        owl:equivalentClass [ rdf:type owl:Restriction ;
+                              owl:onProperty :isAnatomicalPartOf ;
+                              owl:someValuesFrom :LeftAnatomicalStructure
+                            ] ;
+        rdfs:subClassOf :LeftAnatomicalStructure ,
+                        owl:Thing .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Axiom2
+:Axiom2 rdf:type owl:Class ;
+        owl:equivalentClass [ rdf:type owl:Restriction ;
+                              owl:onProperty :isAnatomicalPartOf ;
+                              owl:someValuesFrom :RightAnatomicalStructure
+                            ] ;
+        rdfs:subClassOf :RightAnatomicalStructure ,
+                        owl:Thing .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Brain
+:Brain rdf:type owl:Class ;
+       rdfs:subClassOf :AnatomicalStructure ;
+       owl:disjointWith :ChestWall ,
+                        :Diaphragm ,
+                        :Esophagus ,
+                        :Heart ,
+                        :Liver ,
+                        :LobeOfLung ,
+                        :Lung ,
+                        :LymphNode ,
+                        :Mediastinum ,
+                        :ParietalPericardium ,
+                        :Trachea .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#BrainMetastasis
+:BrainMetastasis rdf:type owl:Class ;
+                 owl:equivalentClass [ owl:intersectionOf ( :Metastasis
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :hasLocation ;
+                                                              owl:someValuesFrom :Brain
+                                                            ]
+                                                          ) ;
+                                       rdf:type owl:Class
+                                     ] .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#CancerDiagnosis
+:CancerDiagnosis rdf:type owl:Class .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#ChestWall
+:ChestWall rdf:type owl:Class ;
+           rdfs:subClassOf :AnatomicalStructure ;
+           owl:disjointWith :Diaphragm ,
+                            :Esophagus ,
+                            :Heart ,
+                            :Liver ,
+                            :LobeOfLung ,
+                            :Lung ,
+                            :LymphNode ,
+                            :Mediastinum ,
+                            :ParietalPericardium ,
+                            :Trachea .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#ContralateralMetastasis
+:ContralateralMetastasis rdf:type owl:Class ;
+                         owl:equivalentClass [ rdf:type owl:Class ;
+                                               owl:unionOf ( [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty :hasLocation ;
+                                                                                      owl:someValuesFrom :LeftAnatomicalStructure
+                                                                                    ]
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty :isMetastasisOf ;
+                                                                                      owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                                                           owl:onProperty :hasLocation ;
+                                                                                                           owl:someValuesFrom :RightAnatomicalStructure
+                                                                                                         ]
+                                                                                    ]
+                                                                                  ) ;
+                                                               rdf:type owl:Class
+                                                             ]
+                                                             [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty :hasLocation ;
+                                                                                      owl:someValuesFrom :RightAnatomicalStructure
+                                                                                    ]
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty :isMetastasisOf ;
+                                                                                      owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                                                           owl:onProperty :hasLocation ;
+                                                                                                           owl:someValuesFrom :LeftAnatomicalStructure
+                                                                                                         ]
+                                                                                    ]
+                                                                                  ) ;
+                                                               rdf:type owl:Class
+                                                             ]
+                                                           )
+                                             ] ;
+                         rdfs:subClassOf :Metastasis .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Diaphragm
+:Diaphragm rdf:type owl:Class ;
+           rdfs:subClassOf :AnatomicalStructure ;
+           owl:disjointWith :Esophagus ,
+                            :Heart ,
+                            :Liver ,
+                            :LobeOfLung ,
+                            :Lung ,
+                            :LymphNode ,
+                            :Mediastinum ,
+                            :ParietalPericardium ,
+                            :Trachea .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#DistantMetastasis
+:DistantMetastasis rdf:type owl:Class ;
+                   owl:equivalentClass [ owl:intersectionOf ( :Metastasis
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty :hasLocation ;
+                                                                owl:someValuesFrom [ owl:intersectionOf ( :AnatomicalStructure
+                                                                                                          [ rdf:type owl:Class ;
+                                                                                                            owl:complementOf :RegionalLymphNode
+                                                                                                          ]
+                                                                                                        ) ;
+                                                                                     rdf:type owl:Class
+                                                                                   ]
+                                                              ]
+                                                            ) ;
+                                         rdf:type owl:Class
+                                       ] .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Esophagus
+:Esophagus rdf:type owl:Class ;
+           rdfs:subClassOf :AnatomicalStructure ;
+           owl:disjointWith :Heart ,
+                            :Liver ,
+                            :LymphNode ,
+                            :Mediastinum ,
+                            :ParietalPericardium ,
+                            :Trachea .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Heart
+:Heart rdf:type owl:Class ;
+       rdfs:subClassOf :AnatomicalStructure ;
+       owl:disjointWith :Liver ,
+                        :LymphNode ,
+                        :Mediastinum ,
+                        :ParietalPericardium ,
+                        :Trachea .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#HilarLymphNode
+:HilarLymphNode rdf:type owl:Class ;
+                rdfs:subClassOf :RegionalLymphNode ;
+                owl:disjointWith :IntrapulmonaryNode ,
+                                 :MediastinalLymphNode ,
+                                 :PeribronchialLymphNode ,
+                                 :ScaleneLimphNode ,
+                                 :SubcarinalLymphNode ,
+                                 :SupraclavicularLymphNode .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#IntrapulmonaryNode
+:IntrapulmonaryNode rdf:type owl:Class ;
+                    rdfs:subClassOf :RegionalLymphNode ;
+                    owl:disjointWith :MediastinalLymphNode ,
+                                     :PeribronchialLymphNode ,
+                                     :ScaleneLimphNode ,
+                                     :SubcarinalLymphNode ,
+                                     :SupraclavicularLymphNode .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#InvasiveEsophagialLungTumorNoMets
+:InvasiveEsophagialLungTumorNoMets rdf:type owl:Class ;
+                                   rdfs:subClassOf :LungCancerExamps ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :hasPrimaryTumour ;
+                                                     owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty :hasLocation ;
+                                                                          owl:someValuesFrom :Esophagus
+                                                                        ]
+                                                   ] ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :hasMetastasis ;
+                                                     owl:cardinality "0"^^xsd:nonNegativeInteger
+                                                   ] .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#InvasivePericardlTumorNoMets
+:InvasivePericardlTumorNoMets rdf:type owl:Class ;
+                              rdfs:subClassOf :LungCancerExamps ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :hasPrimaryTumour ;
+                                                owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty :hasLocation ;
+                                                                     owl:someValuesFrom :ParietalPericardium
+                                                                   ]
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :hasMetastasis ;
+                                                owl:cardinality "0"^^xsd:nonNegativeInteger
+                                              ] .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#IpsilateralMetastasis
+:IpsilateralMetastasis rdf:type owl:Class ;
+                       owl:equivalentClass [ rdf:type owl:Class ;
+                                             owl:unionOf ( [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty :hasLocation ;
+                                                                                    owl:someValuesFrom :LeftAnatomicalStructure
+                                                                                  ]
+                                                                                  [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty :isMetastasisOf ;
+                                                                                    owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                                                         owl:onProperty :hasLocation ;
+                                                                                                         owl:someValuesFrom :LeftAnatomicalStructure
+                                                                                                       ]
+                                                                                  ]
+                                                                                ) ;
+                                                             rdf:type owl:Class
+                                                           ]
+                                                           [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty :hasLocation ;
+                                                                                    owl:someValuesFrom :RightAnatomicalStructure
+                                                                                  ]
+                                                                                  [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty :isMetastasisOf ;
+                                                                                    owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                                                         owl:onProperty :hasLocation ;
+                                                                                                         owl:someValuesFrom :RightAnatomicalStructure
+                                                                                                       ]
+                                                                                  ]
+                                                                                ) ;
+                                                             rdf:type owl:Class
+                                                           ]
+                                                         )
+                                           ] ;
+                       rdfs:subClassOf :Metastasis .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LeftAnatomicalStructure
+:LeftAnatomicalStructure rdf:type owl:Class ;
+                         owl:equivalentClass [ owl:intersectionOf ( :AnatomicalStructure
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty :hasSide ;
+                                                                      owl:hasValue :left
+                                                                    ]
+                                                                  ) ;
+                                               rdf:type owl:Class
+                                             ] ;
+                         owl:disjointWith :RightAnatomicalStructure .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LeftLung
+:LeftLung rdf:type owl:Class ;
+          owl:equivalentClass [ owl:intersectionOf ( :LeftAnatomicalStructure
+                                                     :Lung
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LeftMediastinalMetastasis
+:LeftMediastinalMetastasis rdf:type owl:Class ;
+                           rdfs:subClassOf :Metastasis ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty :hasLocation ;
+                                             owl:someValuesFrom [ owl:intersectionOf ( :MediastinalLymphNode
+                                                                                       [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty :hasSide ;
+                                                                                         owl:hasValue :left
+                                                                                       ]
+                                                                                     ) ;
+                                                                  rdf:type owl:Class
+                                                                ]
+                                           ] .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Liver
+:Liver rdf:type owl:Class ;
+       rdfs:subClassOf :AnatomicalStructure ;
+       owl:disjointWith :LymphNode ,
+                        :Mediastinum ,
+                        :ParietalPericardium ,
+                        :Trachea .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LobeOfLeftLung
+:LobeOfLeftLung rdf:type owl:Class ;
+                owl:equivalentClass [ owl:intersectionOf ( :LobeOfLung
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :isAnatomicalPartOf ;
+                                                             owl:someValuesFrom :LeftLung
+                                                           ]
+                                                         ) ;
+                                      rdf:type owl:Class
+                                    ] .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LobeOfLung
+:LobeOfLung rdf:type owl:Class ;
+            owl:equivalentClass [ rdf:type owl:Class ;
+                                  owl:unionOf ( :LobeOfLeftLung
+                                                :LobeOfRightLung
+                                              )
+                                ] ,
+                                [ rdf:type owl:Class ;
+                                  owl:unionOf ( :LowerLobeOfLung
+                                                :MiddleLobeOfLung
+                                                :UpperLobeOfLung
+                                              )
+                                ] ;
+            rdfs:subClassOf :AnatomicalStructure ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :isAnatomicalPartOf ;
+                              owl:someValuesFrom :Lung
+                            ] ;
+            owl:disjointWith :Lung ,
+                             :LymphNode ,
+                             :Mediastinum .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LobeOfRightLung
+:LobeOfRightLung rdf:type owl:Class ;
+                 owl:equivalentClass [ owl:intersectionOf ( :LobeOfLung
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :isAnatomicalPartOf ;
+                                                              owl:someValuesFrom :RightLung
+                                                            ]
+                                                          ) ;
+                                       rdf:type owl:Class
+                                     ] .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LowerLobeOfLeftLung
+:LowerLobeOfLeftLung rdf:type owl:Class ;
+                     owl:equivalentClass [ owl:intersectionOf ( :LobeOfLeftLung
+                                                                :LowerLobeOfLung
+                                                              ) ;
+                                           rdf:type owl:Class
+                                         ] ;
+                     owl:disjointWith :LowerLobeOfRightLung .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LowerLobeOfLung
+:LowerLobeOfLung rdf:type owl:Class ;
+                 owl:equivalentClass [ rdf:type owl:Class ;
+                                       owl:unionOf ( :LowerLobeOfLeftLung
+                                                     :LowerLobeOfRightLung
+                                                   )
+                                     ] ;
+                 rdfs:subClassOf :LobeOfLung ;
+                 owl:disjointWith :MiddleLobeOfLung ,
+                                  :UpperLobeOfLung .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LowerLobeOfRightLung
+:LowerLobeOfRightLung rdf:type owl:Class ;
+                      owl:equivalentClass [ owl:intersectionOf ( :LobeOfRightLung
+                                                                 :LowerLobeOfLung
+                                                               ) ;
+                                            rdf:type owl:Class
+                                          ] .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Lung
+:Lung rdf:type owl:Class ;
+      owl:equivalentClass [ rdf:type owl:Class ;
+                            owl:unionOf ( :LeftLung
+                                          :RightLung
+                                        )
+                          ] ;
+      rdfs:subClassOf :AnatomicalStructure ;
+      owl:disjointWith :LymphNode ,
+                       :Mediastinum .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LungCancerExamps
+:LungCancerExamps rdf:type owl:Class ;
+                  rdfs:subClassOf :LungTumour .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LungTumorWithBrainMetastasis
+:LungTumorWithBrainMetastasis rdf:type owl:Class ;
+                              rdfs:subClassOf :LungCancerExamps ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :hasMetastasis ;
+                                                owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty :hasLocation ;
+                                                                     owl:someValuesFrom :Brain
+                                                                   ]
+                                              ] .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LungTumorwithLiverMets
+:LungTumorwithLiverMets rdf:type owl:Class ;
+                        rdfs:subClassOf :LungCancerExamps ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :hasMetastasis ;
+                                          owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                               owl:onProperty :hasLocation ;
+                                                               owl:someValuesFrom :Liver
+                                                             ]
+                                        ] .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LungTumour
+:LungTumour rdf:type owl:Class ;
+            owl:equivalentClass [ owl:intersectionOf ( :CancerDiagnosis
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :hasPrimaryTumour ;
+                                                         owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty :hasLocation ;
+                                                                              owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                                   owl:unionOf ( :Lung
+                                                                                                                 [ rdf:type owl:Restriction ;
+                                                                                                                   owl:onProperty :isAnatomicalPartOf ;
+                                                                                                                   owl:someValuesFrom :Lung
+                                                                                                                 ]
+                                                                                                               )
+                                                                                                 ]
+                                                                            ]
+                                                       ]
+                                                     ) ;
+                                  rdf:type owl:Class
+                                ] ;
+            rdfs:subClassOf :CancerDiagnosis .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#LymphNode
+:LymphNode rdf:type owl:Class ;
+           rdfs:subClassOf :AnatomicalStructure ;
+           owl:disjointWith :Mediastinum ,
+                            :ParietalPericardium ,
+                            :Trachea ;
+           rdfs:comment "All subclasses should be provided a definition involving their location"^^xsd:string .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#M0
+:M0 rdf:type owl:Class ;
+    owl:equivalentClass [ owl:intersectionOf ( :LungTumour
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :hasMetastasis ;
+                                                 owl:allValuesFrom :RegionalLymphNodeMetastasis
+                                               ]
+                                             ) ;
+                          rdf:type owl:Class
+                        ] .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#M1
+:M1 rdf:type owl:Class ;
+    owl:equivalentClass [ owl:intersectionOf ( :LungTumour
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :hasMetastasis ;
+                                                 owl:someValuesFrom :DistantMetastasis
+                                               ]
+                                             ) ;
+                          rdf:type owl:Class
+                        ] .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#M1a
+:M1a rdf:type owl:Class ;
+     owl:equivalentClass [ owl:intersectionOf ( :LungTumour
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty :hasMetastasis ;
+                                                  owl:someValuesFrom [ owl:intersectionOf ( :ContralateralMetastasis
+                                                                                            :DistantMetastasis
+                                                                                          ) ;
+                                                                       rdf:type owl:Class
+                                                                     ]
+                                                ]
+                                              ) ;
+                           rdf:type owl:Class
+                         ] ;
+     rdfs:subClassOf :LungTumour .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#M1b
+:M1b rdf:type owl:Class ;
+     owl:equivalentClass [ owl:intersectionOf ( :LungTumour
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty :hasMetastasis ;
+                                                  owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty :hasLocation ;
+                                                                       owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                            owl:unionOf ( :Brain
+                                                                                                          :Heart
+                                                                                                          :Liver
+                                                                                                        )
+                                                                                          ]
+                                                                     ]
+                                                ]
+                                              ) ;
+                           rdf:type owl:Class
+                         ] ;
+     rdfs:subClassOf :LungTumour .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#MediastinalLymphNode
+:MediastinalLymphNode rdf:type owl:Class ;
+                      rdfs:subClassOf :RegionalLymphNode ;
+                      owl:disjointWith :PeribronchialLymphNode ,
+                                       :ScaleneLimphNode ,
+                                       :SubcarinalLymphNode ,
+                                       :SupraclavicularLymphNode .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Mediastinum
+:Mediastinum rdf:type owl:Class ;
+             rdfs:subClassOf :AnatomicalStructure ;
+             owl:disjointWith :ParietalPericardium ,
+                              :Trachea .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Metastasis
+:Metastasis rdf:type owl:Class ;
+            rdfs:subClassOf owl:Thing ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasLocation ;
+                              owl:cardinality "1"^^xsd:nonNegativeInteger
+                            ] ;
+            owl:disjointWith :PrimaryTumour .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#MiddleLobeOfLung
+:MiddleLobeOfLung rdf:type owl:Class ;
+                  rdfs:subClassOf :LobeOfLung ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :isAnatomicalPartOf ;
+                                    owl:someValuesFrom :RightLung
+                                  ] ;
+                  owl:disjointWith :UpperLobeOfLung .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#N0
+:N0 rdf:type owl:Class ;
+    owl:equivalentClass [ owl:intersectionOf ( :LungTumour
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :hasMetastasis ;
+                                                 owl:allValuesFrom :DistantMetastasis
+                                               ]
+                                             ) ;
+                          rdf:type owl:Class
+                        ] .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#N1
+:N1 rdf:type owl:Class ;
+    owl:equivalentClass [ owl:intersectionOf ( :LungTumour
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :hasMetastasis ;
+                                                 owl:someValuesFrom [ owl:intersectionOf ( :IpsilateralMetastasis
+                                                                                           [ rdf:type owl:Restriction ;
+                                                                                             owl:onProperty :hasLocation ;
+                                                                                             owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                                                  owl:unionOf ( :HilarLymphNode
+                                                                                                                                :IntrapulmonaryNode
+                                                                                                                                :PeribronchialLymphNode
+                                                                                                                              )
+                                                                                                                ]
+                                                                                           ]
+                                                                                         ) ;
+                                                                      rdf:type owl:Class
+                                                                    ]
+                                               ]
+                                             ) ;
+                          rdf:type owl:Class
+                        ] ;
+    rdfs:subClassOf :LungTumour .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#N2
+:N2 rdf:type owl:Class ;
+    owl:equivalentClass [ owl:intersectionOf ( :LungTumour
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :hasMetastasis ;
+                                                 owl:someValuesFrom [ owl:intersectionOf ( :IpsilateralMetastasis
+                                                                                           [ rdf:type owl:Restriction ;
+                                                                                             owl:onProperty :hasLocation ;
+                                                                                             owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                                                  owl:unionOf ( :MediastinalLymphNode
+                                                                                                                                :SubcarinalLymphNode
+                                                                                                                              )
+                                                                                                                ]
+                                                                                           ]
+                                                                                         ) ;
+                                                                      rdf:type owl:Class
+                                                                    ]
+                                               ]
+                                             ) ;
+                          rdf:type owl:Class
+                        ] ;
+    rdfs:subClassOf :LungTumour .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#N3
+:N3 rdf:type owl:Class ;
+    owl:equivalentClass [ owl:intersectionOf ( :LungTumour
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :hasMetastasis ;
+                                                 owl:someValuesFrom [ owl:intersectionOf ( :ContralateralMetastasis
+                                                                                           [ rdf:type owl:Restriction ;
+                                                                                             owl:onProperty :hasLocation ;
+                                                                                             owl:someValuesFrom :RegionalLymphNode
+                                                                                           ]
+                                                                                         ) ;
+                                                                      rdf:type owl:Class
+                                                                    ]
+                                               ]
+                                             ) ;
+                          rdf:type owl:Class
+                        ] ;
+    rdfs:subClassOf :LungTumour .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#N3_Pascal
+:N3_Pascal rdf:type owl:Class ;
+           owl:equivalentClass [ owl:intersectionOf ( :LungTumour
+                                                      [ rdf:type owl:Class ;
+                                                        owl:unionOf ( [ rdf:type owl:Class ;
+                                                                        owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                                        owl:onProperty :hasMetastasis ;
+                                                                                        owl:someValuesFrom [ owl:intersectionOf ( :ContralateralMetastasis
+                                                                                                                                  [ rdf:type owl:Restriction ;
+                                                                                                                                    owl:onProperty :hasLocation ;
+                                                                                                                                    owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                                                                                         owl:unionOf ( :HilarLymphNode
+                                                                                                                                                                       :MediastinalLymphNode
+                                                                                                                                                                       :ScaleneLimphNode
+                                                                                                                                                                     )
+                                                                                                                                                       ]
+                                                                                                                                  ]
+                                                                                                                                ) ;
+                                                                                                             rdf:type owl:Class
+                                                                                                           ]
+                                                                                      ]
+                                                                                      [ rdf:type owl:Restriction ;
+                                                                                        owl:onProperty :hasMetastasis ;
+                                                                                        owl:someValuesFrom [ owl:intersectionOf ( :IpsilateralMetastasis
+                                                                                                                                  [ rdf:type owl:Restriction ;
+                                                                                                                                    owl:onProperty :hasLocation ;
+                                                                                                                                    owl:someValuesFrom :ScaleneLimphNode
+                                                                                                                                  ]
+                                                                                                                                ) ;
+                                                                                                             rdf:type owl:Class
+                                                                                                           ]
+                                                                                      ]
+                                                                                    )
+                                                                      ]
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty :hasLocation ;
+                                                                        owl:someValuesFrom :SupraclavicularLymphNode
+                                                                      ]
+                                                                    )
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ;
+           rdfs:subClassOf :LungTumour .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#OccultCarcinoma
+:OccultCarcinoma rdf:type owl:Class ;
+                 rdfs:subClassOf :StagedLungCancer .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#OccultCarcinomaR
+:OccultCarcinomaR rdf:type owl:Class ;
+                  rdfs:subClassOf :StagedLungCancer .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#ParietalPericardium
+:ParietalPericardium rdf:type owl:Class ;
+                     rdfs:subClassOf :AnatomicalStructure ;
+                     owl:disjointWith :Trachea .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#PeribronchialLymphNode
+:PeribronchialLymphNode rdf:type owl:Class ;
+                        rdfs:subClassOf :RegionalLymphNode ;
+                        owl:disjointWith :ScaleneLimphNode ,
+                                         :SubcarinalLymphNode ,
+                                         :SupraclavicularLymphNode .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#PrimaryTumour
+:PrimaryTumour rdf:type owl:Class ;
+               rdfs:subClassOf :Tumour ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasLocation ;
+                                 owl:cardinality "1"^^xsd:nonNegativeInteger
+                               ] .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#RegionalLymphNode
+:RegionalLymphNode rdf:type owl:Class ;
+                   rdfs:subClassOf :LymphNode .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#RegionalLymphNodeMetastasis
+:RegionalLymphNodeMetastasis rdf:type owl:Class ;
+                             owl:equivalentClass [ owl:intersectionOf ( :Metastasis
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty :hasLocation ;
+                                                                          owl:someValuesFrom :RegionalLymphNode
+                                                                        ]
+                                                                      ) ;
+                                                   rdf:type owl:Class
+                                                 ] .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#RightAnatomicalStructure
+:RightAnatomicalStructure rdf:type owl:Class ;
+                          owl:equivalentClass [ owl:intersectionOf ( :AnatomicalStructure
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty :hasSide ;
+                                                                       owl:hasValue :right
+                                                                     ]
+                                                                   ) ;
+                                                rdf:type owl:Class
+                                              ] .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#RightHilarMetastasis
+:RightHilarMetastasis rdf:type owl:Class ;
+                      rdfs:subClassOf :Metastasis ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasLocation ;
+                                        owl:someValuesFrom [ owl:intersectionOf ( :HilarLymphNode
+                                                                                  [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty :hasSide ;
+                                                                                    owl:hasValue :right
+                                                                                  ]
+                                                                                ) ;
+                                                             rdf:type owl:Class
+                                                           ]
+                                      ] .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#RightLung
+:RightLung rdf:type owl:Class ;
+           owl:equivalentClass [ owl:intersectionOf ( :Lung
+                                                      :RightAnatomicalStructure
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#RightLungPrimaryTumor
+:RightLungPrimaryTumor rdf:type owl:Class ;
+                       rdfs:subClassOf :PrimaryTumour ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :hasLocation ;
+                                         owl:someValuesFrom :RightLung
+                                       ] .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#RightMediastinalMetastasis
+:RightMediastinalMetastasis rdf:type owl:Class ;
+                            rdfs:subClassOf :Metastasis ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty :hasLocation ;
+                                              owl:someValuesFrom [ owl:intersectionOf ( :MediastinalLymphNode
+                                                                                        [ rdf:type owl:Restriction ;
+                                                                                          owl:onProperty :hasSide ;
+                                                                                          owl:hasValue :right
+                                                                                        ]
+                                                                                      ) ;
+                                                                   rdf:type owl:Class
+                                                                 ]
+                                            ] .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#ScaleneLimphNode
+:ScaleneLimphNode rdf:type owl:Class ;
+                  rdfs:subClassOf :RegionalLymphNode ;
+                  owl:disjointWith :SubcarinalLymphNode ,
+                                   :SupraclavicularLymphNode .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Side
+:Side rdf:type owl:Class ;
+      owl:disjointWith :Tumour .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#SmallRightLungTumourWithHilarLymphNodeMetastasis
+:SmallRightLungTumourWithHilarLymphNodeMetastasis rdf:type owl:Class ;
+                                                  rdfs:subClassOf :LungCancerExamps ,
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty :hasMetastasis ;
+                                                                    owl:someValuesFrom :RightHilarMetastasis
+                                                                  ] ,
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty :hasMetastasis ;
+                                                                    owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty :isMetastasisOf ;
+                                                                                         owl:someValuesFrom :RightLungPrimaryTumor
+                                                                                       ]
+                                                                  ] ,
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty :hasPrimaryTumour ;
+                                                                    owl:someValuesFrom :TumorSmaller3cm
+                                                                  ] ,
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty :hasPrimaryTumour ;
+                                                                    owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty :hasLocation ;
+                                                                                         owl:someValuesFrom :RightLung
+                                                                                       ]
+                                                                  ] ,
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty :hasMetastasis ;
+                                                                    owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                  ] .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#SmallUpperLeftLobeTumourWithoutMetastasis
+:SmallUpperLeftLobeTumourWithoutMetastasis rdf:type owl:Class ;
+                                           rdfs:subClassOf :LungCancerExamps ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :hasLocation ;
+                                                             owl:someValuesFrom :UpperLobeOfLeftLung
+                                                           ] ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :hasPrimaryTumour ;
+                                                             owl:someValuesFrom :TumorSmaller3cm
+                                                           ] ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :hasMetastasis ;
+                                                             owl:cardinality "0"^^xsd:nonNegativeInteger
+                                                           ] .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Stage0
+:Stage0 rdf:type owl:Class ;
+        rdfs:subClassOf :StagedLungCancer .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Stage0R
+:Stage0R rdf:type owl:Class ;
+         rdfs:subClassOf :StagedLungCancer .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StageIA
+:StageIA rdf:type owl:Class ;
+         owl:equivalentClass [ owl:intersectionOf ( :M0
+                                                    :N0
+                                                    :T1
+                                                  ) ;
+                               rdf:type owl:Class
+                             ] ;
+         rdfs:subClassOf :StagedLungCancer .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StageIAR
+:StageIAR rdf:type owl:Class ;
+          rdfs:subClassOf :StagedLungCancer .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StageIB
+:StageIB rdf:type owl:Class ;
+         owl:equivalentClass [ owl:intersectionOf ( :M0
+                                                    :N0
+                                                    :T2a
+                                                  ) ;
+                               rdf:type owl:Class
+                             ] ;
+         rdfs:subClassOf :StagedLungCancer .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StageIBR
+:StageIBR rdf:type owl:Class ;
+          rdfs:subClassOf :StagedLungCancer .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StageIIA
+:StageIIA rdf:type owl:Class ;
+          owl:equivalentClass [ owl:intersectionOf ( :M0
+                                                     [ rdf:type owl:Class ;
+                                                       owl:unionOf ( [ owl:intersectionOf ( :N0
+                                                                                            :T2b
+                                                                                          ) ;
+                                                                       rdf:type owl:Class
+                                                                     ]
+                                                                     [ owl:intersectionOf ( :N1
+                                                                                            [ rdf:type owl:Class ;
+                                                                                              owl:unionOf ( :T1
+                                                                                                            :T2a
+                                                                                                          )
+                                                                                            ]
+                                                                                          ) ;
+                                                                       rdf:type owl:Class
+                                                                     ]
+                                                                   )
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] ;
+          rdfs:subClassOf :StagedLungCancer .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StageIIAR
+:StageIIAR rdf:type owl:Class ;
+           rdfs:subClassOf :StagedLungCancer .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StageIIB
+:StageIIB rdf:type owl:Class ;
+          owl:equivalentClass [ owl:intersectionOf ( :M0
+                                                     [ rdf:type owl:Class ;
+                                                       owl:unionOf ( [ owl:intersectionOf ( :N0
+                                                                                            :T3
+                                                                                          ) ;
+                                                                       rdf:type owl:Class
+                                                                     ]
+                                                                     [ owl:intersectionOf ( :N1
+                                                                                            :T2b
+                                                                                          ) ;
+                                                                       rdf:type owl:Class
+                                                                     ]
+                                                                   )
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] ;
+          rdfs:subClassOf :StagedLungCancer .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StageIIBR
+:StageIIBR rdf:type owl:Class ;
+           rdfs:subClassOf :StagedLungCancer .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StageIIIA
+:StageIIIA rdf:type owl:Class ;
+           owl:equivalentClass [ owl:intersectionOf ( :M0
+                                                      [ rdf:type owl:Class ;
+                                                        owl:unionOf ( [ owl:intersectionOf ( :N2
+                                                                                             [ rdf:type owl:Class ;
+                                                                                               owl:unionOf ( :T1
+                                                                                                             :T2
+                                                                                                           )
+                                                                                             ]
+                                                                                           ) ;
+                                                                        rdf:type owl:Class
+                                                                      ]
+                                                                      [ owl:intersectionOf ( :T3
+                                                                                             [ rdf:type owl:Class ;
+                                                                                               owl:unionOf ( :N1
+                                                                                                             :N2
+                                                                                                           )
+                                                                                             ]
+                                                                                           ) ;
+                                                                        rdf:type owl:Class
+                                                                      ]
+                                                                      [ owl:intersectionOf ( :T4
+                                                                                             [ rdf:type owl:Class ;
+                                                                                               owl:unionOf ( :N0
+                                                                                                             :N1
+                                                                                                           )
+                                                                                             ]
+                                                                                           ) ;
+                                                                        rdf:type owl:Class
+                                                                      ]
+                                                                    )
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ;
+           rdfs:subClassOf :StagedLungCancer .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StageIIIAR
+:StageIIIAR rdf:type owl:Class ;
+            rdfs:subClassOf :StagedLungCancer .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StageIIIA_Pascal
+:StageIIIA_Pascal rdf:type owl:Class ;
+                  owl:equivalentClass [ owl:intersectionOf ( :M0
+                                                             [ rdf:type owl:Class ;
+                                                               owl:unionOf ( [ owl:intersectionOf ( :N0
+                                                                                                    :T4
+                                                                                                  ) ;
+                                                                               rdf:type owl:Class
+                                                                             ]
+                                                                             [ owl:intersectionOf ( :N1
+                                                                                                    [ rdf:type owl:Class ;
+                                                                                                      owl:unionOf ( :T3
+                                                                                                                    :T4
+                                                                                                                  )
+                                                                                                    ]
+                                                                                                  ) ;
+                                                                               rdf:type owl:Class
+                                                                             ]
+                                                                             [ owl:intersectionOf ( :N2
+                                                                                                    [ rdf:type owl:Class ;
+                                                                                                      owl:unionOf ( :T1
+                                                                                                                    :T2a
+                                                                                                                    :T2b
+                                                                                                                    :T3
+                                                                                                                  )
+                                                                                                    ]
+                                                                                                  ) ;
+                                                                               rdf:type owl:Class
+                                                                             ]
+                                                                           )
+                                                             ]
+                                                           ) ;
+                                        rdf:type owl:Class
+                                      ] ;
+                  rdfs:subClassOf :StagedLungCancer .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StageIIIB
+:StageIIIB rdf:type owl:Class ;
+           owl:equivalentClass [ owl:intersectionOf ( :M0
+                                                      [ rdf:type owl:Class ;
+                                                        owl:unionOf ( [ owl:intersectionOf ( :N3
+                                                                                             [ rdf:type owl:Class ;
+                                                                                               owl:complementOf :T4
+                                                                                             ]
+                                                                                           ) ;
+                                                                        rdf:type owl:Class
+                                                                      ]
+                                                                      [ owl:intersectionOf ( :T4
+                                                                                             [ rdf:type owl:Class ;
+                                                                                               owl:unionOf ( :N2
+                                                                                                             :N3
+                                                                                                           )
+                                                                                             ]
+                                                                                           ) ;
+                                                                        rdf:type owl:Class
+                                                                      ]
+                                                                    )
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ;
+           rdfs:subClassOf :StagedLungCancer .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StageIIIBR
+:StageIIIBR rdf:type owl:Class ;
+            rdfs:subClassOf :StagedLungCancer .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StageIIIB_Pascal
+:StageIIIB_Pascal rdf:type owl:Class ;
+                  owl:equivalentClass [ owl:intersectionOf ( :M0
+                                                             [ rdf:type owl:Class ;
+                                                               owl:unionOf ( [ owl:intersectionOf ( :N2
+                                                                                                    :T4
+                                                                                                  ) ;
+                                                                               rdf:type owl:Class
+                                                                             ]
+                                                                             [ owl:intersectionOf ( :N3
+                                                                                                    [ rdf:type owl:Class ;
+                                                                                                      owl:unionOf ( :T1
+                                                                                                                    :T2a
+                                                                                                                    :T2b
+                                                                                                                    :T3
+                                                                                                                    :T4
+                                                                                                                  )
+                                                                                                    ]
+                                                                                                  ) ;
+                                                                               rdf:type owl:Class
+                                                                             ]
+                                                                           )
+                                                             ]
+                                                           ) ;
+                                        rdf:type owl:Class
+                                      ] ;
+                  rdfs:subClassOf :StagedLungCancer .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StageIV
+:StageIV rdf:type owl:Class ;
+         owl:equivalentClass [ rdf:type owl:Class ;
+                               owl:unionOf ( :M1a
+                                             :M1b
+                                           )
+                             ] ;
+         rdfs:subClassOf :StagedLungCancer .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StageIVR
+:StageIVR rdf:type owl:Class ;
+          rdfs:subClassOf :StagedLungCancer .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#StagedLungCancer
+:StagedLungCancer rdf:type owl:Class .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#SubcarinalLymphNode
+:SubcarinalLymphNode rdf:type owl:Class ;
+                     rdfs:subClassOf :RegionalLymphNode ;
+                     owl:disjointWith :SupraclavicularLymphNode .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#SupraclavicularLymphNode
+:SupraclavicularLymphNode rdf:type owl:Class ;
+                          rdfs:subClassOf :RegionalLymphNode .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#T0
+:T0 rdf:type owl:Class ;
+    rdfs:subClassOf :LungTumour .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#T1
+:T1 rdf:type owl:Class ;
+    owl:equivalentClass [ owl:intersectionOf ( :LungTumour
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :hasPrimaryTumour ;
+                                                 owl:someValuesFrom :TumorSmaller3cm
+                                               ]
+                                             ) ;
+                          rdf:type owl:Class
+                        ] .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#T1a
+:T1a rdf:type owl:Class ;
+     owl:equivalentClass [ owl:intersectionOf ( :LungTumour
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty :hasPrimaryTumour ;
+                                                  owl:someValuesFrom :TumorSmaller2cm
+                                                ]
+                                              ) ;
+                           rdf:type owl:Class
+                         ] ;
+     rdfs:subClassOf :LungTumour .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#T1b
+:T1b rdf:type owl:Class ;
+     owl:equivalentClass [ owl:intersectionOf ( :LungTumour
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty :hasPrimaryTumour ;
+                                                  owl:someValuesFrom :TumorBetween2cm3cm
+                                                ]
+                                              ) ;
+                           rdf:type owl:Class
+                         ] ;
+     rdfs:subClassOf :LungTumour .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#T2
+:T2 rdf:type owl:Class ;
+    owl:equivalentClass [ rdf:type owl:Class ;
+                          owl:unionOf ( :T2a
+                                        :T2b
+                                      )
+                        ] ;
+    rdfs:subClassOf :LungTumour .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#T2a
+:T2a rdf:type owl:Class ;
+     owl:equivalentClass [ owl:intersectionOf ( :LungTumour
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty :hasPrimaryTumour ;
+                                                  owl:someValuesFrom :TumorBetween3cm5cm
+                                                ]
+                                              ) ;
+                           rdf:type owl:Class
+                         ] ;
+     rdfs:subClassOf :LungTumour .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#T2b
+:T2b rdf:type owl:Class ;
+     owl:equivalentClass [ owl:intersectionOf ( :LungTumour
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty :hasPrimaryTumour ;
+                                                  owl:someValuesFrom :TumorBetween5cm7cm
+                                                ]
+                                              ) ;
+                           rdf:type owl:Class
+                         ] ;
+     rdfs:subClassOf :LungTumour .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#T3
+:T3 rdf:type owl:Class ;
+    owl:equivalentClass [ owl:intersectionOf ( :LungTumour
+                                               [ rdf:type owl:Class ;
+                                                 owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty :hasPrimaryTumour ;
+                                                                 owl:someValuesFrom :TumorGreater7cm
+                                                               ]
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty :hasPrimaryTumour ;
+                                                                 owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty :hasLocation ;
+                                                                                      owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                                           owl:unionOf ( :ChestWall
+                                                                                                                         :Diaphragm
+                                                                                                                         :ParietalPericardium
+                                                                                                                       )
+                                                                                                         ]
+                                                                                    ]
+                                                               ]
+                                                             )
+                                               ]
+                                             ) ;
+                          rdf:type owl:Class
+                        ] ;
+    rdfs:subClassOf :LungTumour .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#T4
+:T4 rdf:type owl:Class ;
+    owl:equivalentClass [ owl:intersectionOf ( :LungTumour
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :hasPrimaryTumour ;
+                                                 owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty :hasLocation ;
+                                                                      owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                           owl:unionOf ( :Esophagus
+                                                                                                         :Heart
+                                                                                                         :Mediastinum
+                                                                                                         :Trachea
+                                                                                                       )
+                                                                                         ]
+                                                                    ]
+                                               ]
+                                             ) ;
+                          rdf:type owl:Class
+                        ] ;
+    rdfs:subClassOf :LungTumour .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Trachea
+:Trachea rdf:type owl:Class ;
+         rdfs:subClassOf :AnatomicalStructure .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#TumorBetween2cm3cm
+:TumorBetween2cm3cm rdf:type owl:Class ;
+                    rdfs:subClassOf :TumorSize .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#TumorBetween3cm5cm
+:TumorBetween3cm5cm rdf:type owl:Class ;
+                    rdfs:subClassOf :TumorSize .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#TumorBetween5cm7cm
+:TumorBetween5cm7cm rdf:type owl:Class ;
+                    rdfs:subClassOf :TumorSize .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#TumorGreater7cm
+:TumorGreater7cm rdf:type owl:Class ;
+                 rdfs:subClassOf :TumorSize .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#TumorSize
+:TumorSize rdf:type owl:Class ;
+           rdfs:subClassOf :Tumour .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#TumorSmaller2cm
+:TumorSmaller2cm rdf:type owl:Class ;
+                 rdfs:subClassOf :TumorSize .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#TumorSmaller3cm
+:TumorSmaller3cm rdf:type owl:Class ;
+                 rdfs:subClassOf :TumorSize .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Tumour
+:Tumour rdf:type owl:Class .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#UpperLeftLobePrimaryTumor
+:UpperLeftLobePrimaryTumor rdf:type owl:Class ;
+                           rdfs:subClassOf :PrimaryTumour ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty :hasLocation ;
+                                             owl:someValuesFrom :UpperLobeOfLeftLung
+                                           ] .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#UpperLeftLobeTumorWithLeftMediastinalMetastasis
+:UpperLeftLobeTumorWithLeftMediastinalMetastasis rdf:type owl:Class ;
+                                                 rdfs:subClassOf :LungCancerExamps ,
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty :hasMetastasis ;
+                                                                   owl:someValuesFrom :LeftMediastinalMetastasis
+                                                                 ] ,
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty :hasMetastasis ;
+                                                                   owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                                        owl:onProperty :isMetastasisOf ;
+                                                                                        owl:someValuesFrom :UpperLeftLobePrimaryTumor
+                                                                                      ]
+                                                                 ] ,
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty :hasPrimaryTumour ;
+                                                                   owl:someValuesFrom :TumorBetween5cm7cm
+                                                                 ] ,
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty :hasPrimaryTumour ;
+                                                                   owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                                        owl:onProperty :hasLocation ;
+                                                                                        owl:someValuesFrom :UpperLobeOfLeftLung
+                                                                                      ]
+                                                                 ] ,
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty :hasMetastasis ;
+                                                                   owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                 ] .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#UpperLeftLobeTumorWithRightMediastinalMetastasis
+:UpperLeftLobeTumorWithRightMediastinalMetastasis rdf:type owl:Class ;
+                                                  rdfs:subClassOf :LungCancerExamps ,
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty :hasMetastasis ;
+                                                                    owl:someValuesFrom :RightMediastinalMetastasis
+                                                                  ] ,
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty :hasMetastasis ;
+                                                                    owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty :isMetastasisOf ;
+                                                                                         owl:someValuesFrom :UpperLeftLobePrimaryTumor
+                                                                                       ]
+                                                                  ] ,
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty :hasPrimaryTumour ;
+                                                                    owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty :hasLocation ;
+                                                                                         owl:someValuesFrom :UpperLobeOfLeftLung
+                                                                                       ]
+                                                                  ] ,
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty :hasMetastasis ;
+                                                                    owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                  ] .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#UpperLobeOfLeftLung
+:UpperLobeOfLeftLung rdf:type owl:Class ;
+                     owl:equivalentClass [ owl:intersectionOf ( :LobeOfLeftLung
+                                                                :UpperLobeOfLung
+                                                              ) ;
+                                           rdf:type owl:Class
+                                         ] ;
+                     owl:disjointWith :UpperLobeOfRightLung .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#UpperLobeOfLung
+:UpperLobeOfLung rdf:type owl:Class ;
+                 owl:equivalentClass [ rdf:type owl:Class ;
+                                       owl:unionOf ( :UpperLobeOfLeftLung
+                                                     :UpperLobeOfRightLung
+                                                   )
+                                     ] ;
+                 rdfs:subClassOf :LobeOfLung .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#UpperLobeOfRightLung
+:UpperLobeOfRightLung rdf:type owl:Class ;
+                      owl:equivalentClass [ owl:intersectionOf ( :LobeOfRightLung
+                                                                 :UpperLobeOfLung
+                                                               ) ;
+                                            rdf:type owl:Class
+                                          ] .
+
+
+###  http://www.w3.org/2002/07/owl#Thing
+owl:Thing rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#left
+:left rdf:type owl:NamedIndividual ,
+               :Side .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#patient1
+:patient1 rdf:type owl:NamedIndividual ,
+                   :InvasiveEsophagialLungTumorNoMets .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#patient2
+:patient2 rdf:type owl:NamedIndividual ,
+                   :InvasivePericardlTumorNoMets .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#patient3
+:patient3 rdf:type owl:NamedIndividual ,
+                   :LungTumorWithBrainMetastasis .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#patient4
+:patient4 rdf:type owl:NamedIndividual ,
+                   :LungTumorwithLiverMets .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#patient5
+:patient5 rdf:type owl:NamedIndividual ,
+                   :SmallRightLungTumourWithHilarLymphNodeMetastasis .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#patient6
+:patient6 rdf:type owl:NamedIndividual ,
+                   :SmallUpperLeftLobeTumourWithoutMetastasis .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#patient7
+:patient7 rdf:type owl:NamedIndividual ,
+                   :UpperLeftLobeTumorWithLeftMediastinalMetastasis .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#patient8
+:patient8 rdf:type owl:NamedIndividual ,
+                   :UpperLeftLobeTumorWithRightMediastinalMetastasis .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#patient9
+:patient9 rdf:type owl:NamedIndividual .
+
+
+###  http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#right
+:right rdf:type owl:NamedIndividual ,
+                :Side .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :OccultCarcinoma
+                :OccultCarcinomaR
+                :Stage0
+                :Stage0R
+                :StageIAR
+                :StageIBR
+                :StageIIAR
+                :StageIIBR
+                :StageIIIAR
+                :StageIIIBR
+                :StageIVR
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :TumorBetween3cm5cm
+                :TumorBetween5cm7cm
+                :TumorGreater7cm
+                :TumorSmaller3cm
+              )
+] .
+
+
+#################################################################
+#    Rules
+#################################################################
+
+:x rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment ""^^xsd:string ;
+   rdfs:label "STAGEIA_RULE"^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :T1 ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :x
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#classPredicate> :N0 ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :x
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> :M0 ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> :x
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :StageIAR ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :x
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment ""^^xsd:string ;
+   rdfs:label "STAGEIB_RULE"^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :T2a ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :x
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#classPredicate> :N0 ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :x
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> :M0 ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> :x
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :StageIBR ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :x
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment ""^^xsd:string ;
+   rdfs:label "StageIIA_RULE1"^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :T2b ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :x
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#classPredicate> :N0 ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :x
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> :M0 ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> :x
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :StageIIAR ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :x
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment ""^^xsd:string ;
+   rdfs:label "StageIIA_RULE2"^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :T1 ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :x
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#classPredicate> :N1 ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :x
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> :M0 ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> :x
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :StageIIAR ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :x
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment ""^^xsd:string ;
+   rdfs:label "StageIIA_RULE3"^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :T2a ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :x
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#classPredicate> :N1 ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :x
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> :M0 ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> :x
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :StageIIAR ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :x
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+###  Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi
