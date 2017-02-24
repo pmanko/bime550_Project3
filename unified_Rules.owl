@@ -5847,7 +5847,7 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
                                                 <rdf:first>
                                                     <rdf:Description>
                                                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
-                                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThanOrEqual"/>
+                                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThanOrEqual"/>
                                                         <swrl:arguments>
                                                             <rdf:Description>
                                                                 <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
@@ -5855,7 +5855,7 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
                                                                 <rdf:rest>
                                                                     <rdf:Description>
                                                                         <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#float">5.0</rdf:first>
+                                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#float">3.0</rdf:first>
                                                                         <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
                                                                     </rdf:Description>
                                                                 </rdf:rest>
@@ -5863,7 +5863,31 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
                                                         </swrl:arguments>
                                                     </rdf:Description>
                                                 </rdf:first>
-                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThan"/>
+                                                                <swrl:arguments>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                        <rdf:first rdf:resource="urn:swrl#s"/>
+                                                                        <rdf:rest>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#float">5.0</rdf:first>
+                                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                            </rdf:Description>
+                                                                        </rdf:rest>
+                                                                    </rdf:Description>
+                                                                </swrl:arguments>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
                                             </rdf:Description>
                                         </rdf:rest>
                                     </rdf:Description>
