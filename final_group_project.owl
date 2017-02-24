@@ -256,6 +256,23 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
     
 
 
+    <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Bronchus1 -->
+
+    <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Bronchus1">
+        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#RelativeLocation"/>
+        <owl:disjointWith rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Bronchus2"/>
+    </owl:Class>
+    
+
+
+    <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Bronchus2 -->
+
+    <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#Bronchus2">
+        <rdfs:subClassOf rdf:resource="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#RelativeLocation"/>
+    </owl:Class>
+    
+
+
     <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#CancerDiagnosis -->
 
     <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#CancerDiagnosis"/>
@@ -1369,6 +1386,12 @@ Edited by Piotr Mankowski for Project 3 of BIME 550 Winter 2017 Quarter.</rdfs:c
             </owl:Class>
         </owl:equivalentClass>
     </owl:Class>
+    
+
+
+    <!-- http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#RelativeLocation -->
+
+    <owl:Class rdf:about="http://smi.stanford.edu/people/dameron/ontology/tnm-lung-olivier.owl#RelativeLocation"/>
     
 
 
